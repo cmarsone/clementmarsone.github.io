@@ -3,7 +3,7 @@ layout: post
 title: Multiclass classification
 ---
 
-# How to implement a multiclass perceptron from scratch using softmax
+## Implementing a multiclass perceptron from scratch
 
 The multiclass perceptron can be implemented this way. 
 We denote $K$ the number of classes, $N$ the number of (training) examples, $D$ the dimension of the data (after feature augmentation, at least with a "1" as first component).
