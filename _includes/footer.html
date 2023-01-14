@@ -7,18 +7,20 @@
       <div class="footer-col">
         <p class="strava-subscribe">
           <a href="{{ default: 'https://www.strava.com/athletes/26254810/' | absolute_url }}">
-            <png class="svg-icon orange">
-              <use xlink:href="{{ 'assets/strava.png' | relative_url }}"></use>
+            <svg class="svg-icon orange">
+              <use xlink:href="{{ 'assets/strava.svg' | relative_url }}"></use>
             </png><span>Subscribe</span>
           </a>
         </p>
+      <div class="footer-col">
         <p class="github-subscribe">
           <a href="{{ default: 'https://github.com/cmarsone' | absolute_url }}">
             <svg class="svg-icon orange">
-              <use xlink:href="{{ 'assets/github.svg#rss' | relative_url }}"></use>
+              <use xlink:href="{{ 'assets/github.svg' | relative_url }}"></use>
             </svg><span>Subscribe</span>
           </a>
         </p>
+      </p>
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
