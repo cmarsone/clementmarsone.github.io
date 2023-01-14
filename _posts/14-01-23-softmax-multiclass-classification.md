@@ -24,59 +24,56 @@ The Loss function that we should use is called the **cross-entropy loss function
 $$J = \frac1N \sum_n^N H(\vec{t}_{n}, \vec{y}_{n})$$
 
 where the cross-entropy is a non-symmetric function: $$H(\vec{t}_{n}, \vec{y}_{n}) = -\sum_k^K t_{n,k} \log (y_{n,k})$$ 
-
-
-{% highlight ruby %}
     
     import numpy as np
 
     class MulticlassClassifier:
         def __init__(self):
-        self.thetas = None
+            self.thetas = None
 
         def softmax(self, activations):
-        exp_activations = np.exp(activations)
-        sum_exp_activations = np.sum(exp_activations)
-        softmax_activations = exp_activations / sum_exp_activations
-        return softmax_activations
-
+            exp_activations = np.exp(activations)
+            sum_exp_activations = np.sum(exp_activations)
+            softmax_activations = exp_activations / sum_exp_activations
+            return softmax_activations
+  
         def predict(self, X):
-        z = np.dot(X, self.thetas)
-        predictions = self.softmax(z)
-        return predictions
+            z = np.dot(X, self.thetas)
+            predictions = self.softmax(z)
+            return predictions
 
         def loss(self, y_true, y_pred):
-        epsilon = 1e-7
-        y_pred = np.clip(y_pred, epsilon, 1. - epsilon)
-        loss = - np.mean(y_true * np.log(y_pred))
-        return loss
+            epsilon = 1e-7
+           y_pred = np.clip(y_pred, epsilon, 1. - epsilon)
+           loss = - np.mean(y_true * np.log(y_pred))
+           return loss
 
         def model_loss_gradients(self, X, y_true, thetas):
-        y_pred = self.predict(X)
-        gradients = np.dot(X.T, (y_pred - y_true)) / len(X)
-        return gradients
+            y_pred = self.predict(X)
+            gradients = np.dot(X.T, (y_pred - y_true)) / len(X)
+            return gradients
 
         def gradient_descent(self, X, y_true, initial_thetas, learning_rate, n_iterations):
-        self.thetas = initial_thetas
-        for _ in range(n_iterations):
-            gradients = self.model_loss_gradients(X, y_true, self.thetas)
-            self.thetas -= learning_rate * gradients
-        return self.thetas
+           self.thetas = initial_thetas
+           for _ in range(n_iterations):
+               gradients = self.model_loss_gradients(X, y_true, self.thetas)
+               self.thetas -= learning_rate * gradients
+           return self.thetas
 
         def fit(self, X, y_true, n_iterations):
-        n_features = X.shape[1]
-        n_classes = len(set(y_true))
-        initial_thetas = np.random.randn(n_features, n_classes)
-        learning_rate = 0.1
-        y_true_onehot = self.one_hot_encoding(y_true)
-        self.gradient_descent(X, y_true_onehot, initial_thetas, learning_rate, n_iterations)
+            n_features = X.shape[1]
+            n_classes = len(set(y_true))
+            initial_thetas = np.random.randn(n_features, n_classes)
+            learning_rate = 0.1
+            y_true_onehot = self.one_hot_encoding(y_true)
+            self.gradient_descent(X, y_true_onehot, initial_thetas, learning_rate, n_iterations)
 
         def one_hot_encoding(self,int_labels):
-        n_labels = len(int_labels)
-        n_unique_labels = len(set(int_labels))
-        one_hot = np.zeros((n_labels, n_unique_labels))
-        one_hot[np.arange(n_labels), int_labels] = 1
-        return one_hot
+            n_labels = len(int_labels)
+            n_unique_labels = len(set(int_labels))
+            one_hot = np.zeros((n_labels, n_unique_labels))
+            one_hot[np.arange(n_labels), int_labels] = 1
+            return one_hot
 
         def predict(self, X):
             return np.argmax(self.predict(X), axis=1)
@@ -88,5 +85,3 @@ where the cross-entropy is a non-symmetric function: $$H(\vec{t}_{n}, \vec{y}_{n
 
         def get_parameters(self):
             return self.thetas
-{% endhighlight %}
-
