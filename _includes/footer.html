@@ -6,14 +6,14 @@
     <div class="footer-col-wrapper">
       <div class="footer-col">
         <p class="strava-subscribe">
-          <a href="{{ site.strava.path | default: 'https://www.strava.com/athletes/26254810/' | absolute_url }}">
+          <a href="{{ default: 'https://www.strava.com/athletes/26254810/' | absolute_url }}">
             <svg class="svg-icon orange">
               <use xlink:href="{{ 'assets/strava.png' | relative_url }}"></use>
             </svg><span>Subscribe</span>
           </a>
         </p>
         <p class="github-subscribe">
-          <a href="{{ site.github.path | default: 'https://github.com/cmarsone' | absolute_url }}">
+          <a href="{{ default: 'https://github.com/cmarsone' | absolute_url }}">
             <svg class="svg-icon orange">
               <use xlink:href="{{ 'assets/github.svg#rss' | relative_url }}"></use>
             </svg><span>Subscribe</span>
