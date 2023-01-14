@@ -3,9 +3,6 @@ layout: post
 title: Multiclass classification
 ---
 
-## Multiclass classification
-
-
 The multiclass percpetron can be implemented this way. 
 We denote $K$ the number of classes, $N$ the number of (training) examples, $D$ the dimension of the data (after feature augmentation, at least with a "1" as first component).
 
@@ -23,7 +20,7 @@ The Loss function that we should use is called the **cross-entropy loss function
 
 $$J = \frac1N \sum_n^N H(\vec{t}_{n}, \vec{y}_{n})$$
 
-where the cross-entropy is a non-symmetric function: $$H(\vec{t}_{n}, \vec{y}_{n}) = -\sum_k^K t_{n,k} \log (y_{n,k})$$ 
+where the cross-entropy is a non-symmetric function: $$H(\vec{t}_{n}, \vec{y}_{n}) = -\sum_k^K t_{n,k} \log (y_{n,k})$$
     
     import numpy as np
 
