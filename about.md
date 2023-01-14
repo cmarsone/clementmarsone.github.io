@@ -10,8 +10,8 @@ Hi everyone! I currently live & study in Paris in Master's degree in Quantum Com
 
 ### GitHub description
 
-- 👋 Hi, I’m Clément
-- 👀 I’m interested in Cycling, Sacred Music & Opera
+- 👋 Hi, I’m Clément and I'm 23 years old.
+- 👀 I’m interested in Road Cycling, Sacred Music & Opera, Philosophy
 - 🌱 I’m currently learning Quantum Computing, Distributed Networks, Parallel Programming, Machine Learning...
 - 💞️ I’m looking to collaborate on ... for an exciting internship in one of the fields as above.
 - 📫 How to reach me https://www.linkedin.com/in/clement-marsone/ or https://www.strava.com/athletes/26254810
