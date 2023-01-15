@@ -6,13 +6,15 @@
     <div class="footer-col-wrapper">
       <div class="footer-col">
          <span class="social-link">
-           <a href="https://www.strava.com/athletes/26254810" title="Strava" target="_blank" rel="noopener">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-               <path d="M158.4 0L7 292h89.2l62.2-116.1L220.1 292h88.5zm150.2 292l-43.9 88.2-44.6-88.2h-67.6l112.2 220 111.5-220z">
-               </path>
-             </svg>
-           </a>
-         </span>
+           <p class="strava-subscribe">
+             <a href="{{ default: 'https://www.strava.com/athletes/26254810' | absolute_url }}">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                  <path d="M158.4 0L7 292h89.2l62.2-116.1L220.1 292h88.5zm150.2 292l-43.9 88.2-44.6-88.2h-67.6l112.2 220 111.5-220z">
+                  </path>
+                </svg><span>Strava</span>
+              </a>
+          </p>
+        </span>
       </div>
       <div class="footer-col">
         <p class="github-subscribe">
@@ -31,6 +33,8 @@
             </svg><span>LinkedIn</span>
           </a>
         </p>
+      </div>
+      <div class="footer-col">
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
