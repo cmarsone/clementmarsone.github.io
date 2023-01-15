@@ -16,4 +16,4 @@ Hi everyone! I'm currently living & studying in Paris in Master's degree in Quan
 - 💞️ I’m looking to collaborate on ... for an exciting internship in one of the fields as above.
 - 📫 How to reach me https://www.linkedin.com/in/clement-marsone/ or e-mail
 
-![alt monaco](monaco.jpeg)
+![alt monaco]([monaco.jpeg](https://github.com/cmarsone/cmarsone.github.io/blob/main/casino.jpeg))
