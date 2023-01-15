@@ -7,9 +7,9 @@ title: Training machine learning models
 
 * $X, Y, \ldots$ random variables
 * $x, y, \ldots$ values
-* Given a vector $x \in \mathbb{R}^d$ with $d$ is the number of feature/input values, we want to predict an output $y \rightarrow f(Y|X=x) \in \mathbb{R}$ for regression & binary classification or $ \in \mathbb{R}^k$ for multiclass classification or strutured prediction.
+* Given a vector $x \in \mathbb{R}^d$ with $d$ is the number of feature/input values, we want to predict an output $y \to f(Y \mid X=x) \in \mathbb{R}$ for regression & binary classification or $ \in \mathbb{R}^k$ for multiclass classification or strutured prediction.
 * $\mathbb{P}(X, Y)$ : data distribution
-* $\mathbb{P}_{\theta}(Y|X)$ : model distribution over outputs
+* $\mathbb{P}_{\theta}(Y \mid X)$ : model distribution over outputs
 * $\sum_i \exp(\omega_i)$ : partition
 * $\log\sum_i \exp(\omega_i)$ : log-partition
 * $\text{conv}(Y)$ : the Convex Hull i. e. the smallest convex set that contains $Y$.
