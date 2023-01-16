@@ -18,7 +18,7 @@ title: Training machine learning models
 
 * Training machine learning models is an optimization problem. The aim is to find the minimum of a function. Be careful to distinguish between *min* (a single value), *argmin* (a set of values), *inf* (the lower bound/limit) & conversely for a *max*.
 
-* input space -> score/logit/weight space -> output space
+* (input space) $\to$ scoring function $\omega=\sigma_\theta(x)$ $\to$ (score/logit/weight space) $\to$ prediction function $\mu=\hat{y}(\omega)$ $\to$ (output space)
 
 ### Types of problem
 * *Regression* : $Y \in \mathbb{R}$
