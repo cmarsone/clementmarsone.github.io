@@ -49,14 +49,14 @@ $$f^* (x) = \mathbb{1} \{ \mu \ge 1/2 \} \in \operatorname{argmax}_{y \in \{ 0, 
 
 #### Multiclass classification
 
-$Y$ is the set of one-hot vectors of dimension $k$, $\text{conv}(Y)=\Delta(k)$ simplex of dim $k = \{ \mu \in \mathbb{R}^k \mid \sum_ i \mu_ i = 1 \& \forall i \mu_ i \ge 0 \}$, $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in \mathbb{R}^{k \times d}$, $b \in \mathbb{R}^k \to \hat{y}(\omega) = \text{argmax}_ {y \in Y} \langle y, \omega \rangle$ or $\hat{y}(\omega) = \text{softmax}(\omega) \iff \mu_ i = \frac{\exp(\omega_ i}{\sum_ j (\omega_ j)}$
+$Y$ is the set of one-hot vectors of dimension $k$, $\text{conv}(Y)=\Delta(k)$ simplex of dim $k = \{ \mu \in \mathbb{R}^k \mid \sum_ i \mu_ i = 1, \forall i \mu_ i \ge 0 \}$, $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in \mathbb{R}^{k \times d}$, $b \in \mathbb{R}^k \to \hat{y}(\omega) = \text{argmax}_ {y \in Y} \langle y, \omega \rangle$ or $\hat{y}(\omega) = \text{softmax}(\omega) \iff \mu_ i = \frac{\exp(\omega_ i}{\sum_ j (\omega_ j)}$
 
 $$\hat{y}(\omega) = \begin{cases}
 1 & \text{if } \omega \ge 0 \\
 0 & \text{otherwise}
 \end{cases}$$ 
 
-or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
+or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)
 
 $\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution 
 $$\begin{cases}
