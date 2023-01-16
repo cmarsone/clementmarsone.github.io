@@ -4,10 +4,6 @@ title: About
 permalink: /about/
 ---
 
-<p style="float: left; margin: 0 0 10px 10px;">
-  <img src="pco.jpeg" alt="pco_profile" width="200" height="300">
-</p>
-
 ### Who am I ?
 
 Hi everyone! I'm currently living & studying in Paris in Master's degree in Quantum Computing, Machine Learning & High Performance Computing at University Paris-Saclay. Before I did a double bachelor in Maths & Physics. Otherwise, I spend also some gap years to grow in maturity by making better reflections on myself, develop many soft skills & discover other horizons. Finally, I answered to me some conclusions about the creation & life after death that I'm always ready to talk about...
