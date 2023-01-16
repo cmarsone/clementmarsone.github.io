@@ -31,7 +31,7 @@ $Y \in \mathbb{R}$, $\text{conv}(Y)=\mathbb{R}$, $\sigma_\theta(x)=a^T x + b = \
 
 $Y = \{ 0, 1 \}$, $\text{conv}(Y)=\[ 0, 1 \]$, $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in \mathbb{R}^d$, $b \in \mathbb{R} \to \hat{y}(\omega) = \omega$
 
-$$\hat{y}(\omega} = \begin{cases}
+$$\hat{y}(\omega) = \begin{cases}
 1 & \text{if } \omega \ge 0 \\
 0 & \text{otherwise}
 \end{cases}$$ 
