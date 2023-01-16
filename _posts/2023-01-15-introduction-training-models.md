@@ -34,7 +34,9 @@ $Y = \{ 0, 1 \}$, $\text{conv}(Y)=\[ 0, 1 \]$, $\sigma_\theta(x)=a^T x + b = \la
 $$\hat{y}(\omega} = \begin{cases}
 1 & \text{if } \omega \ge 0 \\
 0 & \text{otherwise}
-\end{cases}$$ or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
+\end{cases}$$ 
+
+or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
 
 $\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution 
 $$\begin{cases}
