@@ -5,10 +5,7 @@ title: Collective communications with MPI
 
 ## General concepts
 
-* Collective communications allow making a series of point-to-point communications
-in one single call.
-* A collective communication always concerns all the processes of the indicated
-communicator.
+* Collective communications allow making *a series of point-to-point communications* in one single call. It always concerns all the processes of the indicated communicator.
 * For each process, the call ends when its participation in the collective call is completed, in the sense of point-to-point communications (therefore, when the
 concerned memory area can be changed).
 * The management of tags in these communications is transparent and system-dependent. Therefore, they are never explicitly defined during calls to subroutines. An advantage of this is that collective communications never interfere with point-to-point communications.
@@ -26,3 +23,10 @@ on the transferred data :
   * Reduction operations (sum, product, maximum, minimum, etc.), whether of a
 predefined or personal type : `MPI_Reduce()`
   * Reduction operations with distributing of the result (this is in fact equivalent to an MPI_Reduce() followed by an MPI_Bcast() ) : `MPI_Allreduce()`
+
+## Communication modes
+
+* *Point-to-Point send modes* : Standard `MPI_Send()`, Synchronous `MPI_Ssend()`, Buffered `MPI_Bsend()`
+* *Blocking call* : A call is blocking if the memory space used for the communication can be reused immediately after the exit of the call. The data sent can be modified after the call & the data received can be read after the call.
+* *Synchronous send* : A synchronous send involves a synchronization between the involved processes i.e. send cannot start until its receive is posted. There can be no communication before the two processes are ready to communicate. ⚠ to the deadlocks !
+* 
