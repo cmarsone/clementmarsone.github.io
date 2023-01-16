@@ -56,9 +56,10 @@ $$\hat{y}(\omega) = \begin{cases}
 0 & \text{otherwise}
 \end{cases}$$ 
 
-or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)
+or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp(\omega)} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)
 
 $\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution 
+
 $$\begin{cases}
 \mathbb{P}_ \theta (Y = 1, \mid X = x) = \mu \\
 \mathbb{P}_ \theta (Y = 0, \mid X = x) = 1 - \mu
