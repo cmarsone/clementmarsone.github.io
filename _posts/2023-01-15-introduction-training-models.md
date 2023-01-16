@@ -9,7 +9,7 @@ title: Training machine learning models
 * $x, y, \ldots$ values
 * Given a vector $x \in \mathbb{R}^d$ with $d$ is the number of feature/input values, we want to predict an output $y \to f(Y \mid X=x) \in \mathbb{R}$ for regression & binary classification or $ \in \mathbb{R}^k$ for multiclass classification or strutured prediction.
 * $\mathbb{P}(X, Y)$ : data distribution
-* $\mathbb{P}_{\theta}(Y \mid X)$ : model distribution over outputs
+* $\mathbb{P}_ {\theta}(Y \mid X)$ : model distribution over outputs
 * $\sum_i \exp(\omega_i)$ : partition
 * $\log\sum_i \exp(\omega_i)$ : log-partition
 * $\text{conv}(Y)$ : the Convex Hull i. e. the smallest convex set that contains $Y$ 
@@ -31,9 +31,14 @@ $Y \in \mathbb{R}$, $\text{conv}(Y)=\mathbb{R}$, $\sigma_\theta(x)=a^T x + b = \
 
 $Y = \{ 0, 1 \}$, $\text{conv}(Y)=\[ 0, 1 \]$, $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in \mathbb{R}^d$, $b \in \mathbb{R} \to \hat{y}(\omega) = \omega$
 
-$y = \begin{cases}
-1 & \text{if } a > x \ge 0 \
--1 & \text{otherwise}
+$\hat{y}(\omega} = \begin{cases}
+1 & \text{if } \omega \ge 0 \\
+0 & \text{otherwise}
+\end{cases}$ or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
+
+$\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution $\begin{cases}
+\mathbb{P}_ \theta (Y = 1, \mid X = x) = \mu \\
+\mathbb{P}_ \theta (Y = 0, \mid X = x) = 1 - \mu
 \end{cases}$
 #### Multiclass classification
 
