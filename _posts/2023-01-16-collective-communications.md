@@ -14,7 +14,7 @@ concerned memory area can be changed).
 * The management of tags in these communications is transparent and system-dependent. Therefore, they are never explicitly defined during calls to subroutines. An advantage of this is that collective communications never interfere with point-to-point communications.
 
 ### Types of collective communications
-1. One which ensures global synchronizations : 'MPI_Barrier()'
+1. One which ensures global synchronizations : `int MPI_Barrier (MPI_Comm MPI_COMM_WORLD)`
 2. Ones which only transfer data :
   * Global distribution of data : MPI_Bcast()
   *  Selective distribution of data : MPI_Scatter()
