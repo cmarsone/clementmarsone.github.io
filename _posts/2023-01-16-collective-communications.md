@@ -16,14 +16,29 @@ concerned memory area can be changed).
 ### Types of collective communications
 1. One which ensures global synchronizations : `int MPI_Barrier (MPI_Comm MPI_COMM_WORLD)`
 2. Ones which only transfer data :
-  * Global distribution of data : MPI_Bcast()
-  *  Selective distribution of data : MPI_Scatter()
-  *  Collection of distributed data : MPI_Gather()
-  *  Collection of distributed data by all the processes : MPI_Allgather()
-  *  Collection and selective distribution by all the processes of distributed data : MPI_Alltoall()
+  * Global distribution of data : `int MPI_Bcast (void *buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm)`
+  *  Selective distribution of data : `int MPI_Scatter (const void *sendbuf,int sendcount,
+MPI_Datatype sendtype,void *recvbuf,
+int recvcount,MPI_Datatype recvtype,
+int root,MPI_Comm comm)`
+  *  Collection of distributed data : `int MPI_Gather (const void*sendbuf,int sendcount,
+MPI_Datatype sendtype,void *recvbuf,
+int recvcount,MPI_Datatype recvtype,
+int root,MPI_Comm comm)`
+  *  Collection of distributed data by all the processes : `int MPI_Allgather (const void *sendbuf,int sendcount,
+MPI_Datatype sendtype,void *recvbuf,
+int recvcount,MPI_Datatype recvtype,
+MPI_Comm comm`
+  *  Collection and selective distribution by all the processes of distributed data : `int MPI_Alltoall (const void *sendbuf,int sendcount,
+MPI_Datatype sendtype,void *recvbuf,
+int recvcount,MPI_Datatype recvtype,
+MPI_Comm comm)`
 3. Ones which, in addition to the communications management, carry out operations
 on the transferred data :
   * Reduction operations (sum, product, maximum, minimum, etc.), whether of a
-predefined or personal type : MPI_Reduce()
-  * Reduction operations with distributing of the result (this is in fact equivalent to an MPI_Reduce() followed by an MPI_Bcast() ) : MPI_Allreduce()
+predefined or personal type : `int MPI_Reduce (const void*sendbuf,void *recvbuf,int count,
+MPI_Datatype datatype,MPI_Op op,int root,
+MPI_Comm comm)`
+  * Reduction operations with distributing of the result (this is in fact equivalent to an MPI_Reduce() followed by an MPI_Bcast() ) : `int MPI_Allreduce (const void *sendbuf,void *recvbuf,int count,
+MPI_Datatype datatype,MPI_Op op,MPI_Comm comm)`
  
