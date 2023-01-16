@@ -31,15 +31,20 @@ $Y \in \mathbb{R}$, $\text{conv}(Y)=\mathbb{R}$, $\sigma_\theta(x)=a^T x + b = \
 
 $Y = \{ 0, 1 \}$, $\text{conv}(Y)=\[ 0, 1 \]$, $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in \mathbb{R}^d$, $b \in \mathbb{R} \to \hat{y}(\omega) = \omega$
 
-$\hat{y}(\omega} = \begin{cases}
+$$\hat{y}(\omega} = \begin{cases}
 1 & \text{if } \omega \ge 0 \\
 0 & \text{otherwise}
-\end{cases}$ or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
+\end{cases}$$ or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
 
-$\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution $\begin{cases}
+$\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution 
+$$\begin{cases}
 \mathbb{P}_ \theta (Y = 1, \mid X = x) = \mu \\
 \mathbb{P}_ \theta (Y = 0, \mid X = x) = 1 - \mu
-\end{cases}$
+\end{cases}$$
+
+The following prediction function is an *optimal prediction rule*. It is the *Bayes classifier*:
+$$f^* (x) = \mathbb{1} \{ \mu \ge 1/2 \} \in \operatorname{argmax}_{y \in \{ 0, 1\}} P(Y = y \mid X = x)$$ and $\epsilon^* = \mathbb{E} \left[ \min \left( \eta (X), 1 - \eta (X) \right) \right] $
+
 #### Multiclass classification
 
 $Y$ is the set of one-hot vectors of dimension $k$
