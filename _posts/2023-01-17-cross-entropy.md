@@ -24,9 +24,11 @@ The cross-entropy loss is calculated between two probability distributions, the 
 
 Let $\mu \in \Delta(k)$, $\lambda \in \Delta(k)$ simplex of $k$ (multiclass). $\mu$ is a one-hot vector
 
-*Shannon entropy* : $H^s \[ \mu \] = \sum_ i \mu_ i \log \mu_ i$ gives a mesaure of uncertainty of the distribution $\mu$
+*Shannon entropy* : $H^s \[ \mu \] = -\sum_ i \mu_ i \log \mu_ i$ gives a mesaure of uncertainty of the distribution $\mu$
 
-$\to \forall \mu \in \Delta(k)$, $H^s \[ \mu \] \ge 0$ such that $H^s \[ \mu \] = \sum_ i \mu_ i \log \mu_ i$
+$\to \forall \mu \in \Delta(k)$, $H^s \[ \mu \] \ge 0$ such that $H^s \[ \mu \] = -\sum_ i \mu_ i \log \mu_ i \ge -\sum_ i \mu_ i ( \mu_ i - 1) = 1 - \sum_ i \mu_ i^2 \ge 0$
+
+$$
 
 
 
