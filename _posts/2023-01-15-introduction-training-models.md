@@ -36,7 +36,7 @@ $$\hat{y}(\omega) = \begin{cases}
 0 & \text{otherwise}
 \end{cases}$$ 
 
-or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)$
+or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in \] 0, 1 \[$ (sigmoid)
 
 $\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution
 
@@ -47,7 +47,7 @@ $$\begin{cases}
 
 The following prediction function is an *optimal prediction rule*. It is kown as the *Bayes classifier* :
 
-$$f^* (x) = \mathbb{1} \{ \mu \ge 1/2 \} \in \operatorname{argmax}_{y \in \{ 0, 1\}} P(Y = y \mid X = x)$$ and $\epsilon^* = \mathbb{E} \left[ \min \left( \eta (X), 1 - \eta (X) \right) \right] $$
+$$f^* (x) = \mathbb{1} \{ \mu \ge 1/2 \} \in \operatorname{argmax}_{y \in \{ 0, 1\}} P(Y = y \mid X = x)$$ and $\epsilon^* = \mathbb{E} \left[ \min \left( \eta (X), 1 - \eta (X) \right) \right] $
 
 #### Multiclass classification
 
