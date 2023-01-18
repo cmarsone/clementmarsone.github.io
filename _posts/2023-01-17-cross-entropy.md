@@ -46,4 +46,6 @@ Properties of positivity: $\begin{cases}
 
 $\text{KL}\[ y, \mu]$ is one-hot vector $\mu = \text{softmax}(\omega)$
 
-$\text{KL}\[ y, \mu] = \sum_ i \log \frac{y_ i}{\mu_ i} = -y_ i \log \mu_ i - H\[ y \] = \sum_ i y_ i \log \frac{\exp(\omega_ i)}{2\omega} = \sum_ i \omega_ i y_ i +\sum_ i y_ i \log 2_omega = -\langle y, \omega \rangle + \log 2\omega = -\log \mathbb{P}_ \theta (Y = y \mid X = x)$
+$\text{KL}\[ y, \mu] = \sum_ i \log \frac{y_ i}{\mu_ i} = \underbrace{-y_ i \log \mu_ i}{cross-entropy} - \underbrace{H\[ y \]}{= 0 \text{ as } y \in \mathbb{E}\[ k \]} = \sum_ i y_ i \log \frac{\exp(\omega_ i)}{2\omega} = \sum_ i \omega_ i y_ i +\sum_ i y_ i \log 2_omega = -\langle y, \omega \rangle + \log 2\omega = -\log \mathbb{P}_ \theta (Y = y \mid X = x)$
+
+*Fermi-Dirac entropy* : Let $\mu \in \[ 0, 1 \]$ be the paramters of Bernoulli such that $H^{FD}\[ \mu \] = -\mu \log \mu - (1- \mu) \log(1- \mu)$
