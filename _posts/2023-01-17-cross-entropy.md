@@ -29,10 +29,8 @@ Let $\mu \in \Delta(k)$, $\lambda \in \Delta(k)$ simplex of $k$ (multiclass). $\
 $\to \forall \mu \in \Delta(k)$, $H^s \[ \mu \] \ge 0$ such that $H^s \[ \mu \] = -\sum_ i \mu_ i \log \mu_ i \ge -\sum_ i \mu_ i ( \mu_ i - 1) = 1 - \sum_ i \mu_ i^2 \ge 0$
 
 $$\begin{cases}
-
 H^ s \[ \mu \] = 0 & \iff \mu \text{ is a one-hot vector (min-entropy)} \\
 H^ s \[ \mu \] \text{ is maximized } & \iff \forall i \text{ , } \mu_ i = \frac{1}{k} \\
-
 \end{cases}$$ 
 
 *Kullback-Leibler divergence*, also known as relative entropy, is a measure of the difference between two probability distributions. We assume $\forall i$, $\mu_ i \ge 0 \iff \lambda_ i \ge 0$.
@@ -48,7 +46,7 @@ Properties of positivity: $\begin{cases}
 
 $\text{KL}\[ y, \mu]$ is one-hot vector $\mu = \text{softmax}(\omega)$
 
-$\text{KL}\[ y, \mu] = \sum_ i \log \frac{y_ i}{\mu_ i} = \underbrace{-y_ i \log \mu_ i}{cross-entropy} - \underbrace{H\[ y \]}{= 0 \text{ as } y \in \mathbb{E}\[ k \]} = \sum_ i y_ i \log \frac{\exp(\omega_ i)}{2\omega} = \sum_ i \omega_ i y_ i +\sum_ i y_ i \log 2_omega = -\langle y, \omega \rangle + \log 2\omega = -\log \mathbb{P}_ \theta (Y = y \mid X = x)$
+$\text{KL}\[ y, \mu] = \sum_ i \log \frac{y_ i}{\mu_ i} = \underbrace{-y_ i \log \mu_ i}_ {cross-entropy} - \underbrace{H\[ y \]}_ {= 0 \text{ as } y \in \mathbb{E}\[ k \]} = \sum_ i y_ i \log \frac{\exp(\omega_ i)}{2\omega} = \sum_ i \omega_ i y_ i +\sum_ i y_ i \log 2_omega = -\langle y, \omega \rangle + \log 2\omega = -\log \mathbb{P}_ \theta (Y = y \mid X = x)$
 
 *Fermi-Dirac entropy* : The Fermi-Dirac entropy is a statistical measure of the entropy of a system of non-interacting fermions, such as electrons in a metal.
 
