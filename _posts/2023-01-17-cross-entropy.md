@@ -48,4 +48,10 @@ $\text{KL}\[ y, \mu]$ is one-hot vector $\mu = \text{softmax}(\omega)$
 
 $\text{KL}\[ y, \mu] = \sum_ i \log \frac{y_ i}{\mu_ i} = \underbrace{-y_ i \log \mu_ i}{cross-entropy} - \underbrace{H\[ y \]}{= 0 \text{ as } y \in \mathbb{E}\[ k \]} = \sum_ i y_ i \log \frac{\exp(\omega_ i)}{2\omega} = \sum_ i \omega_ i y_ i +\sum_ i y_ i \log 2_omega = -\langle y, \omega \rangle + \log 2\omega = -\log \mathbb{P}_ \theta (Y = y \mid X = x)$
 
-*Fermi-Dirac entropy* : Let $\mu \in \[ 0, 1 \]$ be the paramters of Bernoulli such that $H^{FD}\[ \mu \] = -\mu \log \mu - (1- \mu) \log(1- \mu)$
+*Fermi-Dirac entropy* : The Fermi-Dirac entropy is a statistical measure of the entropy of a system of non-interacting fermions, such as electrons in a metal.
+
+$$S = k_ {B}ln(2)(1 + n_ {F})$$
+
+Where $k_ {B}$ is the Boltzmann constant, ln is the natural logarithm, and $n_ {F}$ is the Fermi-Dirac occupation number.
+
+Let $\mu \in \[ 0, 1 \]$ be the paramters of Bernoulli such that $H^{FD}\[ \mu \] = -\mu \log \mu - (1- \mu) \log(1- \mu)$
