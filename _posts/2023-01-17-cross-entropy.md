@@ -28,10 +28,15 @@ Let $\mu \in \Delta(k)$, $\lambda \in \Delta(k)$ simplex of $k$ (multiclass). $\
 
 $\to \forall \mu \in \Delta(k)$, $H^s \[ \mu \] \ge 0$ such that $H^s \[ \mu \] = -\sum_ i \mu_ i \log \mu_ i \ge -\sum_ i \mu_ i ( \mu_ i - 1) = 1 - \sum_ i \mu_ i^2 \ge 0$
 
-$$\begin{cases}
-H^ s \[ \mu \] = 0 \iff \mu \text{ is a one-hot vector (min-entropy)} \\
-H^ s \[ \mu \] \text{ is maximized } \iff \forall i \text{ , } \mu_ i = \frac{1}{k}
-\end{cases}$$ 
+$$
+\begin{cases}
+
+H^ s \[ \mu \] = 0 & \iff \mu \text{ is a one-hot vector (min-entropy)} \\
+
+H^ s \[ \mu \] \text{ is maximized } &\iff \forall i \text{ , } \mu_ i = \frac{1}{k}
+
+\end{cases}
+$$ 
 
 *Kullback-Leibler divergence*, also known as relative entropy, is a measure of the difference between two probability distributions. We assume $\forall i$, $\mu_ i \ge 0 \iff \lambda_ i \ge 0$.
 
