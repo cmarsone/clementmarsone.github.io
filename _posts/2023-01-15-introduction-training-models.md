@@ -41,8 +41,8 @@ or $\hat{y}(\omega) = \frac{\exp(\omega)}{1 + \exp{\omega}} = \sigma(\omega) \in
 $\mu = \hat{y}(\omega)$, $\mu$ should be interpreted as the parameter of a Bernoulli distribution
 
 $$\begin{cases}
-\mathbb{P}_ \theta (Y = 1, \mid X = x) = \mu \\
-\mathbb{P}_ \theta (Y = 0, \mid X = x) = 1 - \mu
+\mathbb{P}_ \theta (Y = 1 \mid X = x) = \mu \\
+\mathbb{P}_ \theta (Y = 0 \mid X = x) = 1 - \mu
 \end{cases}$$
 
 The following prediction function is an *optimal prediction rule*. It is kown as the *Bayes classifier* :
