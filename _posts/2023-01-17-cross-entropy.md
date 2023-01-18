@@ -44,6 +44,6 @@ Properties of positivity: $\begin{cases}
 
 ⚠️ But it does not commute in general: $\text{KL}\[ \mu, \lambda \] \neq \text{KL}\[ \lambda, \mu \]$
 
-$\text{KL}\[ y, \mu]$ is one-hot vector $\mu = \textoperator{softmax}(\omega)$
+$\text{KL}\[ y, \mu]$ is one-hot vector $\mu = \text{softmax}(\omega)$
 
 $\text{KL}\[ y, \mu] = \sum_ i \log \frac{y_ i}{\mu_ i} = -y_ i \log \mu_ i - H\[ y \] = \sum_ i y_ i \log \frac{\exp(\omega_ i)}{2\omega} = \sum_ i \omega_ i y_ i +\sum_ i y_ i \log 2_omega = -\langle y, \omega \rangle + \log 2\omega = -\log \mathbb{P}_ \theta (Y = y \mid X = x)
