@@ -56,3 +56,5 @@ $Y$ is the set of one-hot vectors of dimension $k$, $\text{conv}(Y)=\Delta(k)$ s
 $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in \mathbb{R}^{k \times d}$, $b \in \mathbb{R}^k \to \hat{y}(\omega) = \text{argmax}_ {y \in Y} \langle y, \omega \rangle$ or $\hat{y}(\omega) = \text{softmax}(\omega) \iff \mu_ i = \frac{\exp(\omega_ i)}{\sum_ j (\omega_ j)}$
 
 #### Multilabel : structured prediction
+
+Multilabel classification is a machine learning problem where a model is trained to predict multiple output variables for a given input.
