@@ -30,11 +30,8 @@ $\to \forall \mu \in \Delta(k)$, $H^s \[ \mu \] \ge 0$ such that $H^s \[ \mu \] 
 
 $$
 \begin{cases}
-
 H^ s \[ \mu \] = 0 & \iff \mu \text{ is a one-hot vector (min-entropy)} \\
-
-H^ s \[ \mu \] \text{ is maximized } &\iff \forall i \text{ , } \mu_ i = \frac{1}{k}
-
+H^ s \[ \mu \] \text{ is maximized } & \iff \forall i \text{ , } \mu_ i = \frac{1}{k} \\
 \end{cases}
 $$ 
 
