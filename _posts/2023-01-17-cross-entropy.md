@@ -33,4 +33,11 @@ H^s \[ \mu \] = 0 & \iff \mu \text{ is a one-hot vector (min-entropy)}\\
 H^s \[ \mu \] \text{ is maximized } & \iff \forall i \text{ , } \mu_ i = \frac{1}{k}
 \end{cases}$$ 
 
-*Kullback-Leibler divergence*, also known as relative entropy, is a measure of the difference between two probability distributions. We assume$\ge 0 \iff \mu$ is a one-hot vector (min-entropy)
+*Kullback-Leibler divergence*, also known as relative entropy, is a measure of the difference between two probability distributions. We assume $\forall i$, $\mu_ i \ge 0 \iff \lambda_ i \ge 0$.
+
+$\text{KL}\[ \mu, \lambda \] = \sum_ i \log \frac{\mu_ i}{\lambda_ i}$
+
+Properties of positivity: $\begin{cases}
+\text{KL}\[ \mu, \lambda \] \ge 0 \\
+\text{KL}\[ \mu, \lambda \] = 0 \iff \mu = \lambda
+\end{cases}$
