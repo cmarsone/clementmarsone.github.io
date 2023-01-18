@@ -40,8 +40,8 @@ $\text{KL}\[ \mu, \lambda \] = \sum_ i \log \frac{\mu_ i}{\lambda_ i}$
 Properties of positivity: 
 
 $$\begin{cases}
-\text{KL}\[ \mu, \lambda \] & \ge 0 \\
-\text{KL}\[ \mu, \lambda \] & = 0 \iff \mu = \lambda
+\text{KL} [ \mu, \lambda ] & \ge 0 \\
+\text{KL} [ \mu, \lambda ] & = 0 \iff \mu = \lambda
 \end{cases}$$
 
 ⚠️ But it does not commute in general: $\text{KL}\[ \mu, \lambda \] \neq \text{KL}\[ \lambda, \mu \]$
