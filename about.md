@@ -14,4 +14,4 @@ Hi everyone! I'm currently living in Paris & studying in Master's degree in Quan
 - 👀 I’m interested in Road Cycling, Sacred Music & Opera, Philosophy.
 - 🌱 I’m currently learning Quantum Computing, Distributed Networks, Parallel Programming in HPC, Machine Learning...
 - 💞️ I’m looking to collaborate on ... for an exciting internship in one of the fields above.
-- 📫 How to reach me [LinkedIn](https://www.linkedin.com/in/clement-marsone/) or [e-mail](mailto:clement.marsone@universite-paris-saclay.fr)
+- 📫 How to reach me [LinkedIn](https://www.linkedin.com/in/clement-marsone/) or [Email](mailto:clement.marsone@universite-paris-saclay.fr)
