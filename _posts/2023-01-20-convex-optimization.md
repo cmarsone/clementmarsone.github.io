@@ -5,7 +5,7 @@ title: Convex Optimization
 
 #### Convex set $U \subseteq R^n$
 
-$\forall u, u^' in U, \exists \epsilon \in [0, 1]$ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^'}_ {convex combination) \in U$
+$\forall u, u^' in U, \exists \epsilon \in [0, 1]$ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^'}_ {convex combination} \in U$
 
 #### Convex hull $\text{conv } U$ (smallest convex set that contains $U$
 
@@ -14,17 +14,23 @@ Example: $\text{conv } E(k) = \Delta(k)$
 
 #### Convex function $f:U \to \mathbb{R}$
 
-1. $\forall x, x^' ∈X,ε∈[0,1]:εx+(1−ε)x′ ∈X$,
-or, in other words, any point which is a convex combination of points in X must also be in X.
+1. $U$ is a convex set
+2. $\forall u, u^' \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^'}_ {dom. needs to be conv.} \leq \epsilon f(u) +(1 -\epsilon)f(u^')$
+(2bis. $\forall u \in U, \nabla^2f(u)$ (Hessian) is a positive semi-definite matrix ($\langle u,\nabla^2f(u) \rangle$) 
 
-*Convex and concave functions*
-LetX⊆Rn beaconvexset.Afunctionf:X→Risconvexifandonlyif:
-∀x,x′ ∈X,ε∈[0,1]:f(εx+(1−ε)x′)≤εf(x)+(1−ε)f(x′)
-Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function f is concave if and only if −f is convex.
+In other words, any point which is a convex combination of points in $U$ must also be in $U$. Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function $f$ is concave if and only if $−f$ is convex.
 
-Hessian, Positive semi-definitive matrix and its equivalence with convex function
-proper function, Closed function iff its epigraph is closed equivlent to semi lower continuity
+#### Domain of a function $\to$ the set $\text{dom}(f) = \{x \in \mathbb{R}^n \mid f(x) < +\infty \}
 
+#### Proper function $f:U \to \mathbb{R} \cup \{ - \infty, + \infty \}$ 
+
+If it does not attain the value $-\infty$ and $text{dom}(f) \neq \emptyset$ i.e.
+1. $\forall u \in U, f (u) \neq -infty
+2. $\exists u \in U, f (u) \neq +\infty
+
+#### Closed function
+
+A function is closed $\iff$ its epigraph is closed. This property is equivalent to lower semi-continuity
 Extended real value extension => transform a constrained optimization problem into an unconstrained problem
 
 Only at this subsection, we adopt the following rule:
