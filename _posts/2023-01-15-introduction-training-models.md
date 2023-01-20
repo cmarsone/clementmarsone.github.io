@@ -181,3 +181,14 @@ Suppose f is convex and differentiable, with domf = Rn. Any maximizer x∗ of yT
 f∗(y) = x∗T ∇f(x∗) − f(x∗).
 This allows us to determine f∗(y) for any y for which we can solve the gradient
 Then we have f∗(y) = zT ∇f(z) − f(z).
+
+
+
+
+Jensen's inequality
+let w =sum_i mu_ i w_i and g in partial f(w), we need w in dom f by previous theorem
+by def of subgradient:
+forall i f(w_ i) >= f(w) + <g, w_ i -w >
+therefore sum _ i mu_ i f_i(w) >= sum mu_ i f(w) + sum mu i <g, w i-w> which is 0
+
+example: is log-partition = log sum exp w_ i convex ? proof by jensen or holder s inequalities
