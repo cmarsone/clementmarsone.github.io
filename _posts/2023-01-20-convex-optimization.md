@@ -5,9 +5,9 @@ title: Convex Optimization
 
 #### Convex set $U \subseteq R^n$
 
-$\forall u, u^' in U, \exists \epsilon \in [0, 1]$ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^'}_ {convex combination} \in U$
+$\forall u, u^{'} in U, \exists \epsilon \in [0,1] $ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^{'}}_ {convex combination} \in U$
 
-#### Convex hull $\text{conv } U$ (smallest convex set that contains $U$
+#### Convex hull $\text{conv } U$ the smallest convex set that contains $U$
 
 $\text{conv } U = \{ \epsilon u +(1 -\epsilon)u^' \mid u, u^' in U, \epsilon \in [0, 1] \}$
 Example: $\text{conv } E(k) = \Delta(k)$
@@ -20,7 +20,7 @@ Example: $\text{conv } E(k) = \Delta(k)$
 
 In other words, any point which is a convex combination of points in $U$ must also be in $U$. Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function $f$ is concave if and only if $−f$ is convex.
 
-#### Domain of a function $\to$ the set $\text{dom}(f) = \{x \in \mathbb{R}^n \mid f(x) < +\infty \}
+#### Domain of a function $\to$ the set $\text{dom}(f) = \{x \in \mathbb{R}^n \mid f(x) < +\infty \}$
 
 #### Proper function $f:U \to \mathbb{R} \cup \{ - \infty, + \infty \}$ 
 
