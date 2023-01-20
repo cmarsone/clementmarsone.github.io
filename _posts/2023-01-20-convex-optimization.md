@@ -5,17 +5,17 @@ title: Convex Optimization
 
 #### Convex set $U \subseteq R^n$
 
-$\forall u, u^{'} in U, \exists \epsilon \in [0,1] $ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^{'}}_ {convex combination} \in U$
+$\forall u, u^{\prime} in U, \exists \epsilon \in [0,1] $ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^{\prime}}_ {convex  combination} \in U$
 
 #### Convex hull $\text{conv } U$ the smallest convex set that contains $U$
 
-$\text{conv } U = \{ \epsilon u +(1 -\epsilon)u^' \mid u, u^' in U, \epsilon \in [0, 1] \}$
-Example: $\text{conv } E(k) = \Delta(k)$
+$\text{conv } U = \{ \epsilon u +(1 -\epsilon)u^\prime \mid u, u^\prime in U, \epsilon \in [0, 1] \}$
+Simplex of dimension $k$: $\text{conv } E(k) = \Delta(k)$
 
 #### Convex function $f:U \to \mathbb{R}$
 
 1. $U$ is a convex set
-2. $\forall u, u^' \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^'}_ {dom. needs to be conv.} \leq \epsilon f(u) +(1 -\epsilon)f(u^')$
+2. $\forall u, u^\prime \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^\prime}_ {dom. needs to be conv.} \leq \epsilon f(u) +(1 -\epsilon)f(u^\prime)$
 (2bis. $\forall u \in U, \nabla^2f(u)$ (Hessian) is a positive semi-definite matrix ($\langle u,\nabla^2f(u) \rangle$) 
 
 In other words, any point which is a convex combination of points in $U$ must also be in $U$. Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function $f$ is concave if and only if $−f$ is convex.
@@ -33,17 +33,11 @@ If it does not attain the value $-\infty$ and $text{dom}(f) \neq \emptyset$ i.e.
 A function is closed $\iff$ its epigraph is closed. This property is equivalent to lower semi-continuity
 Extended real value extension => transform a constrained optimization problem into an unconstrained problem
 
-Only at this subsection, we adopt the following rule:
-0·∞ = ∞·0 = 0·(−∞) = (−∞)·0 = 0.
-μ2 2 +L − μ∥x − y∥2,
-and the result follows after some simplifications.
-
 *Extended Real-Valued Functions* : A function that can take values −∞ or +∞ is called an extended real-valued function. That is f : Rn → [−∞, +∞]. We can also denote [−∞, +∞] by R ∪ {±∞}. The domain of this function is defined by the set dom(f) = {x ∈ Rn | f(x) < +∞}.
 
 For an arbitrary set S ⊂ Rn, the indicator function of S is defined by the following
 extended real-valued function:
 
-A function f : Rn → [−∞, +∞] is called *proper *if it does not attain the value −∞ and dom(f) ̸= ∅. This function is called closed if its epigraph is a closed set.
 A function f : Rn → [−∞, +∞] is called lower *semicontinuous *at x ∈ R if f(x) ≤ lim inf f(xn)
 n→∞
 for any sequence {xn}∞n=1 for which xn → x. Therefore, a function f: Rn → [−∞,+∞] is called
