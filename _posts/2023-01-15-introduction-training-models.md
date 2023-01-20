@@ -141,6 +141,47 @@ f is convex
 - sub estimator h u' 
 - super gradient is a similar definition for. oncave fucnrion
 
-beck 3.14
 
 
+beck 3.14Theorem 3.14 (nonemptiness and boundedness of the subdifferential set at interior points of the domain). Let f : E → (−∞,∞] be a proper convex function, and assume that x ̃ ∈ int(dom(f)). Then ∂f(x ̃) is nonempty and bounded.
+
+
+ #### compute subgradients 3.4
+
+strong and weak subgradients
+
+multiplication by a positive scalar 3,35
+Theorem 3.35. Let f : E → (−∞, ∞] be a proper function and let α > 0. Then for any x ∈ dom(f)
+∂(αf)(x) = α∂f(x).
+ 
+summation 3.36
+Theorem 3.36. Let f1,f2 : E → (−∞,∞] be proper convex functions, and let x ∈ dom(f1) ∩ dom(f2).
+(a) The following inclusion holds:
+∂f1(x) + ∂f2(x) ⊆ ∂(f1 + f2)(x).
+(b) If x ∈ int(dom(f1)) ∩ int(dom(f2)), then
+∂(f1 + f2)(x) = ∂f1(x) + ∂f2(x).
+
+maimization 3.50
+The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
+Theorem 3.50 (max rule of subdifferential calculus). Let f1, f2, . . . , fm : E → (−∞, ∞] be proper convex functions, and define
+f(x) = max{f1(x),f2(x),...,fm(x)}. Let x ∈ mi=1 int(dom(fi)). Then
+
+∂f(x) = conv ∪i∈I(x)∂fi(x) , where I(x) = {i ∈ {1,2,...,m} : fi(x) = f(x)}.
+
+un constrained optimization pronlem fermat s theorem
+
+#### Fenchel conjugates
+
+Fenchel’s inequality
+From the definition of conjugate function, we immediately obtain the inequality f(x) + f∗(y) ≥ xT y
+for all x, y. This is called Fenchel’s inequality (or Young’s inequality when f is differentiable).
+For example with f(x) = (1/2)xT Qx, where Q ∈ Sn++, we obtain the inequality xT y ≤ (1/2)xT Qx + (1/2)yT Q−1y.
+Conjugate of the conjugate
+The examples above, and the name ‘conjugate’, suggest that the conjugate of the conjugate of a convex function is the original function. This is the case provided a technical condition holds: if f is convex, and f is closed (i.e., epi f is a closed set; see §A.3.3), then f∗∗ = f. For example, if domf = Rn, then we have f∗∗ = f, i.e., the conjugate of the conjugate of f is f again 
+
+Differentiable functions
+The conjugate of a differentiable function f is also called the Legendre transform of f. (To distinguish the general definition from the differentiable case, the term Fenchel conjugate is sometimes used instead of conjugate.)
+Suppose f is convex and differentiable, with domf = Rn. Any maximizer x∗ of yT x−f(x) satisfies y = ∇f(x∗), and conversely, if x∗ satisfies y = ∇f(x∗), then x∗ maximizes yT x − f(x). Therefore, if y = ∇f(x∗), we have
+f∗(y) = x∗T ∇f(x∗) − f(x∗).
+This allows us to determine f∗(y) for any y for which we can solve the gradient
+Then we have f∗(y) = zT ∇f(z) − f(z).
