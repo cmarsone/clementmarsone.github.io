@@ -3,18 +3,18 @@ layout: post
 title: Convex Optimization
 ---
 
-#### Convex set
+#### Convex set $U \subseteq R^n$
 
-A set $U leg R^n$ is convex iff forall u, u^' in U, exists epsilon in 0, 1 s.t. epsilon u
+$\forall u, u^' in U, \exists \epsilon \in [0, 1]$ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^'}_ {convex combination) \in U$
 
-#### Convex Hull
+#### Convex hull $\text{conv } U$ (smallest convex set that contains $U$
 
-conv U = simplex 
+$\text{conv } U = \{ \epsilon u +(1 -\epsilon)u^' \mid u, u^' in U, \epsilon \in [0, 1] \}$
+Example: $\text{conv } E(k) = \Delta(k)$
 
-#### Convex function 
+#### Convex function $f:U \to \mathbb{R}$
 
-*Convex sets* : A set $X⊆R^n$ is convex if and only if:
-∀x,x′ ∈X,ε∈[0,1]:εx+(1−ε)x′ ∈X,
+1. $\forall x, x^' ∈X,ε∈[0,1]:εx+(1−ε)x′ ∈X$,
 or, in other words, any point which is a convex combination of points in X must also be in X.
 
 *Convex and concave functions*
