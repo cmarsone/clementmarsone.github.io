@@ -71,11 +71,11 @@ conv U = simplex
 
 #### Convex function 
 
-Definition 3.1: Convex sets
-AsetX⊆Rn isconvexifandonlyif:
+*Convex sets* : A set $X⊆R^n$ is convex if and only if:
 ∀x,x′ ∈X,ε∈[0,1]:εx+(1−ε)x′ ∈X,
 or, in other words, any point which is a convex combination of points in X must also be in X.
-Definition 3.2: Convex and concave functions
+
+*Convex and concave functions*
 LetX⊆Rn beaconvexset.Afunctionf:X→Risconvexifandonlyif:
 ∀x,x′ ∈X,ε∈[0,1]:f(εx+(1−ε)x′)≤εf(x)+(1−ε)f(x′)
 Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function f is concave if and only if −f is convex.
@@ -89,18 +89,14 @@ Only at this subsection, we adopt the following rule:
 0·∞ = ∞·0 = 0·(−∞) = (−∞)·0 = 0.
 μ2 2 +L − μ∥x − y∥2,
 and the result follows after some simplifications.
-5.5 Extended Real-Valued Functions
-L−μ
-L−μ L−μ
-   Definition 5.24 A function that can take values −∞ or +∞ is called an extended real-valued function. That is f : Rn → [−∞, +∞]. We can also denote [−∞, +∞] by R ∪ {±∞}. The domain of this function is defined by the set dom(f) = {x ∈ Rn | f(x) < +∞}.
-Example 5.25 For an arbitrary set S ⊂ Rn, the indicator function of S is defined by the following
-extended real-valued function:
-{ 0,x∈S, δS(x) = +∞, x ̸∈ S.
-30
-(10)
 
-Definition 5.26 A function f : Rn → [−∞, +∞] is called proper if it does not attain the value −∞ and dom(f) ̸= ∅. This function is called closed if its epigraph is a closed set.
-Definition 5.27 A function f : Rn → [−∞, +∞] is called lower semicontinuous at x ∈ R if f(x) ≤ lim inf f(xn)
+*Extended Real-Valued Functions* : A function that can take values −∞ or +∞ is called an extended real-valued function. That is f : Rn → [−∞, +∞]. We can also denote [−∞, +∞] by R ∪ {±∞}. The domain of this function is defined by the set dom(f) = {x ∈ Rn | f(x) < +∞}.
+
+For an arbitrary set S ⊂ Rn, the indicator function of S is defined by the following
+extended real-valued function:
+
+A function f : Rn → [−∞, +∞] is called *proper *if it does not attain the value −∞ and dom(f) ̸= ∅. This function is called closed if its epigraph is a closed set.
+A function f : Rn → [−∞, +∞] is called lower *semicontinuous *at x ∈ R if f(x) ≤ lim inf f(xn)
 n→∞
 for any sequence {xn}∞n=1 for which xn → x. Therefore, a function f: Rn → [−∞,+∞] is called
 lower semicontinous if it is lower semicontinuous at each point of Rn.
