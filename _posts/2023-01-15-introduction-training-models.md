@@ -58,3 +58,29 @@ $\sigma_\theta(x)=a^T x + b = \langle a, x \rangle + b$, $\theta(a, b)$, $a \in 
 #### Multilabel : structured prediction
 
 Multilabel classification is a machine learning problem where a model is trained to predict multiple output variables for a given input.
+
+### Convex optmization
+
+#### Convex set
+
+A set $U leg R^n$ is convex iff forall u, u^' in U, exists epsilon in 0, 1 s.t. epsilon u
+
+#### Convex Hull
+
+conv U = simplex 
+
+#### Convex function
+
+A function f U R is convex iff
+U is a convex set
+forall u, u' epsilon in 01 f( epsilon u + 1 - epsilon u' \leq epsilon f(u) + (1-epsilon)f(u^')
+underbrace domain needs to be conv
+
+A function f is concave iff $-f is convex
+
+A function f U R is strictly convex iff
+U is a convex set
+forall u \neq u' epsilon in 01 f( epsilon u + 1 - epsilon u' < epsilon f(u) + (1-epsilon)f(u^')
+underbrace domain needs to be conv
+
+Hessian definition 
