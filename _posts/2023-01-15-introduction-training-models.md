@@ -69,18 +69,78 @@ A set $U leg R^n$ is convex iff forall u, u^' in U, exists epsilon in 0, 1 s.t. 
 
 conv U = simplex 
 
-#### Convex function
+#### Convex function 
 
-A function f U R is convex iff
-U is a convex set
-forall u, u' epsilon in 01 f( epsilon u + 1 - epsilon u' \leq epsilon f(u) + (1-epsilon)f(u^')
-underbrace domain needs to be conv
+Definition 3.1: Convex sets
+AsetX⊆Rn isconvexifandonlyif:
+∀x,x′ ∈X,ε∈[0,1]:εx+(1−ε)x′ ∈X,
+or, in other words, any point which is a convex combination of points in X must also be in X.
+Definition 3.2: Convex and concave functions
+LetX⊆Rn beaconvexset.Afunctionf:X→Risconvexifandonlyif:
+∀x,x′ ∈X,ε∈[0,1]:f(εx+(1−ε)x′)≤εf(x)+(1−ε)f(x′)
+Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function f is concave if and only if −f is convex.
 
-A function f is concave iff $-f is convex
+Hessian, Positive semi-definitive matrix and its equivalence with convex function
+proper function, Closed function iff its epigraph is closed equivlent to semi lower continuity
 
-A function f U R is strictly convex iff
-U is a convex set
-forall u \neq u' epsilon in 01 f( epsilon u + 1 - epsilon u' < epsilon f(u) + (1-epsilon)f(u^')
-underbrace domain needs to be conv
+Extended real value extension => transform a constrained optimization problem into an unconstrained problem
 
-Hessian definition 
+Only at this subsection, we adopt the following rule:
+0·∞ = ∞·0 = 0·(−∞) = (−∞)·0 = 0.
+μ2 2 +L − μ∥x − y∥2,
+and the result follows after some simplifications.
+5.5 Extended Real-Valued Functions
+L−μ
+L−μ L−μ
+   Definition 5.24 A function that can take values −∞ or +∞ is called an extended real-valued function. That is f : Rn → [−∞, +∞]. We can also denote [−∞, +∞] by R ∪ {±∞}. The domain of this function is defined by the set dom(f) = {x ∈ Rn | f(x) < +∞}.
+Example 5.25 For an arbitrary set S ⊂ Rn, the indicator function of S is defined by the following
+extended real-valued function:
+{ 0,x∈S, δS(x) = +∞, x ̸∈ S.
+30
+(10)
+
+Definition 5.26 A function f : Rn → [−∞, +∞] is called proper if it does not attain the value −∞ and dom(f) ̸= ∅. This function is called closed if its epigraph is a closed set.
+Definition 5.27 A function f : Rn → [−∞, +∞] is called lower semicontinuous at x ∈ R if f(x) ≤ lim inf f(xn)
+n→∞
+for any sequence {xn}∞n=1 for which xn → x. Therefore, a function f: Rn → [−∞,+∞] is called
+lower semicontinous if it is lower semicontinuous at each point of Rn.
+Theorem 5.28 Let f : Rn → [−∞, +∞]. Then the following conditions are equivalent:
+1. f is lower semicontinuous.
+2. f is closed.
+3. For any λ ∈ R, the λ-level sets Lλ of f (see Theorem 5.3) are closed.
+
+Definition 5.29 An extended real-valued function f: Rn → [−∞,+∞] is called convex if its epi-
+graph is a convex set.
+Therefore, we can show that the a proper extended real-valued function is a convex function if and only if it satisfies the condition for usual functions (Definition 5.1) using the rule (10).
+
+### Operations preserving convexity of functions
+
+Weighted sum of functions Beck 2.7 2.16
+Maximum sum of functions
+linear transformation (convex)
+
+Scalar inout 
+derivative:
+Linear approximation : 
+Chain rule
+
+ Vector input:
+partial derivative:
+gradient:
+chain rule for vector (sum):
+
+### Subgradients
+
+Definition 3.6: Subgradient
+Given a function f : X ⊆ Rn → R, a subgradient of f at x ∈ X is a vector g ∈ Rn such that: ∀x′∈X: f(x′)≥f(x)+g⊤(x′−x)
+The set of subgradients at point x is called the subdifferential and is denoted ∂f(x).
+
+Properties:
+f is convex 
+- if f is differentiable at u then partial f(u) = {nab,a f(x)
+- sub estimator h u' 
+- super gradient is a similar definition for. oncave fucnrion
+
+beck 3.14
+
+
