@@ -28,12 +28,15 @@ If it does not attain the value $-\infty$ and $text{dom}(f) \neq \emptyset$ i.e.
 1. $\forall u \in U, f (u) \neq -infty
 2. $\exists u \in U, f (u) \neq +\infty
 
-#### Closed function
+#### Closed function $\iff$ lower semi-continuous \iff
 
 A function is closed $\iff$ its epigraph is closed. This property is equivalent to lower semi-continuity
-Extended real value extension => transform a constrained optimization problem into an unconstrained problem
+A function $f : \R^n \to [−\infty, +\infty] is called *lower semi-continuous* at $x \in R$ if $f(x) \leq \lim_ {n\to\infty} \inf f(x_ n)$ for any sequence $\{x_ n\}_ {n\to\infty} = 1$ for which $x_ n \to x$ or at each point of $\R^n$ in other terms.
 
-*Extended Real-Valued Functions* : A function that can take values −∞ or +∞ is called an extended real-valued function. That is f : Rn → [−∞, +∞]. We can also denote [−∞, +∞] by R ∪ {±∞}. The domain of this function is defined by the set dom(f) = {x ∈ Rn | f(x) < +∞}.
+Transform a constrained optimization problem into an unconstrained problem
+#### $\to$ Extended Real-Valued Functions : 
+
+A function that can take values $−∞$ or $+∞$ is called an *extended real-valued function*. That is $f : \R^n → [−∞, +∞]$. We can also denote $[−∞, +∞]$ by $\R \cup \{ ±∞ \}$. The domain of this function is defined by the set dom $(f) = \{x \in \R^n \mid f(x) < +∞ \}$
 
 For an arbitrary set S ⊂ Rn, the indicator function of S is defined by the following
 extended real-valued function:
