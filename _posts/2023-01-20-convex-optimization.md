@@ -9,7 +9,7 @@ $\forall u, u^{\prime} in U, \exists \epsilon \in [0,1] $ s.t. $\underbrace{\eps
 
 #### Convex hull $\text{conv } U$ the smallest convex set that contains $U$
 
-$\operatorname{conv} U = \{ \epsilon u +(1 -\epsilon)u^\prime \mid u, u^\prime \in U, \epsilon \in [0, 1] \} $
+$\operatorname{conv} U = \lbrace \epsilon u +(1 -\epsilon)u^\prime \mid u, u^\prime \in U, \epsilon \in [0, 1] \rbrace $
 For instance, the simplex of dimension $k$: $\operatorname{conv} E(k) = \Delta(k)$
 
 #### Convex function $f:U \to \mathbb{R}$
@@ -20,22 +20,21 @@ For instance, the simplex of dimension $k$: $\operatorname{conv} E(k) = \Delta(k
 
 In other words, any point which is a convex combination of points in $U$ must also be in $U$. Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function $f$ is concave if and only if $−f$ is convex.
 
-#### Domain of a function $\to$ the set $\operatorname{dom}(f) = \{x \in \mathbb{R}^n \mid f(x) < +\infty \}$
+#### Domain of a function $\to$ the set $\operatorname{dom}(f) = \lbrace x \in \mathbb{R}^n \mid f(x) < +\infty \rbrace$
 
-#### Proper function $f:U \to \mathbb{R} \cup \{ - \infty, + \infty \}$ 
+#### Proper function $f:U \to \mathbb{R} \cup \lbrace - \infty, + \infty \}$ 
 
 If it does not attain the value $-\infty$ and $operatorname{dom}(f) \neq \emptyset$ i.e.
 1. $\forall u \in U, f (u) \neq -infty
 2. $\exists u \in U, f (u) \neq +\infty
 
-#### Closed epigraph $\iff$ lower semi-continuous $\iff$ \closed level sets
+#### Closed epigraph $\iff$ lower semi-continuous $\iff$ closed level sets
 
 A function is closed $\iff$ its epigraph is closed. This property is equivalent to lower semi-continuity
 A function $f : \R^n \to [−\infty, +\infty] is called *lower semi-continuous* at $x \in R$ if $f(x) \leq \lim_ {n\to\infty} \inf f(x_ n)$ for any sequence $\{x_ n\}_ {n\to\infty} = 1$ for which $x_ n \to x$ or at each point of $\R^n$ in other terms.
-The $α-$*lower level set* of $f$ is the set: $\ds \operatorname {lev} \limits_{\mathop \le \alpha} f := \set {x \in S: \map f x \le \alpha}$
+The $α-$*lower level set* of $f$ is the set: $\ds \operatorname {lev} \limits_{\mathop \le \alpha} f := \lbrace x \in S: \map f x \le \alpha \rbrace$
 
-Transform a constrained optimization problem into an unconstrained problem
-#### $\to$ Extended Real-Valued Functions : 
+#### Transform a constrained optimization problem into an unconstrained problem $\to$ Extended Real-Valued Functions : 
 
 A function that can take values $−∞$ or $+∞$ is called an *extended real-valued function*. That is $f : \R^n → [−∞, +∞]$. We can also denote $[−∞, +∞]$ by $\R \cup \{ ±∞ \}$. The domain of this function is defined by the set dom $(f) = \{x \in \R^n \mid f(x) < +∞ \}$
 
