@@ -30,23 +30,25 @@ If it does not attain the value $-\infty$ and $\operatorname{dom}(f) \neq \empty
 
 #### Closed epigraph $\iff$ lower semi-continuous $\iff$ closed $\alpha$-level sets
 
-A function is *closed* $\iff$ its $epigraph is closed*
+A function is *closed* $\iff$ its *epigraph is closed* $\operatorname{dom}$
 
 $\iff$ A function $f : \mathbb{R}^n \to [−\infty, +\infty] is called *lower semi-continuous* at $x \in \mathbb{R}$ if $f(x) \leq \lim_ {n\to\infty} \inf f(x_ n)$ for any sequence $\{x_ n\}_ {n\to\infty} = 1$ for which $x_ n \to x$ or at each point of $\mathbb{R}^n$ in other terms.
 
-$\iff$ The $α-$*lower level set* of $f$ is the set: $\operatorname{lev}_ { \le \alpha} f := \lbrace x \in S: f (x) \le \alpha \rbrace$
+$\iff$ The $α-$ *lower level set* of $f$ is the set: $\operatorname{lev}_ { \leq \alpha} f := \lbrace x \in S: f (x) \leq \alpha \rbrace$
 
 #### Transform a constrained optimization into an unconstrained problem
 
-A function that can take values $−∞$ or $+∞$ is called an *extended real-valued function*. That is $f : \mathbb{R}^n → [−∞, +∞]$. We can also denote $[−∞, +∞]$ by $\R \cup \{ ±∞ \}$. The domain of this function is defined by the set dom $(f) = \{x \in \R^n \mid f(x) < +∞ \}$
+A function that can take values $−∞$ or $+∞$ is called an *extended real-valued function*. That is $f : \mathbb{R}^n → [−∞, +∞]$. We can also denote $[−∞, +∞]$ by $\mathbb{R}\cup \{ ±∞ \}$. The domain of this function is defined by the set dom $(f) = \{x \in \mathbb{R}^n \mid f(x) < +∞ \}$
 
-For an arbitrary set S ⊂ Rn, the *indicator function* of S is defined by the following
+$f(x) = \begin{cases} f(x) & \text{if } x \in \text{dom } f \ \infty & \text{otherwise} \end{cases}$
+
+For an arbitrary set $S \subset \mathbb{R}^n$, the *indicator function* of $S$ is defined by the following
 extended real-valued function:
 
 $$ \delta_ S (s) =
 \begin{cases}
 0 & \text{if }s \in S, \\
-+∞ $ \text{otherwise.}
++∞ & \text{otherwise.}
 \end{cases}$$
 
 ### Operations preserving convexity of functions
