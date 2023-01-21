@@ -3,20 +3,20 @@ layout: post
 title: Convex Optimization
 ---
 
-#### Convex set $U \subseteq R^n$
+#### Convex set: $U \subseteq R^n$
 
-$\forall u, u^{\prime} in U, \exists \epsilon \in [0,1] $ s.t. $\underbrace{\epsilon u +(1 -\epsilon)u^{\prime}}_ {convex comb.} \in U$
+$\forall u, u^{\prime} \in U, \exists \epsilon \in [0,1] $ such that $\underbrace{\epsilon u +(1 -\epsilon)u^{\prime}}_ {\text{convex comb.}} \in U$
 
-#### Convex hull $\text{conv } U$ the smallest convex set that contains $U$
+#### Convex hull: $\text{conv } U$ the smallest convex set that contains $U$
 
 $\operatorname{conv} U = \lbrace \epsilon u +(1 -\epsilon)u^\prime \mid u, u^\prime \in U, \epsilon \in [0, 1] \rbrace $
-For instance, the simplex of dimension $k$: $\operatorname{conv} E(k) = \Delta(k)$
+For instance, $k$: $\operatorname{conv} E(k) = \Delta(k)$
 
 #### Convex function $f:U \to \mathbb{R}$
 
 1. $U$ is a convex set
-2. $\forall u, u^\prime \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^\prime}_ {dom. needs to be conv.} \leq \epsilon f(u) +(1 -\epsilon)f(u^\prime)$
-(2bis. $\forall u \in U, \nabla^2f(u)$ (Hessian) is a positive semi-definite matrix ($\langle u,\nabla^2f(u) \rangle$) 
+2. $\forall u, u^\prime \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^\prime}_ {\text{dom. needs to be conv.}}) \leq \epsilon f(u) +(1 -\epsilon)f(u^\prime)$
+2bis. ($\forall u \in U, \nabla^2f(u)$ (Hessian) is a positive semi-definite matrix ($\langle u,\nabla^2f(u) \rangle$) 
 
 In other words, any point which is a convex combination of points in $U$ must also be in $U$. Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function $f$ is concave if and only if $−f$ is convex.
 
