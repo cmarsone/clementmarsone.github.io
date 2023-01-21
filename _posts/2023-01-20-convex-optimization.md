@@ -34,27 +34,20 @@ A function is *closed* $\iff$ its $epigraph is closed*
 
 $\iff$ A function $f : \mathbb{R}^n \to [−\infty, +\infty] is called *lower semi-continuous* at $x \in \mathbb{R}$ if $f(x) \leq \lim_ {n\to\infty} \inf f(x_ n)$ for any sequence $\{x_ n\}_ {n\to\infty} = 1$ for which $x_ n \to x$ or at each point of $\mathbb{R}^n$ in other terms.
 
-$\iff$ The $α-$*lower level set* of $f$ is the set: $\operatorname {lev}_ {\leq \alpha} \limits_ {\mathop \le \alpha} f := \lbrace x \in S: f (x) \le \alpha \rbrace$
+$\iff$ The $α-$*lower level set* of $f$ is the set: $\operatorname{lev}_ { \le \alpha} f := \lbrace x \in S: f (x) \le \alpha \rbrace$
 
-#### Transform a constrained optimization problem into an unconstrained problem $\to$ Extended Real-Valued Functions : 
+#### Transform a constrained optimization into an unconstrained problem
 
 A function that can take values $−∞$ or $+∞$ is called an *extended real-valued function*. That is $f : \mathbb{R}^n → [−∞, +∞]$. We can also denote $[−∞, +∞]$ by $\R \cup \{ ±∞ \}$. The domain of this function is defined by the set dom $(f) = \{x \in \R^n \mid f(x) < +∞ \}$
 
-For an arbitrary set S ⊂ Rn, the indicator function of S is defined by the following
+For an arbitrary set S ⊂ Rn, the *indicator function* of S is defined by the following
 extended real-valued function:
 
-A function f : Rn → [−∞, +∞] is called lower *semicontinuous *at x ∈ R if f(x) ≤ lim inf f(xn)
-n→∞
-for any sequence {xn}∞n=1 for which xn → x. Therefore, a function f: Rn → [−∞,+∞] is called
-lower semicontinous if it is lower semicontinuous at each point of Rn.
-Theorem 5.28 Let f : Rn → [−∞, +∞]. Then the following conditions are equivalent:
-1. f is lower semicontinuous.
-2. f is closed.
-3. For any λ ∈ R, the λ-level sets Lλ of f (see Theorem 5.3) are closed.
-
-Definition 5.29 An extended real-valued function f: Rn → [−∞,+∞] is called convex if its epi-
-graph is a convex set.
-Therefore, we can show that the a proper extended real-valued function is a convex function if and only if it satisfies the condition for usual functions (Definition 5.1) using the rule (10).
+$$ \delta_ S (s) =
+\begin{cases}
+0 & \text{if }s \in S, \\
++∞ $ \text{otherwise.}
+\end{cases}$$
 
 ### Operations preserving convexity of functions
 
