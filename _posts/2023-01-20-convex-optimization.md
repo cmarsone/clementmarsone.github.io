@@ -10,29 +10,28 @@ $\forall u, u^{\prime} \in U, \exists \epsilon \in [0,1] $ such that $\underbrac
 #### Convex hull: $\text{conv } U$ the smallest convex set that contains $U$
 
 $\operatorname{conv} U = \lbrace \epsilon u +(1 -\epsilon)u^\prime \mid u, u^\prime \in U, \epsilon \in [0, 1] \rbrace $
-For instance, $k$: $\operatorname{conv} E(k) = \Delta(k)$
+For instance, simplex $\operatorname{conv} E(k) = \Delta(k)$
 
 #### Convex function $f:U \to \mathbb{R}$
 
 1. $U$ is a convex set
-2. $\forall u, u^\prime \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^\prime}_ {\text{dom. needs to be conv.}}) \leq \epsilon f(u) +(1 -\epsilon)f(u^\prime)$
-2bis. ($\forall u \in U, \nabla^2f(u)$ (Hessian) is a positive semi-definite matrix ($\langle u,\nabla^2f(u) \rangle$) 
+2. $\forall u, u^\prime \in U, ε \in [0, 1], f( \underbrace{\epsilon u +(1 -\epsilon)u^\prime}_ {\text{dom. needs to be conv.}}) \leq \epsilon f(u) +(1 -\epsilon)f(u^\prime)$ or $\forall u \in U, \nabla^2f(u)$ (Hessian) is a positive semi-definite matrix ($\langle u,\nabla^2f(u) \rangle$ 
 
 In other words, any point which is a convex combination of points in $U$ must also be in $U$. Note that the domain of the function is required to be convex so that the left-hand side is well defined. A function $f$ is concave if and only if $−f$ is convex.
 
-#### Domain of a function $\operatorname{dom}(f) = \lbrace x \in \mathbb{R}^n \mid f(x) < +\infty \rbrace$
+#### (Epigraph) Domain of a function $\operatorname{dom}(f) = \lbrace x \in \mathbb{R}^n \mid f(x) < +\infty \rbrace$
 
 #### Proper function $f:U \to \mathbb{R} \cup \lbrace - \infty, + \infty \rbrace$ 
 
-If it does not attain the value $-\infty$ and $\operatorname{dom}(f) \neq \emptyset$ i.e.
+If it does not attain the value $-\infty$ and $\operatorname{dom}(f) \neq \0$ i.e.
 1. $\forall u \in U, f (u) \neq -\infty$
 2. $\exists u \in U, f (u) \neq +\infty$
 
 #### Closed epigraph $\iff$ lower semi-continuous $\iff$ closed $\alpha$-level sets
 
-A function is *closed* $\iff$ its *epigraph is closed* $\operatorname{dom}$
+A function is *closed* $\iff$ its *epigraph is closed*
 
-$\iff$ A function $f : \mathbb{R}^n \to [−\infty, +\infty] is called *lower semi-continuous* at $x \in \mathbb{R}$ if $f(x) \leq \lim_ {n\to\infty} \inf f(x_ n)$ for any sequence $\{x_ n\}_ {n\to\infty} = 1$ for which $x_ n \to x$ or at each point of $\mathbb{R}^n$ in other terms.
+$\iff$ A function $f : \mathbb{R}^n \to [−\infty, +\infty]$ is called *lower semi-continuous* at $x \in \mathbb{R}$ if $\liminf_ {x \to x} \map f x = \map f { x}$ for any sequence $\lbrace x_ n \rbrace_ {n \geq 1} \subseteq \mathbb{E}$ for which $x_ n \to x$ as $n \to \infty$ or at each point of $\mathbb{R}^n$ in other terms.
 
 $\iff$ The $α-$ *lower level set* of $f$ is the set: $\operatorname{lev}_ { \leq \alpha} f := \lbrace x \in S: f (x) \leq \alpha \rbrace$
 
@@ -40,7 +39,9 @@ $\iff$ The $α-$ *lower level set* of $f$ is the set: $\operatorname{lev}_ { \le
 
 A function that can take values $−∞$ or $+∞$ is called an *extended real-valued function*. That is $f : \mathbb{R}^n → [−∞, +∞]$. We can also denote $[−∞, +∞]$ by $\mathbb{R}\cup \{ ±∞ \}$. The domain of this function is defined by the set dom $(f) = \{x \in \mathbb{R}^n \mid f(x) < +∞ \}$
 
-$f(x) = \begin{cases} f(x) & \text{if } x \in \text{dom } f \ \infty & \text{otherwise} \end{cases}$
+$$f(x) = 
+\begin{cases} f(x) & \text{if } x \in \text{dom } \\
+f = \infty & \text{otherwise} \end{cases}$$
 
 For an arbitrary set $S \subset \mathbb{R}^n$, the *indicator function* of $S$ is defined by the following
 extended real-valued function:
