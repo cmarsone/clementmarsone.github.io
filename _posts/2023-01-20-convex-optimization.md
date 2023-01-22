@@ -33,7 +33,7 @@ A function is *closed* $\iff$ its *epigraph is closed*
 
 $\iff$ A function $f : \mathbb{R}^n \to [−\infty, +\infty]$ is called *lower semi-continuous* at $x \in \mathbb{R}$ if $\liminf_ {x \to \bar x} f (x) = f (\bar x)$ for any sequence $\lbrace x_ n \rbrace_ {n \geq 1} \subseteq \mathbb{E}$ for which $x_ n \to x$ as $n \to \infty$ or at each point of $\mathbb{R}^n$ in other terms.
 
-$\iff$ The $α-$ *lower level set* of $f$ is the set: $\operatorname{lev}_ { \leq \alpha} f := \lbrace x \in S: f (x) \leq \alpha \rbrace$
+$\iff$ The $α$-*lower level set* of $f$ is the set: $\operatorname{lev}_ { \leq \alpha} f := \lbrace x \in S: f (x) \leq \alpha \rbrace$
 
 #### Transform a constrained optimization into an unconstrained problem
 
