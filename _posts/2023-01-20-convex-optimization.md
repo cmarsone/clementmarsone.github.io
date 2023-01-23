@@ -90,7 +90,7 @@ $$∀u ∈ \operatorname{dom} f , g ∈ \mathbb{R}^k : α . u ∈ ∂h(u) \iff g
 
 *Maximization of subdifferential*: The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
 
-Let $f_ 1, \cdots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \cdots,f_ n (x))$. Let $x ∈ \cap_i ^n \operatorname{int}(\operatorname{dom}(f_ i)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup_ {i∈I(x)} ∂f_ i (x)$, where $I(x) = \{ i \in \lbrace 1, \cdots, m\rbrace : f_ i (x) = f(x) \}$
+Let $f_ 1, \ldots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \ldots,f_ n (x))$. Let $x ∈ \cap_i ^n \operatorname{int}(\operatorname{dom}(f_ i)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup_ {i∈I(x)} ∂f_ i (x)$, where $I(x) = \{ i \in \{ 1, \ldots, m\} : f_ i (x) = f(x) \}$
 
 ### Optimality conditions
 
@@ -107,7 +107,7 @@ $∀u ∈ \mathbb{R}^k , g ∈ ∂f (\hat u) : f (u) ≥ f (\hat u) + \langle g,
 #### Fenchel conjugates
 
 Let $f : n → \mathbb{R} ∪ \{ ∞ \}$ be a function.
-The $Fenchel conjugate$ of $f$ is the function $f^ ∗ : \mathbb{R}^n → \mathbb{R} ∪ \{∞ \}$ defined as follows:
+The *Fenchel conjugate* of $f$ is the function $f^ ∗ : \mathbb{R}^n → \mathbb{R} ∪ \{∞ \}$ defined as follows:
 $$f^ ∗ (t) = \operatorname{sup}_ {u∈\operatorname{dom} f} \langle t, u \rangle − f (u)$$
 The biconjugate of $f$ is the function $f^{∗∗} : \mathbb{R}^n → \mathbb{R} ∪ \{ ∞\}$ defined as follows:
 $$f^{∗∗}(u) = \operatorname{sup}_ {t∈\operatorname{dom}} f^∗ \langle u, t\rangle − f^∗ (t)$$
@@ -116,10 +116,10 @@ If $f$ is proper, closed and convex, then $f^{ ∗∗} = f$
 *Fenchel-Young inequality*. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname{dom} f$ and $t ∈ dom \operatorname{f^* }$:
 $$f (u) + f^ ∗(t) ≥ \langle u, t\rangle$$
 Proof. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname{dom} f$ and $t ∈ \operatorname{dom} f^ ∗$:
-$$ \langle u, t \rangle − f (u) ≤ \operatorname{sup}_  {u\prime ∈ \operatorname{dom} f} u\prime^⊤ y − f (u\prime) = f^∗ (t)$$
+$$ \langle u, t \rangle − f (u) ≤ \operatorname{sup}_  {u^{\prime} ∈ \operatorname{dom} f} u^{\prime^{⊤}}y − f (u^{\prime}) = f^∗ (t)$$
 By re-arranging terms, we get the expected inequality.
 
-*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with $\operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^{∗^{T}} ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then, we have $f^∗ (y) = z^T ∇f(z) − f(z).$
+*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with $\operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^{∗^{T}} ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then, we have $f^∗ (y) = z^T ∇f(z) − f(z)$
 
 *Subdifferential of a Fenchel conjuguate*. Let $f : \mathbb{R}^k → \mathbb{R} ∪ \{ \infty \}$ be a function. Let $t ∈ \operatorname{dom} f^∗$ and $$\hat u = \operatorname{arg} \operatorname{max}_ {u∈\operatorname{dom} f} ⟨u, t⟩ − f (u)$$
 Then, $\hat u$ is a subgradient of $f^∗$ at $t$, i.e. $\hat u ∈ ∂f^∗ (t)$.
