@@ -120,7 +120,7 @@ Proof. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname
 $$ \langle u, t \rangle − f (u) ≤ \operatorname{sup}_  {u\prime ∈ \operatorname{dom} f} u\prime^⊤ y − f (u\prime) = f^∗ (t)$$
 By re-arranging terms, we get the expected inequality.
 
-*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with \operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^∗^T ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then we have $f^∗ (y) = z^T ∇f(z) − f(z).$
+*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with \operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^{∗^{T}} ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then we have $f^∗ (y) = z^T ∇f(z) − f(z).$
 
 
 
