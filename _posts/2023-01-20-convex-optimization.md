@@ -66,9 +66,10 @@ We can use the chain rule for vectors by a sum of derivatives.
 
 ### Subgradients
 
-Definition 3.6: Subgradient
-Given a function f : X ⊆ Rn → R, a subgradient of f at x ∈ X is a vector g ∈ Rn such that: ∀x′∈X: f(x′)≥f(x)+g⊤(x′−x)
-The set of subgradients at point x is called the subdifferential and is denoted ∂f(x).
+Given a function $f : \mathbb{R}^n → \mathbb{R}^n \subseteq \lbrace ∞ \rbrace$, a subgradient at u ∈ U is a vector g ∈ Rn such
+that:
+$∀u′ ∈ \mathbb{R}^n : f (u′) ≥ f (u) + \langle g, u′ − u \rangle$
+The set of *subgradients* at point $u$ is called the *subdifferential* and is denoted $∂f (u)$.
 
 Properties:
 f is convex 
