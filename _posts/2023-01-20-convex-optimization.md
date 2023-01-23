@@ -78,56 +78,59 @@ IF $f$ is convex:
 
 
 
-beck 3.14Theorem 3.14 (nonemptiness and boundedness of the subdifferential set at interior points of the domain). Let f : E → (−∞,∞] be a proper convex function, and assume that x ̃ ∈ int(dom(f)). Then ∂f(x ̃) is nonempty and bounded.
+*Non-emptiness and boundedness of the subdifferential set at interior points of the domain*. Let $f : E → (−∞,∞]$ be a proper convex function, and assume that $u ̃∈ \operatorname{int}(\operatorname{dom}(f)), \forall$. Then $∂f(u)$ is nonempty and bounded i.e. existence of subgradient.
 
 
- #### compute subgradients 3.4
+ #### Computing Subgradients
 
-strong and weak subgradients
+*Strong subgradients*: the subdifferential set at a given point is known i.e. full characterization of the subdifferential set
+*Weak subgradients*: one or several subgradients at a given point are known but not all i.e. partially
 
-multiplication by a positive scalar 3,35
-Theorem 3.35. Let f : E → (−∞, ∞] be a proper function and let α > 0. Then for any x ∈ dom(f)
-∂(αf)(x) = α∂f(x).
- 
-summation 3.36
-Theorem 3.36. Let f1,f2 : E → (−∞,∞] be proper convex functions, and let x ∈ dom(f1) ∩ dom(f2).
-(a) The following inclusion holds:
-∂f1(x) + ∂f2(x) ⊆ ∂(f1 + f2)(x).
-(b) If x ∈ int(dom(f1)) ∩ int(dom(f2)), then
-∂(f1 + f2)(x) = ∂f1(x) + ∂f2(x).
+*Multiplication by a positive scalar*: Let $f : \mathbb{R}^k → \mathbb{R} ∪ {∞}$ be a proper function$, h(u) = αf (u)$ with $α > 0$. Then:
+$$∀u ∈ \operatorname{dom} f , g ∈ \mathbb{R}^k : α u ∈ ∂h(u) \iff g ∈ ∂f (u)$$
 
-maimization 3.50
-The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
-Theorem 3.50 (max rule of subdifferential calculus). Let f1, f2, . . . , fm : E → (−∞, ∞] be proper convex functions, and define
-f(x) = max{f1(x),f2(x),...,fm(x)}. Let x ∈ mi=1 int(dom(fi)). Then
-
-∂f(x) = conv ∪i∈I(x)∂fi(x) , where I(x) = {i ∈ {1,2,...,m} : fi(x) = f(x)}.
+*Summation* Let $f_ 1, f_ 2 : \mathbb{R}^k → \mathbb{R}∪{∞}$ be proper convex functions and $h(u) = f_ 1(u) + f_ 2(u)$. Then, $∀u ∈ \operatorname{dom} h, g ∈ \mathbb{R}^k$, we have g$ ∈ ∂h(u) \iff g = g^{(1)} + g^{(2)}\text{ such that }g^{(1)} ∈ ∂f_ 1 (u)\text{ and }g^{(2)} ∈ ∂f_ 2 (u)$
 
-un constrained optimization pronlem fermat s theorem
+*Maximization of subdifferential*: The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
+
+Let $f_ 1, \cdots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \cdots,f_ n (x))$. Let $x ∈ mi=1 int(dom(fi)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup i∈I(x)∂f_ i (x)$, where $I(x) = \lbrace i \in \lbrace 1, \cdots, m\rbrace : f_ i (x) = f(x)\rbrace
+
+### Optimality conditions
+
+#### Unconstrained optimization problem (Fermat)
+
+Let $f : \mathbb{R}^k → \mathbb{R} ∪ \{ ∞ \}$ be a proper convex function and $\hat u ∈ \operatorname{dom} f$. If $0 \in \partial f (\hat u)$, then $f (\hat u)$ is the global minimum of $f$.
+
+*Proof*
+
+By the subgradient definition:
+
+$∀u ∈ \mathbb{R}^k , g ∈ ∂f (\hat u) : f (u) ≥ f (\hat u) + \langle g, u − \hat u \rangle$. In particular, we know that $0 ∈ ∂f (\hat u)$, therefore $f (u) ≥ f (ˆu)$
 
 #### Fenchel conjugates
+
+Let $f : n → \mathbb{R} ∪ \{ ∞ \}$ be a function.
+The Fenchel conjugate of $f$ is the function $f^ ∗ : \mathbb{R}^n → \mathbb{R} ∪ \{∞ \}$ defined as follows:
+$$f^ ∗ (t) = \operatornam{sup}_ {u∈\operatorname{dom} f} \langle t, u \rangle − f (u)$$
+The biconjugate of $f$ is the function $f^{∗∗} : \mathbb{R}^n → R\mathbb{R} ∪ \{ ∞\}$ defined as follows:
+$$f^{∗∗}(u) = \operatorname{sup} t∈\operatorname{dom} f^∗ \langle u, t\rangle − f^∗ (t)$$
+If $f$ is proper, closed and convex, then $f^{ ∗∗} = f$
 
 Fenchel’s inequality
 From the definition of conjugate function, we immediately obtain the inequality f(x) + f∗(y) ≥ xT y
 for all x, y. This is called Fenchel’s inequality (or Young’s inequality when f is differentiable).
 For example with f(x) = (1/2)xT Qx, where Q ∈ Sn++, we obtain the inequality xT y ≤ (1/2)xT Qx + (1/2)yT Q−1y.
-Conjugate of the conjugate
-The examples above, and the name ‘conjugate’, suggest that the conjugate of the conjugate of a convex function is the original function. This is the case provided a technical condition holds: if f is convex, and f is closed (i.e., epi f is a closed set; see §A.3.3), then f∗∗ = f. For example, if domf = Rn, then we have f∗∗ = f, i.e., the conjugate of the conjugate of f is f again 
 
-Differentiable functions
-The conjugate of a differentiable function f is also called the Legendre transform of f. (To distinguish the general definition from the differentiable case, the term Fenchel conjugate is sometimes used instead of conjugate.)
-Suppose f is convex and differentiable, with domf = Rn. Any maximizer x∗ of yT x−f(x) satisfies y = ∇f(x∗), and conversely, if x∗ satisfies y = ∇f(x∗), then x∗ maximizes yT x − f(x). Therefore, if y = ∇f(x∗), we have
-f∗(y) = x∗T ∇f(x∗) − f(x∗).
-This allows us to determine f∗(y) for any y for which we can solve the gradient
-Then we have f∗(y) = zT ∇f(z) − f(z).
+*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with \operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^∗^T ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then we have $f^∗ (y) = z^T ∇f(z) − f(z).$
 
 
 
 
-Jensen's inequality
-let w =sum_i mu_ i w_i and g in partial f(w), we need w in dom f by previous theorem
-by def of subgradient:
-forall i f(w_ i) >= f(w) + <g, w_ i -w >
-therefore sum _ i mu_ i f_i(w) >= sum mu_ i f(w) + sum mu i <g, w i-w> which is 0
+#### Jensen's inequality
 
-example: is log-partition = log sum exp w_ i convex ? proof by jensen or holder s inequalities
+Let $w = \sum_i mu_ i w_i$ and $g \in \partial f(w)$, we need $w \in \operatorname{dom} f$ by previous theorem. By the definition of subgradient:
+$$\forall i, f(w_ i) \geq f(w) + \langle g, w_ i -w \rangle$$
+
+Therefore $\sum _ i mu_ i f_i(w) \geq \sum_ i mu_ i f(w) + \sum_ i mu_ i \langle g, w_ i -w \rangle$ which is $0$.
+
+For instance,  $\log \sum_ i \exp w_ i $ (log-partition) convex ? We can prove by Jensen's or Holder's inequalities.
