@@ -23,7 +23,7 @@ In other words, any point which is a convex combination of points in $U$ must al
 
 #### Proper function $f:U \to \mathbb{R} \cup \lbrace - \infty, + \infty \rbrace$ 
 
-If it does not attain the value $-\infty$ and $\operatorname{dom}(f) \neq \0$ i.e.
+If it does not attain the value $-\infty$ and $\operatorname{dom}(f) \neq \emptyset$ i.e.
 1. $\forall u \in U, f (u) \neq -\infty$
 2. $\exists u \in U, f (u) \neq +\infty$
 
@@ -107,10 +107,10 @@ $∀u ∈ \mathbb{R}^k , g ∈ ∂f (\hat u) : f (u) ≥ f (\hat u) + \langle g,
 #### Fenchel conjugates
 
 Let $f : n → \mathbb{R} ∪ \{ ∞ \}$ be a function.
-The Fenchel conjugate of $f$ is the function $f^ ∗ : \mathbb{R}^n → \mathbb{R} ∪ \{∞ \}$ defined as follows:
+The $Fenchel conjugate$ of $f$ is the function $f^ ∗ : \mathbb{R}^n → \mathbb{R} ∪ \{∞ \}$ defined as follows:
 $$f^ ∗ (t) = \operatorname{sup}_ {u∈\operatorname{dom} f} \langle t, u \rangle − f (u)$$
-The biconjugate of $f$ is the function $f^{∗∗} : \mathbb{R}^n → R\mathbb{R} ∪ \{ ∞\}$ defined as follows:
-$$f^{∗∗}(u) = \operatorname{sup} t∈\operatorname{dom} f^∗ \langle u, t\rangle − f^∗ (t)$$
+The biconjugate of $f$ is the function $f^{∗∗} : \mathbb{R}^n → \mathbb{R} ∪ \{ ∞\}$ defined as follows:
+$$f^{∗∗}(u) = \operatorname{sup}_ {t∈\operatorname{dom}} f^∗ \langle u, t\rangle − f^∗ (t)$$
 If $f$ is proper, closed and convex, then $f^{ ∗∗} = f$
 
 *Fenchel-Young inequality*. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname{dom} f$ and $t ∈ dom \operatorname{f^* }$:
