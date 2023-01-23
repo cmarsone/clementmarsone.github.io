@@ -54,19 +54,15 @@ $$ \delta_ S (s) =
 
 ### Operations preserving convexity of functions
 
-Weighted sum of functions Beck 2.7 2.16
-Maximum sum of functions
-linear transformation (convex)
+Weighted sum, Maximum & Linear transformation preserve all the convexity of functions
 
-Scalar inout 
-derivative:
-Linear approximation : 
-Chain rule
+### Gradient
 
- Vector input:
-partial derivative:
-gradient:
-chain rule for vector (sum):
+*Scalar input* $\to$ take the derivative $\to$ compute the linear approximation : 
+We can use the chain rule to derive composed functions.
+
+*Vector input* $\to$ take the partial derivative $\to$ compute the gradient : 
+We can use the chain rule for vectors by a sum of derivatives.
 
 ### Subgradients
 
