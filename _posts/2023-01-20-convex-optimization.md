@@ -66,16 +66,15 @@ We can use the chain rule for vectors by a sum of derivatives.
 
 ### Subgradients
 
-Given a function $f : \mathbb{R}^n → \mathbb{R}^n \subseteq \lbrace ∞ \rbrace$, a subgradient at u ∈ U is a vector g ∈ Rn such
-that:
-$∀u′ ∈ \mathbb{R}^n : f (u′) ≥ f (u) + \langle g, u′ − u \rangle$
+Given a function $f : \mathbb{R}^n → \mathbb{R}^n \cup \lbrace ∞ \rbrace$, a subgradient at $u ∈ U$ is a vector $g ∈ \mathbb{R}^n$ such that:
+$∀u\prime ∈ \mathbb{R}^n : f (u\prime) ≥ f (u) + \langle g, u\prime − u \rangle$
 The set of *subgradients* at point $u$ is called the *subdifferential* and is denoted $∂f (u)$.
 
 Properties:
-f is convex 
-- if f is differentiable at u then partial f(u) = {nab,a f(x)
-- sub estimator h u' 
-- super gradient is a similar definition for. oncave fucnrion
+IF $f$ is convex:
+- if $f$ is differentiable at $u$, then $\partial f(u) = \lbrace \nabla f(x) \rbrace i.e. the gradient is the single subgradient
+- the function $h(u^{\prime})=f(u) + \langleg, u^{\prime}-u \rangle$ is a linear *sub-estimator* of $f$ 
+- the *super-gradient* is a similar definition for a concave fucnrion
 
 
 
