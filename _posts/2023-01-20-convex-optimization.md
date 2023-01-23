@@ -67,18 +67,16 @@ We can use the chain rule for vectors by a sum of derivatives.
 ### Subgradients
 
 Given a function $f : \mathbb{R}^n → \mathbb{R}^n \cup \lbrace ∞ \rbrace$, a subgradient at $u ∈ U$ is a vector $g ∈ \mathbb{R}^n$ such that:
-$∀u\prime ∈ \mathbb{R}^n : f (u\prime) ≥ f (u) + \langle g, u\prime − u \rangle$
+$∀u^\prime ∈ \mathbb{R}^n : f (u^\prime) ≥ f (u) + \langle g, u^\prime − u \rangle$
 The set of *subgradients* at point $u$ is called the *subdifferential* and is denoted $∂f (u)$.
 
 Properties:
-IF $f$ is convex:
+If $f$ is convex:
 - if $f$ is differentiable at $u$, then $\partial f(u) = \lbrace \nabla f(x) \rbrace i.e. the gradient is the single subgradient
-- the function $h(u^{\prime})=f(u) + \langleg, u^{\prime}-u \rangle$ is a linear *sub-estimator* of $f$ 
-- the *super-gradient* is a similar definition for a concave fucnrion
+- the function $h(u^{\prime})=f(u) + \langle g, u^{\prime}-u \rangle$ is a linear *sub-estimator* of $f$ 
+- the *super-gradient* is a similar definition for a concave function.
 
-
-
-*Non-emptiness and boundedness of the subdifferential set at interior points of the domain*. Let $f : E → (−∞,∞]$ be a proper convex function, and assume that $u ̃∈ \operatorname{int}(\operatorname{dom}(f)), \forall$. Then $∂f(u)$ is nonempty and bounded i.e. existence of subgradient.
+*Non-emptiness and boundedness of the subdifferential set at interior points of the domain*. Let $f : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be a proper convex function, and assume that $u ̃∈ \operatorname{int}(\operatorname{dom}(f)), \forall$. Then $∂f(u)$ is non-empty and bounded i.e. existence of subgradient.
 
 
  #### Computing Subgradients
@@ -116,10 +114,11 @@ The biconjugate of $f$ is the function $f^{∗∗} : \mathbb{R}^n → R\mathbb{R
 $$f^{∗∗}(u) = \operatorname{sup} t∈\operatorname{dom} f^∗ \langle u, t\rangle − f^∗ (t)$$
 If $f$ is proper, closed and convex, then $f^{ ∗∗} = f$
 
-Fenchel’s inequality
-From the definition of conjugate function, we immediately obtain the inequality f(x) + f∗(y) ≥ xT y
-for all x, y. This is called Fenchel’s inequality (or Young’s inequality when f is differentiable).
-For example with f(x) = (1/2)xT Qx, where Q ∈ Sn++, we obtain the inequality xT y ≤ (1/2)xT Qx + (1/2)yT Q−1y.
+*Fenchel-Young inequality*. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname{dom} f$ and $t ∈ dom \operatorname{f^* }$:
+$$f (u) + f^ ∗(t) ≥ \langle u, t\rangle$$
+Proof. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname{dom} f$ and $t ∈ \operatorname{dom} f^ ∗$:
+$$ \langle u, t \rangle − f (u) ≤ \operatorname{sup}_  {u\prime ∈ \operatorname{dom} f} u\prime^⊤ y − f (u\prime) = f^∗ (t)$$
+By re-arranging terms, we get the expected inequality.
 
 *Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with \operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^∗^T ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then we have $f^∗ (y) = z^T ∇f(z) − f(z).$
 
