@@ -7,7 +7,7 @@ title: Convex Optimization
 
 $\forall u, u^{\prime} \in U, \exists \epsilon \in [0,1] $ such that $\underbrace{\epsilon u +(1 -\epsilon)u^{\prime}}_ {\text{convex comb.}} \in U$
 
-#### Convex hull: $\text{conv } U$ the smallest convex set that contains $U$
+#### Convex hull: $\operatorname{conv} U$ the smallest convex set that contains $U$
 
 $\operatorname{conv} U = \lbrace \epsilon u +(1 -\epsilon)u^\prime \mid u, u^\prime \in U, \epsilon \in [0, 1] \rbrace $
 For instance, simplex $\operatorname{conv} E(k) = \Delta(k)$
