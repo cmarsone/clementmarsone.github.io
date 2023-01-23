@@ -90,7 +90,7 @@ $$∀u ∈ \operatorname{dom} f , g ∈ \mathbb{R}^k : α . u ∈ ∂h(u) \iff g
 
 *Maximization of subdifferential*: The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
 
-Let $f_ 1, \ldots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \ldots,f_ n (x))$. Let $x ∈ \cap_i ^n \operatorname{int}(\operatorname{dom}(f_ i)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup_ {i∈I(x)} ∂f_ i (x)$, where $I(x) = \{ i \in \{ 1, \ldots, m\} : f_ i (x) = f(x) \}$
+Let $f_ 1, \ldots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \ldots,f_ n (x))$. Let $x ∈ \cap_i ^n \operatorname{int}(\operatorname{dom}(f_ i))$. Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup_ {i∈I(x)} ∂f_ i (x)$, where $I(x) = \{ i \in \{ 1, \ldots, m\} : f_ i (x) = f(x) \}$
 
 ### Optimality conditions
 
