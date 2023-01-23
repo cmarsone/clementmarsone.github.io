@@ -19,3 +19,46 @@ The goal is to create more complex data structures by using different subroutine
 Fortran derived datatypes or to C structures
 
 `MPI_Get_address()` provides the address of a variable. It’s equivalent of & operator in C.
+
+Écologie : Loué sois-tu, Seigneur, créateur du ciel et de la terre !
+οἶκος = maison et λόγος = science => science de la terre que nous habitons
+
+Il y a-t-il aujourd'hui un péché écologique ? A qui l'homme doit-il rendre ses devoirs ?
+
+Principe : l'homme a été créé en dernier dans la création par Dieu comme l'être terrestre le plus parfait à l'image de Celui qui l'a créé. Par conséquent, il a été placé au sommet de la l'univers et a reçu un pouvoir de domination sur les êtres qui l'entourent. Il a aussi reçu mission de travailler la terre et de se nourrir de ses fruits (Gen. 2)
+Finalité : l'homme tend sans cesse vers son bonheur le plus profond i.e. sa perfection. Le but ultime que Dieu nous réserve est celui de le connaître et de l'aimer afin de partager sa joie infinie pour l'éternité.
+Dans l'ordre,
+Moyens surnaturels : la grâce (Jean 3, 5)
+Moyens naturels : son âme et son corps (intelligence, volonté, sensibilité), son prochain, LA NATURE QUI L'ENTOURE
+
+Grandir en perfection => grandir en charité
+
+Charité dans l'ordre : envers Dieu, envers soi-même, envers son prochain, envers les dons que Dieu met à notre disposition (ÉCOLOGIE)
+
+Péché = manquer à la charité de Dieu : même ordre d'importance qu'au-dessus
+
+1ere conclusion: remettre les choses à leur place selon leur ordre. L'écologie est une vraie question mais n'est pas primordiale
+
+(en partie dans Laudato Si) Constat du mal dans notre vie dans l'ordre : refus de Dieu qui nous a créés par amour, l'homme est tourné vers ce qui le rabaisse, son prochain est offensé, la nature est abîmée
+
+Raison du problème écologique: les voitures, le tri des déchets, les routes à 90 km/h ? 
+Raison profonde, la surconsommation (cliché de l'Americain moyen par ex.) : l'homme est de plus en plus tourné vers sa sensualité => une recherche démesurée des moyens matériels qui le laissent toujours plus avide du plaisir éphémère
+
+C'est ici le problème fondamental, une consommation excessive de ce dont on a pas besoin
+Donc Dieu nous laisse voir, par miséricorde,la conséquence de nos mauvaises actions afin que nous voyons notre faute et que nous revenions à Lui.
+
+Piège actuel : idéologie d'une planète divinisée où nous faisons tous parti de ce grand tout
+Piège politique, souvent progressiste, humaniste, manipulé par des lobbys (Gretha Thunberg...)
+Non, la nature n'est pas notre finalité : le péché est d'abord contre son Créateur, contre lui-même et les autres, et enfin contre les dons naturels à sa disposition
+Mon opinion: que l'Eglise ne se laisse pas trop embarquer par cet engouement médiatique
+But de l'encyclique: Loué sois tu Dieu créateur ! et non pas la terre et les plantes...
+Écologie chrétienne (SOLUTION): revenir à une simple orientée vers Dieu et une utilisation mesurée des produits de consommation => esprit de pauvreté préché par le Christ et les saints
+
+Points forts de l'encyclique : regard spirituel sur l'écologie par des citations des textes sacrés et des saints, constat scientifique détaillé et remarquable sur la catastophe écologique
+
+Points faibles : un discours quelquefois trop humaniste à moitié entre un rapport de Greenpeace ou un cours de Géographie de collège sur le développement durable
+Mission du Pape : garder et enseigner la foi. Aujourd'hui, des questions peut-être plus importantes sont passées sous silence 
+Par exemple, persécution des chrétiens, scandales dans l'église, unité autour de la messe depuis le Concile, baisse de la pratique religieuse, euthanasie et vie de l'embryon...
+
+Finir par une belle citation : << Nous n'héritons pas de la terre de nos parents, nous l'empruntons à nos enfants. >> (devine le nom de cet auteur du XXe...)
+ou "Toute chair est comme l'herbe, elle est comme la fleur des champs" (Psaumes)
