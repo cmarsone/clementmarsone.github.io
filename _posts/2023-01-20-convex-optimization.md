@@ -78,20 +78,19 @@ If $f$ is convex:
 
 *Non-emptiness and boundedness of the subdifferential set at interior points of the domain*. Let $f : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be a proper convex function, and assume that $u ̃∈ \operatorname{int}(\operatorname{dom}(f)), \forall$. Then $∂f(u)$ is non-empty and bounded i.e. existence of subgradient.
 
-
  #### Computing Subgradients
 
 *Strong subgradients*: the subdifferential set at a given point is known i.e. full characterization of the subdifferential set
 *Weak subgradients*: one or several subgradients at a given point are known but not all i.e. partially
 
-*Multiplication by a positive scalar*: Let $f : \mathbb{R}^k → \mathbb{R} ∪ \{ ∞\}$ be a proper function$, h(u) = αf (u)$ with $α > 0$. Then:
+*Multiplication by a positive scalar*: Let $f : \mathbb{R}^k → \mathbb{R} ∪ \{ \infty \}$ be a proper function$, h(u) = αf (u)$ with $α > 0$. Then:
 $$∀u ∈ \operatorname{dom} f , g ∈ \mathbb{R}^k : α u ∈ ∂h(u) \iff g ∈ ∂f (u)$$
 
-*Summation* Let $f_ 1, f_ 2 : \mathbb{R}^k → \mathbb{R}∪\{ ∞\}$ be proper convex functions and $h(u) = f_ 1(u) + f_ 2(u)$. Then, $∀u ∈ \operatorname{dom} h, g ∈ \mathbb{R}^k$, we have g$ ∈ ∂h(u) \iff g = g^{(1)} + g^{(2)}\text{ such that }g^{(1)} ∈ ∂f_ 1 (u)\text{ and }g^{(2)} ∈ ∂f_ 2 (u)$
+*Summation* Let $f_ 1, f_ 2 : \mathbb{R}^k → \mathbb{R}∪\{ ∞\}$ be proper convex functions and $h(u) = f_ 1(u) + f_ 2(u)$. Then, $∀u ∈ \operatorname{dom} h, g ∈ \mathbb{R}^k$, we have $g ∈ ∂h(u) \iff g = g^{(1)} + g^{(2)}\text{ such that }g^{(1)} ∈ ∂f_ 1 (u)\text{ and }g^{(2)} ∈ ∂f_ 2 (u)$
 
 *Maximization of subdifferential*: The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
 
-Let $f_ 1, \cdots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \cdots,f_ n (x))$. Let $x ∈ mi=1 int(dom(fi)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup i∈I(x)∂f_ i (x)$, where $I(x) = \bigl\{ i \in \lbrace 1, \cdots, m\rbrace : f_ i (x) = f(x)\bigr\}$
+Let $f_ 1, \cdots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \cdots,f_ n (x))$. Let $x ∈ \cap_i ^n \operatorname{int}(\operatorname{dom}(f_ i)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup_ {i∈I(x)} ∂f_ i (x)$, where $I(x) = \{ i \in \lbrace 1, \cdots, m\rbrace : f_ i (x) = f(x) \}$
 
 ### Optimality conditions
 
@@ -120,10 +119,17 @@ Proof. Let $f : \mathbb{R}^n → \mathbb{R}$ be a function, $u ∈ \operatorname
 $$ \langle u, t \rangle − f (u) ≤ \operatorname{sup}_  {u\prime ∈ \operatorname{dom} f} u\prime^⊤ y − f (u\prime) = f^∗ (t)$$
 By re-arranging terms, we get the expected inequality.
 
-*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with \operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^{∗^{T}} ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then we have $f^∗ (y) = z^T ∇f(z) − f(z).$
+*Differentiable functions*: The conjugate of a differentiable function $f$ is also called the *Legendre transform* of $f$. Suppose $f$ is convex and differentiable, with $\operatorname{dom}f = \mathbb{R}^n$. Any maximizer $x^∗$ of $y^T x−f(x)$ satisfies $y = ∇f(x^∗)$, and conversely, if $x^∗$ satisfies $y = ∇f(x^∗)$, then $x^∗$ maximizes $y^T x − f(x)$. Therefore, if $y = ∇f(x^∗)$, we have $f∗(y) = x^{∗^{T}} ∇f(x^∗) − f(x^∗)$. This allows us to determine $f^∗(y)$ for any $y$ for which we can solve the gradient. Then, we have $f^∗ (y) = z^T ∇f(z) − f(z).$
 
+*Subdifferential of a Fenchel conjuguate*. Let $f : \mathbb{R}^k → \mathbb{R} ∪ \{ \infty \}$ be a function. Let $t ∈ \operatorname{dom} f^∗$ and $$\hat u = \operatorname{arg} \operatorname{max}_ {u∈\operatorname{dom} f} ⟨u, t⟩ − f (u)$$
+Then, $\hat u$ is a subgradient of $f^∗$ at $t$, i.e. $\hat u ∈ ∂f^∗ (t)$.
 
+Proof. Although this can be proved via Danskin’s theorem, here is a simpler proof. We have $f^∗ (t) = \operatorname{max} u∈\operatorname{dom} f \langle u, t\rangle − f (u) =\langle u, t\rangle − f (\hat u)$.
+For all $t^\prime ∈ \operatorname{dom} f^∗$ we have:
 
+$$f^∗ (t) + \langle \hat u, t^\prime − t\rangle = \langle \hat u, t\rangle − f (\hat u) + \langle \hat u, t^\prime \rangle − \langle \hat u, t\rangle = \langle \hat u, t^\prime \rangle − f (\hat u) ≤ \operatorname{max}_ {u∈\operatorname{dom} f} u^⊤ t^\prime − f (u) = f^∗ (t^\prime)$$
+
+Hence $\hat u$ is a subgradient of $f^∗$ at $t$.
 
 #### Jensen's inequality
 
