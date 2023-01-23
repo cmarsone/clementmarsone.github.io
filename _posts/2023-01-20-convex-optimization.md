@@ -84,14 +84,14 @@ If $f$ is convex:
 *Strong subgradients*: the subdifferential set at a given point is known i.e. full characterization of the subdifferential set
 *Weak subgradients*: one or several subgradients at a given point are known but not all i.e. partially
 
-*Multiplication by a positive scalar*: Let $f : \mathbb{R}^k → \mathbb{R} ∪ {∞}$ be a proper function$, h(u) = αf (u)$ with $α > 0$. Then:
+*Multiplication by a positive scalar*: Let $f : \mathbb{R}^k → \mathbb{R} ∪ \{ ∞\}$ be a proper function$, h(u) = αf (u)$ with $α > 0$. Then:
 $$∀u ∈ \operatorname{dom} f , g ∈ \mathbb{R}^k : α u ∈ ∂h(u) \iff g ∈ ∂f (u)$$
 
-*Summation* Let $f_ 1, f_ 2 : \mathbb{R}^k → \mathbb{R}∪{∞}$ be proper convex functions and $h(u) = f_ 1(u) + f_ 2(u)$. Then, $∀u ∈ \operatorname{dom} h, g ∈ \mathbb{R}^k$, we have g$ ∈ ∂h(u) \iff g = g^{(1)} + g^{(2)}\text{ such that }g^{(1)} ∈ ∂f_ 1 (u)\text{ and }g^{(2)} ∈ ∂f_ 2 (u)$
+*Summation* Let $f_ 1, f_ 2 : \mathbb{R}^k → \mathbb{R}∪\{ ∞\}$ be proper convex functions and $h(u) = f_ 1(u) + f_ 2(u)$. Then, $∀u ∈ \operatorname{dom} h, g ∈ \mathbb{R}^k$, we have g$ ∈ ∂h(u) \iff g = g^{(1)} + g^{(2)}\text{ such that }g^{(1)} ∈ ∂f_ 1 (u)\text{ and }g^{(2)} ∈ ∂f_ 2 (u)$
 
 *Maximization of subdifferential*: The following result shows how to compute the subdifferential set of a maximum of a finite collection of convex functions.
 
-Let $f_ 1, \cdots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \cdots,f_ n (x))$. Let $x ∈ mi=1 int(dom(fi)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup i∈I(x)∂f_ i (x)$, where $I(x) = \lbrace i \in \lbrace 1, \cdots, m\rbrace : f_ i (x) = f(x)\rbrace
+Let $f_ 1, \cdots, f_ n : \mathbb{R}^k → \mathbb{R} \cup \{ \infty \}$ be proper convex functions, and define $f(x) = \operatorname{max}(f_ 1 (x), \cdots,f_ n (x))$. Let $x ∈ mi=1 int(dom(fi)). Then, $g \in ∂f_ i (x) = \operatorname{conv} \cup i∈I(x)∂f_ i (x)$, where $I(x) = \bigl\{ i \in \lbrace 1, \cdots, m\rbrace : f_ i (x) = f(x)\bigr\}$
 
 ### Optimality conditions
 
@@ -109,7 +109,7 @@ $∀u ∈ \mathbb{R}^k , g ∈ ∂f (\hat u) : f (u) ≥ f (\hat u) + \langle g,
 
 Let $f : n → \mathbb{R} ∪ \{ ∞ \}$ be a function.
 The Fenchel conjugate of $f$ is the function $f^ ∗ : \mathbb{R}^n → \mathbb{R} ∪ \{∞ \}$ defined as follows:
-$$f^ ∗ (t) = \operatornam{sup}_ {u∈\operatorname{dom} f} \langle t, u \rangle − f (u)$$
+$$f^ ∗ (t) = \operatorname{sup}_ {u∈\operatorname{dom} f} \langle t, u \rangle − f (u)$$
 The biconjugate of $f$ is the function $f^{∗∗} : \mathbb{R}^n → R\mathbb{R} ∪ \{ ∞\}$ defined as follows:
 $$f^{∗∗}(u) = \operatorname{sup} t∈\operatorname{dom} f^∗ \langle u, t\rangle − f^∗ (t)$$
 If $f$ is proper, closed and convex, then $f^{ ∗∗} = f$
