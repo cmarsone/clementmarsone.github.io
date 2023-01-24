@@ -1,0 +1,92 @@
+
+
+
+### Networking basics
+
+#### Networks
+
+A *computer network* is two or more client machines that are connected together to share resources. It can be logically partitioned into subnets. 
+Networking requires a networking device, such as a *router* (between subnets) or *switch* (between machines), to connect all the clients together and enable communication between them.
+
+Each client machine in a network has a *unique Internet Protocol (IP) address* that identifies it.
+For instance: network & broadcast address, internal communication, DNS resolution, future use...
+
+A public IPv4 address is manually assigned through an Elastic IP address associated with AWS or automatically assigned through the public IP address settings i.e. at subnet level.
+Elatic network interface is a virtual network interface that you can attach or detach from an instance in a VPC.
+
+A route table contains a set of rules or outes that you can configure to direct traffic from your subnet.
+Each route specifies a destination and a target. It contains a local route for communication within the VPC. Each subnet must be associated with a route table.
+The destination is the destination CIDR block where you want traffic from your subnet to go.
+A Classless Inter-Domain Routing (CIDR) adress is expressed as an IP address and is the first address of the network
+
+#### Open Systems Interconnection (OSI) model
+
+
+
+• A VPC is a logically isolated section of the AWS Cloud.
+• A VPC belongs to one Region and requires a CIDR block.
+• A VPC is subdivided into subnets.
+• A subnet belongs to one Availability Zone and requires a CIDR block.
+• Route tables control traffic for a subnet.
+• Route tables have a built-in local route.
+• You add additional routes to the table.
+• The local route cannot be deleted.
+
+### VPC Networking
+
+An *internet gateway* (passerelle) is a scalable, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet. An internet gateway serves two purposes: 
+- to provide a target in your VPC route tables for internet-routable traffic
+- to perform network address translation for instances that were assigned public IPv4 addresses.
+
+A *Network Address Translation* (NAT) gateway enables instances in a private subnet to connect to the internet or other AWS services, but prevents the internet from initiating a connection with those instances.
+
+*VPC sharing* enables customers to share subnets with other AWS accounts in the same organization in AWS Organizations. VPC sharing enables multiple AWS accounts to create their application resources such as Amazon EC2 instances.
+
+A *VPC peering connection* is a networking connection between two VPCs that enables you to route traffic between them privately.
+AWS Site-to-Site VPN => AWS Direct Connect => VPC endpoints
+A VPC endpoit is a virtual device that enable you to privately connect to Amazon regional services
+
+AWS *transit gateway* is a network transit hub that you use to interconnect your VPCs and on-premises network.
+
+ •
+There are several VPC networking options, which include:
+•
+Internet gateway: Connects your VPC to the internet
+•
+NAT gateway: Enables instances in a private subnet to connect to the internet
+•
+VPC endpoint: Connects your VPC to supported AWS services
+•
+VPC peering: Connects your VPC to other VPCs
+•
+VPC sharing: Allows multiple AWS accounts to create their application resources into shared, centrally-managed Amazon VPCs
+•
+AWS Site-to-Site VPN: Connects your VPC to remote networks
+•
+AWS Direct Connect: Connects your VPC to a remote network by using a dedicated network connection
+•
+AWS Transit Gateway: A hub-and-spoke connection alternative to VPC peering
+•
+You can use the VPC Wizard to implement your design.
+
+### VPC Security
+
+
+*Security group* (virtual firewall) have separate inbound and outbound rules, and each rule can either allow or deny traffic.
+They are stateful
+
+The same at the subnet level => *Network Access Control Lists* (ACLs) is an optional layer of security for your Amazon VPC. It acts as a firewall for controlling traffic in and out of one or more subnets.To add another layer of security to your VPC, you can set up network ACLs with rules that are similar to your security groups.
+They are stateless. Each subnet in your VPC must be associated with a network ACL.
+
+ Here is a summary of the differences between security groups and network ACLs:
+•
+Security groupsact at the instance level, but network ACLs act at the subnet level.
+•
+Security groups support allow rules only, but network ACLs support both allow and deny rules.
+•
+Security groups are stateful, but network ACLs are stateless.
+•
+For security groups, all rules are evaluated before the decision is made to allow traffic. For network ACLs, rules are evaluated in number order before the decision is made to allow traffic.
+ AWS Academy Cloud FoundationsModule 5: Networking and Content Delivery© 2021 Amazon Web Services, Inc. or its affiliates. All rights reserved.46
+
+
