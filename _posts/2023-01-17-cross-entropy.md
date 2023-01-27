@@ -61,10 +61,9 @@ Let $\mu \in \[ 0, 1 \]$ be the paramters of Bernoulli such that $H^{FD}\[ \mu \
 
 
 Dual optimization
-We consider the following L2 regularized binary SVM training problem:
-Xn 1
-min max(0, 1 − a⊤x(i)y(i)) + ∥x∥2 a2
-i=1
+We consider the following $L_ 2$ regularized binary *SVM training problem*:
+$$\operatorname{min}_ a \sum_ {i=1} ^n \operatorname{max}(0, 1 − a^⊤ x(i)y(i)) + ∥x∥2 a2
+i=1$$
 We showed that optimizing this optimization problem via subgradient descent can be problematic: the sub- gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
 • it highlights what support vectors in SVM means,
 • it allows us to use a hyper-parameter free optimization algorithm (no stepsize!) We first need to bring in some theory
