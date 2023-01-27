@@ -62,18 +62,19 @@ Let $\mu \in \[ 0, 1 \]$ be the paramters of Bernoulli such that $H^{FD}\[ \mu \
 
 Dual optimization
 We consider the following $L_ 2$ regularized binary *SVM training problem*:
-$$\operatorname{min}_ a \sum_ {i=1} ^n \operatorname{max}(0, 1 − a^⊤ x(i)y(i)) + ∥x∥2 a2
-i=1$$
-We showed that optimizing this optimization problem via subgradient descent can be problematic: the sub- gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
+$$\operatorname{min}_ a \sum_ {i=1} ^n \operatorname{max}(0, 1 − a^⊤ x(i)y(i)) + ∥x∥^2 a^2$$
+
+We showed that optimizing this problem via subgradient descent can be problematic: the sub-gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
 • it highlights what support vectors in SVM means,
 • it allows us to use a hyper-parameter free optimization algorithm (no stepsize!) We first need to bring in some theory
-4.1 Lagrangian duality
-Let X ⊆ Rn be a convex set and f : X → R be a function. We consider the following primal mathematical program:
-(P) min f(x) x∈X
-s.t. Ax ≤ b
-where A ∈ Rm×n and b ∈ Rm defines a set of m linear inequalities. The Lagrangian of (P) is the function
-L:X×Rm+ →Rdefinedasfollows:
-where x are the primal variables and λ the Lagrangian multipliers also called the dual variables. We build the
+
+### Lagrangian duality
+Let $X ⊆ R^n$ be a convex set and $f : X → R$ be a function. We consider the following primal mathematical program:
+$$(P) \operatorname{min} f(x) x∈X$$
+$$s.t. Ax ≤ b$$
+where $A ∈ Rm×n$ and $b ∈ Rm$ defines a set of $m$ linear inequalities. The Lagrangian of $(P)$ is the function
+$L:X×Rm+ →R$ defined as follows:
+where $x$ are the primal variables and $λ$ the Lagrangian multipliers also called the dual variables. We build the
 L(x, λ) = f (x) + λ⊤ (Ax − b) following relaxation of the primal problem:
 L(λ) = min L(x, λ) x∈X
 where L is a function L : Rm+ → R. We use the same name for two different functions, we hope it won’t confuse the reader. We call this problem relaxed because the constraints on the primal variables are replaced by penalties in the objective. It can be the case that this problem is simpler to solve than the primal problem.
