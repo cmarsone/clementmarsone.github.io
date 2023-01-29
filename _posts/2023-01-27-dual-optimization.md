@@ -95,3 +95,11 @@ where x ∈ Rk, g(i) ≥ 0 is a set of m inequality and h(i)(x) = 0 is a set of 
 ∀i : ∀i: ∀i :
 ∂ f(x∗)+Xμ ∂ g(j)(x∗)−Xλ ∂ h(j)(x∗)=0 ∂x j ∂x j ∂x
 ijiji
+
+g(i)(x) ≥ 0 h(i) (x) = 0 μi≥0
+X μig(i)(x∗) ≥ 0 i
+where μ ∈ Rm and λ ∈ Rn are dual variables associated with primal inequalities and equalities, respectively. These set of equation, in the general case, are necessary constraints: there may exists points x that satisfies these constraints that are not optimal solution. However, if:
+• f is a concave function,
+• all g(i) are concave functions,
+• annd all h(i) are affine functions,
+then the KKT are sufficient conditions too. In particular, we will see that in some special cases we can solve this set of equations to find the optimal x∗, i.e. the optimization problem as a closed form solution.
