@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Matrix-matrix product
+title: Matrix-matrix product in MPI
 ---
 
 Dimension : $N \times N$  and $N_ L = \frac{N}{N _ \text{processes}}$ according to lines ands columns such that $N$ may be divisible by $N_ \text{processes}$
