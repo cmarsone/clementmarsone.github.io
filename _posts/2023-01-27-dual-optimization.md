@@ -6,24 +6,36 @@ author: Clément
 
 We consider the following $L_ 2$ regularized binary *SVM training problem*:
 $$\operatorname{min}_ a \sum_ {i=1} ^n \operatorname{max}(0, 1 − a^⊤ x(i)y(i)) + ∥x∥^2 a^2$$
-
 We showed that optimizing this problem via subgradient descent can be problematic: the sub-gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
-• it highlights what support vectors in SVM means,
-• it allows us to use a hyper-parameter free optimization algorithm (no stepsize!) We first need to bring in some theory
+- it highlights what support vectors in SVM means,
+- it allows us to use a hyper-parameter free optimization algorithm i.e. no stepsize
 
 ### Lagrangian duality
-Let $X ⊆ R^n$ be a convex set and $f : X → R$ be a function. We consider the following primal mathematical program:
-$$(P) \operatorname{min} f(x) x∈X$$
-$$s.t. Ax ≤ b$$
-where $A ∈ Rm×n$ and $b ∈ Rm$ defines a set of $m$ linear inequalities. The Lagrangian of $(P)$ is the function
-$L:X×Rm+ →R$ defined as follows:
-where $x$ are the primal variables and $λ$ the Lagrangian multipliers also called the dual variables. We build the
-L(x, λ) = f (x) + λ⊤ (Ax − b) following relaxation of the primal problem:
-L(λ) = min L(x, λ) x∈X
-where L is a function L : Rm+ → R. We use the same name for two different functions, we hope it won’t confuse the reader. We call this problem relaxed because the constraints on the primal variables are replaced by penalties in the objective. It can be the case that this problem is simpler to solve than the primal problem.
+
+Let $X \subseteq \mathbb{R}^n$ be a convex set and $f: X \rightarrow \mathbb{R}$ be a function. We consider the following primal mathematical program:
+
+$$\begin{equation}
+\text{(P)} \quad \min_{x \in X} f(x) \quad \text{s.t.} \quad Ax \le b
+\end{equation}$$
+
+where $A \in \mathbb{R}^{m \times n}$ and $b \in \mathbb{R}^m$ defines a set of $m$ linear inequalities. The Lagrangian of $(P)$ is the function $L: X \times \mathbb{R}^m_+ \rightarrow \mathbb{R}$ defined as follows:
+
+\begin{equation}
+L(x, \lambda) = f(x) + \lambda^T(Ax - b)
+\end{equation}
+
+where $x$ are the primal variables and $\lambda$ are the Lagrangian multipliers, also called the dual variables. We build the following relaxation of the primal problem:
+
+\begin{equation}
+L(\lambda) = \min_{x \in X} L(x, \lambda)
+\end{equation}
+
+where $L$ is a function $L: \mathbb{R}^m_+ \rightarrow \mathbb{R}$. We use the same name for two different functions, hoping it will not confuse the reader. We call this problem relaxed because the constraints on the primal variables are replaced by penalties in the objective. This problem can be simpler to solve than the primal problem.
 
 
-Weak Lagrangian duality Let xˆ be the optimal solution of the primal problem (P). Then: ∀λ∈Rm+ : f(xˆ)≥L(λ)
+### Weak Lagrangian duality
+
+Let xˆ be the optimal solution of the primal problem (P). Then: ∀λ∈Rm+ : f(xˆ)≥L(λ)
 In other word, for any set of dual variables λ, the relaxed problem gives use a lower bound to the optimal solution. To prove this, first note that xˆ satisfies the primal constraints by definition, therefore λ⊤(Axˆ − b) ≤ 0:
 f(xˆ) ≥ f(xˆ) + λ⊤(Axˆ − b)
 If this inequality is true for xˆ, it will also be true if we try to find the x that minimizes the right-hand side:
