@@ -20,20 +20,38 @@ $$\begin{equation}
 
 where $A \in \mathbb{R}^{m \times n}$ and $b \in \mathbb{R}^m$ defines a set of $m$ linear inequalities. The Lagrangian of $(P)$ is the function $L: X \times \mathbb{R}^m_+ \rightarrow \mathbb{R}$ defined as follows:
 
-\begin{equation}
+$$\begin{equation}
 L(x, \lambda) = f(x) + \lambda^T(Ax - b)
-\end{equation}
+\end{equation}$$
 
 where $x$ are the primal variables and $\lambda$ are the Lagrangian multipliers, also called the dual variables. We build the following relaxation of the primal problem:
 
-\begin{equation}
+$$\begin{equation}
 L(\lambda) = \min_{x \in X} L(x, \lambda)
-\end{equation}
+\end{equation}$$
 
 where $L$ is a function $L: \mathbb{R}^m_+ \rightarrow \mathbb{R}$. We use the same name for two different functions, hoping it will not confuse the reader. We call this problem relaxed because the constraints on the primal variables are replaced by penalties in the objective. This problem can be simpler to solve than the primal problem.
 
 
-### Weak Lagrangian duality
+
+### Relaxation of the primal problem : weak Lagrangian duality
+
+The relaxed problem $L : \mathbb{R}^m_+ \rightarrow \mathbb{R}$ is defined as:
+
+$$\begin{equation}
+L(\lambda) = \min_{u \in U} L(u, \lambda)
+\end{equation}$$
+
+Weak Lagrangian duality states that, given $\hat{u}$ as the optimal solution of the primal problem $(P)$, then for all $\lambda \in \mathbb{R}^m_+$:
+
+$$\begin{equation}
+f(\hat{u}) \geq L(\lambda)
+\end{equation}$$
+
+Proof:
+
+Since $\hat{u}$ satisfies the constraints, we have $f(\hat{u}) \geq f(\hat{u}) + \lambda^T (\hat{A} \hat{u} - b)$. Also, $f(\hat{u}) + \lambda^T (\hat{A} \hat{u} - b) \geq \min_{u \in U} f(u) + \lambda^T(Au - b) = L(\lambda)$.
+
 
 Let xˆ be the optimal solution of the primal problem (P). Then: ∀λ∈Rm+ : f(xˆ)≥L(λ)
 In other word, for any set of dual variables λ, the relaxed problem gives use a lower bound to the optimal solution. To prove this, first note that xˆ satisfies the primal constraints by definition, therefore λ⊤(Axˆ − b) ≤ 0:
