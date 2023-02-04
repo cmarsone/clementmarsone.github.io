@@ -12,19 +12,19 @@ We showed that optimizing this problem via subgradient descent can be problemati
 
 ### Lagrangian duality
 
-Let $X \subseteq \mathbb{R}^n$ be a convex set and $f: X \rightarrow \mathbb{R}$ be a function. We consider the following primal mathematical program:
+Let $U \subseteq \mathbb{R}^n$ be a convex set and $f: U \rightarrow \mathbb{R}$ be a function. We consider the following primal mathematical program:
 
 $$\begin{equation}
-\text{(P)} \quad \min_{x \in X} f(x) \quad \text{s.t.} \quad Ax \le b
+\text{(P)} \quad \min_{u \in U} f(u) \quad \text{s.t.} \quad Au \le b
 \end{equation}$$
 
-where $A \in \mathbb{R}^{m \times n}$ and $b \in \mathbb{R}^m$ defines a set of $m$ linear inequalities. The Lagrangian of $(P)$ is the function $L: X \times \mathbb{R}^m_+ \rightarrow \mathbb{R}$ defined as follows:
+where $A \in \mathbb{R}^{m \times n}$ and $b \in \mathbb{R}^m$ defines a set of $m$ linear inequalities. The Lagrangian of $(P)$ is the function $L: U \times \mathbb{R}^m_+ \rightarrow \mathbb{R}$ defined as follows:
 
 $$\begin{equation}
-L(x, \lambda) = f(x) + \lambda^T(Ax - b)
+L(u, \lambda) = f(u) + \lambda^T(Au - b)
 \end{equation}$$
 
-where $x$ are the primal variables and $\lambda$ are the Lagrangian multipliers, also called the dual variables. We build the following relaxation of the primal problem:
+where $u \in U$ are the *primal variables* and $\lambda \in \mathbb{R}_ +^m$ are the *Lagrangian multipliers*, also called the *dual variables*. We build the following relaxation of the primal problem:
 
 $$\begin{equation}
 L(\lambda) = \min_{x \in X} L(x, \lambda)
@@ -32,9 +32,7 @@ L(\lambda) = \min_{x \in X} L(x, \lambda)
 
 where $L$ is a function $L: \mathbb{R}^m_+ \rightarrow \mathbb{R}$. We use the same name for two different functions, hoping it will not confuse the reader. We call this problem relaxed because the constraints on the primal variables are replaced by penalties in the objective. This problem can be simpler to solve than the primal problem.
 
-
-
-### Relaxation of the primal problem : weak Lagrangian duality
+### Relaxation of the primal problem with weak Lagrangian duality
 
 The relaxed problem $L : \mathbb{R}^m_+ \rightarrow \mathbb{R}$ is defined as:
 
@@ -51,6 +49,20 @@ f(\hat{u}) \geq L(\lambda)
 Proof:
 
 Since $\hat{u}$ satisfies the constraints, we have $f(\hat{u}) \geq f(\hat{u}) + \lambda^T (\hat{A} \hat{u} - b)$. Also, $f(\hat{u}) + \lambda^T (\hat{A} \hat{u} - b) \geq \min_{u \in U} f(u) + \lambda^T(Au - b) = L(\lambda)$.
+
+The Lagrangian dual problem is defined as follows:
+
+$L(\lambda)$ is a lower bound to the primal problem for all $\lambda \in \mathbb{R}^m_+$, such that $f(\hat{u}) \geq L(\lambda)$.
+
+The dual problem $(D)$ is defined as the search for the best lower bound:
+
+$$\begin{equation}
+(D) \quad \max_{\lambda \in \mathbb{R}^m_+} L(\lambda)
+\end{equation}$$
+
+It is important to note that the dual problem is always concave, regardless of whether the function $f$ is convex or not.
+
+Strong Lagrangian duality states that, given a dual feasible solution $\lambda \in \mathbb{R}^m_+$ and $\bar{u} = \arg\max_{u \in U} L(u, \lambda)$, if $\bar{u}$ satisfies the primal feasibility condition $A\bar{u} \leq b$ and the complementary slackness condition $\lambda^T (A\bar{u} - b) = 0$, then $\bar{u} = \hat{u}$ is the optimal solution of the primal problem $(P)$.
 
 
 Let xˆ be the optimal solution of the primal problem (P). Then: ∀λ∈Rm+ : f(xˆ)≥L(λ)
