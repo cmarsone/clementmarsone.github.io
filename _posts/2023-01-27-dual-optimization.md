@@ -121,36 +121,36 @@ Therefore $f(\bar{u}) = f(\hat{u})$.
 
 ### Relaxing equality constraints
 
-\begin{align*}
+$$\begin{align*}
 \min_{u} ; &f(u) \
 \text{s.t.} ; &Au = b \
 \text{or} ; &Au \le b \
 &-Au \le -b
-\end{align*}
+\end{align*}$$
 
 The Lagrangian can be expressed as:
 
-\begin{align*}
+$$\begin{align*}
 L(u, \lambda \ge 0, \lambda' \ge 0) &= f(u) + \lambda^\top (Au - b) + \lambda'^\top (-Au + b) \
 &= f(u) + \lambda^\top (Au - b) - \lambda'^\top (Au - b) \
 &= f(u) + (\lambda - \lambda')^\top (Au - b)
-\end{align*}
+\end{align*}$$
 
 Let $\lambda'' = \lambda - \lambda'$:
 
-\begin{align*}
+$$\begin{align*}
 L(u, \lambda'') &= f(u) + \lambda''^\top (Au - b)
-\end{align*}
+\end{align*}$$
 
 In this formulation, the dual variables $\lambda'' \in \mathbb{R}^m$ are unconstrained. Relaxing the equalities has the benefits of an unconstrained optimization problem and a simpler strong duality condition.
 
 ### Karush–Kuhn–Tucker conditions
 
-\begin{align}
+$$\begin{align}
 \nabla f(\mathbf{x}) + \sum_{i=1}^m \lambda_i \nabla g_i(\mathbf{x}) &= \mathbf{0} \
 g_i(\mathbf{x}) &\le 0, \quad i = 1, 2, \ldots, m \
 \lambda_i &\ge 0, \quad i = 1, 2, \ldots, m \
 \lambda_i g_i(\mathbf{x}) &= 0, \quad i = 1, 2, \ldots, m
-\end{align}
+\end{align}$$
 
 where $\mathbf{x}$ is the vector of optimization variables, $f(\mathbf{x})$ is the objective function, $g_i(\mathbf{x})$ are the inequality constraints, $\lambda_i$ are the Lagrange multipliers, and $m$ is the number of constraints.
