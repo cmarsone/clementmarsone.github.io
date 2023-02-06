@@ -114,7 +114,9 @@ Sample::Sample( void ) {
 
 ### Member attributs & member functions
 
-`...
+` 
+
+...
 
 void    Sample::bar( void ) {
 
