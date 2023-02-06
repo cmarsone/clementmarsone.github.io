@@ -84,11 +84,11 @@ int     main( void ) {
 
 ### Class & instance
 
-A class in object-oriented programming (OOP) is a blueprint or template for creating objects. It defines a set of attributes (member variables) and behaviors (member functions) that are common to all objects of that class. A class does not hold any values for its attributes, it simply defines what kind of data they can hold.
+A *class* in object-oriented programming (OOP) is a blueprint or template for creating objects. It defines a set of attributes (member variables) and behaviors (member functions) that are common to all objects of that class. A class does not hold any values for its attributes, it simply defines what kind of data they can hold.
 
-An instance, also known as an object, is a specific occurrence of a class. It holds the values for the attributes defined in the class and can perform the behaviors specified in the class. An object is created from a class by calling a special function called a constructor. Each object has its own set of values for the attributes defined in the class, and can perform the behaviors independently of other objects of the same class
+An *instance*, also known as an *object*, is a specific occurrence of a class. It holds the values for the attributes defined in the class and can perform the behaviors specified in the class. An object is created from a class by calling a special function called a constructor. Each object has its own set of values for the attributes defined in the class, and can perform the behaviors independently of other objects of the same class
 
-In C++, a class is defined using the "class" keyword followed by the class name and the class definition, which is enclosed in curly braces. Member variables are declared within the class definition and can be either public (accessible from outside the class) or private (only accessible within the class). Member functions are also declared within the class definition and can access and manipulate the member variables.
+In C++, a class is defined using the `class` keyword followed by the class name and the class definition, which is enclosed in curly braces. Member variables are declared within the class definition and can be either public (accessible from outside the class) or private (only accessible within the class). Member functions are also declared within the class definition and can access and manipulate the member variables.
 
 ```
 // Sample.class.hpp
@@ -130,7 +130,9 @@ void    Sample::bar( void ) {
     std::cout << "Member function bar called" << std::endl;
     return ;
 }
+```
 
+```
 int     main() {
 
     Sample  instance;
@@ -174,7 +176,9 @@ void    Sample::bar( void ) {
     std::cout << "Member function bar called" << std::endl;
     return ;
 }
+```
 
+```
 #ifndef SAMPLE_CLASS_H
 # define SAMPLE_CLASS_H
 
@@ -190,7 +194,9 @@ class   Sample {
         void    bar( void );
 
 };
+```
 
+```
 int     main() {
 
     Sample  instance;
@@ -202,7 +208,145 @@ int     main() {
 
 ### Initialization lists
 
+```
+#include <iostream>
+
+class   Sample1 {
+
+    public:
+
+        char    a1;
+        int     a2;
+        float   a3;
+
+        Sample1( char p1, int p2, float p3 );
+        ~Sample1( void );
+
+};
+```
+
+```
+Sample1::Sample1( char p1, int p2, float p3 ) {
+
+    std::cout << "Constructor called" << std::endl;
+
+    this->a1 = p1;
+    std::cout << "this->a1 = " << this->a1 << std::endl;
+
+    this->a2 = p2;
+    std::cout << "this->a2 = " << this->a2 << std::endl;
+
+    this->a3 = p3;
+    std::cout << "this->a3 = " << this->a3 << std::endl;
+
+    return ;
+}
+
+Sample1::~Sample1( void ) {
+
+    std::cout << "Destructor called" << std::endl;
+    return ;
+}
+```
+
+```
+class   Sample2 {
+
+    public:
+
+        char    a1;
+        int     a2;
+        float   a3;
+
+        Sample2( char p1, int p2, float p3 );
+        ~Sample2( void );
+
+};
+```
+
+```
+Sample2::Sample2( char p1, int p2, float p3 ) : a1(p1), a2(p2), a3(p3) {
+
+    std::cout << "Constructor called" << std::endl;
+
+    std::cout << "this->a1 = " << this->a1 << std::endl;
+    std::cout << "this->a2 = " << this->a2 << std::endl;
+    std::cout << "this->a3 = " << this->a3 << std::endl;
+
+    return ;
+}
+
+Sample2::~Sample2( void ) {
+
+    std::cout << "Destructor called" << std::endl;
+    return ;
+}
+```
+
+```
+int         main() {
+
+    Sample1 instance1( 'a', 42, 4.2f );
+    Sample2 instance2( 'z', 13, 3.14f );
+
+    return (0);
+
+}
+```
+
 ### `const`
+
+```
+#include <iostream>
+
+class   Sample {
+
+    public:
+
+        float const pi;
+        int         qd;
+
+        Sample( float const f );
+        ~Sample( void );
+
+        void    bar( void ) const;
+
+};
+```
+
+```
+Sample::Sample( float const f ) : pi( f ), qd( 42 ) {
+
+    std::cout << "Constructor called" << std::endl;
+    return ;
+}
+
+Sample::~Sample( void ) {
+
+    std::cout << "Destructor called" << std::endl;
+    return ;
+}
+
+void Sample::bar( void ) const {
+
+    std::cout << "this->pi: " << this->pi << std::endl;
+    std::cout << "this->qd: " << this->qd << std::endl;
+
+    return ;
+}
+```
+
+```
+int         main() {
+
+    Sample instance( 3.14f );
+
+    instance.bar();
+
+    return (0);
+
+}
+```
 
 ### Encapsulation
 
@@ -214,4 +358,4 @@ int     main() {
 
 ### Non-member attributs & non-member functions
 
-### Pointers to membersc
+### Pointers to members
