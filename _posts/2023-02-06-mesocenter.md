@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computing with mesocenter
+title: High Performance Computing with mesocenter
 ---
 
 ### The objectives of a mesocenter
