@@ -124,8 +124,7 @@ Therefore $f(\bar{u}) = f(\hat{u})$.
 $$\begin{align*}
 \min_{u} &f(u) \\
 \text{s.t. } &Au = b \\
-\text{or } &Au \le b \\
-- &Au \le -b
+\text{or } &Au \le b \\ - &Au \le -b
 \end{align*}$$
 
 The Lagrangian can be expressed as:
@@ -166,11 +165,11 @@ $$\begin{align}
 An optimal solution $x^* \in \mathbb{R}^k$ of the mathematical program satisfies the following constraints:
 
 $$\begin{align}
-&\text{(stationarity)} \quad \forall i : \frac{\partial f(x^)}{\partial x_i} + \sum_{j=1}^{m} \mu_j \frac{\partial g_j(x^)}{\partial x_i} - \sum_{j=1}^{n} \lambda_j \frac{\partial h_j(x^)}{\partial x_i} = 0 \\
+&\text{(stationarity)} \quad \forall i : \frac{\partial f(x^*)}{\partial x_i} + \sum_{j=1}^{m} \mu_j \frac{\partial g_j(x^*)}{\partial x_i} - \sum_{j=1}^{n} \lambda_j \frac{\partial h_j(x^*)}{\partial x_i} = 0 \\
 &\text{(primal feasibility)} \quad \forall i : g_i(x) \ge 0 \\
 &\quad\quad\quad\quad\quad\quad\quad \forall i : h_i(x) = 0 \\
 &\text{(dual feasibility)} \quad \forall i : \mu_i \ge 0 \\
-&\text{(complementary slackness)} \quad \sum_{i=1}^{m} \mu_i g_i(x^) \ge 0 \\
+&\text{(complementary slackness)} \quad \sum_{i=1}^{m} \mu_i g_i(x^*) \ge 0 \\
 \end{align}$$
 
 where $\mu \in \mathbb{R}^m$ and $\lambda \in \mathbb{R}^n$ are dual variables associated with primal inequalities and equalities, respectively.
