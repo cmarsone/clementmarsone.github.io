@@ -146,6 +146,7 @@ In this formulation, the dual variables $\lambda'' \in \mathbb{R}^m$ are unconst
 ### Karush–Kuhn–Tucker conditions
 
 Assume we have a maximization problem defined as follows:
+
 $$\begin{align}
 \nabla f(\mathbf{x}) + \sum_ {i=1}^m \lambda_ i \nabla g_ i(\mathbf{x}) &= \mathbf{0} \\
 g_ i(\mathbf{x}) &\le 0, \quad i = 1, 2, \ldots, m \\
