@@ -10,6 +10,16 @@ We showed that optimizing this problem via subgradient descent can be problemati
 - it highlights what support vectors in SVM means,
 - it allows us to use a hyper-parameter free optimization algorithm i.e. no stepsize
 
+Minimize:
+
+$\frac{1}{2}||w||^2 + C \sum_{i=1}^{n} \xi_i$
+
+Subject to:
+
+$y_i(w^Tx_i + b) \ge 1 - \xi_i, \quad \xi_i \ge 0, \quad i = 1,2,...,n$
+
+where $C$ is the regularization parameter that controls the trade-off between maximizing the margin and avoiding overfitting, $w$ and $b$ are the coefficients of the hyperplane, $x_i$ and $y_i$ are the features and labels of the $i$th sample, and $\xi_i$ is the slack variable that allows for misclassified samples.
+
 ### Lagrangian duality
 
 Let $U \subseteq \mathbb{R}^n$ be a convex set and $f: U \rightarrow \mathbb{R}$ be a function. We consider the following primal mathematical program:
