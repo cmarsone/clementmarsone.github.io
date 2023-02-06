@@ -1,3 +1,7 @@
+---
+layout: post
+title: Computing with mesocenter
+---
 
 ### The objectives of a mesocenter
 
