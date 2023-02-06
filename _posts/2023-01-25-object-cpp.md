@@ -122,6 +122,12 @@ Sample::Sample( void ) {
 
 ### Member attributs & member functions
 
+*Member variables* (also known as member attributes or instance variables) are data members of a class, used to hold information about an object of that class. They define the state of an object.
+
+*Member functions* (also known as methods) are functions that are members of a class and perform operations on the objects of that class. They define the behavior of an object.
+
+In C++, a class is defined using the keyword `class` followed by the name of the class. Member variables are declared inside the class definition and can be private or public. The default access level for member variables is private. Member functions are also declared inside the class definition and can access and modify the member variables.
+
 ```
 ... (as above)
 
@@ -148,6 +154,10 @@ int     main() {
 ```
 
 ### `this`
+
+The `this` keyword in C++ is a *pointer to the current object*. It is a constant pointer that holds the memory address of the object for which the member function is called.
+
+The `this` pointer is automatically passed to the member function by the compiler and can be used to access the member variables of the object. It can be used within any non-static member function of a class.
 
 ```
 #include <iostream>
@@ -207,6 +217,10 @@ int     main() {
 ```
 
 ### Initialization lists
+
+In C++, an *initialization list* is used to initialize the member variables of an object at the time of its creation. It is a comma-separated list of initial values that are assigned to the member variables in the order in which they are declared in the class definition. The initialization list is specified in the constructor of the class using the syntax : `variable1(value1)`, `variable2(value2)`, ... after the constructor's parameters.
+
+Initialization lists are useful in situations where the default constructor for a type is not sufficient for initializing the member variables. By using an initialization list, the member variables can be initialized to specific values in the constructor, which can improve the readability and maintainability of the code.
 
 ```
 #include <iostream>
@@ -296,6 +310,8 @@ int         main() {
 
 ### `const`
 
+In C++, the `const` keyword is used to declare a variable as constant, meaning its value cannot be changed after initialization. When used before a variable or function declaration, it indicates that the variable or function is constant and its value cannot be modified.
+
 ```
 #include <iostream>
 
@@ -349,6 +365,10 @@ int         main() {
 ```
 
 ### Encapsulation
+
+In encapsulation, the data members of a class are declared as private, and the class provides public methods (member functions) to access and manipulate the data. This way, the implementation details of the class are hidden from the outside world and can be changed without affecting the users of the class. The public methods act as an interface between the class and its users, ensuring that the class's behavior is predictable and consistent.
+
+Encapsulation provides several benefits, including improved data protection and security, reduced complexity, and better maintenance. It also makes it easier to change the implementation of a class without affecting its users, which can be especially useful for large projects.
 
 ### `class` vs `struct`
 
