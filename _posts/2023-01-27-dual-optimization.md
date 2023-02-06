@@ -5,7 +5,7 @@ author: Clément
 ---
 
 We consider the following $L_ 2$ regularized binary *SVM training problem*:
-$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y_ i (a^⊤ x_ i +b) + \frac{1}{2} ||a||_ 2^2 $$
+$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y_ i (a^\top x_ i +b) + \frac{1}{2} ||a||_ 2^2 $$
 where $C$ is the regularization parameter that controls the trade-off between maximizing the margin and avoiding overfitting, $a$ and $b$ are the coefficients of the hyperplane, $x_i$ and $y_i$ are the features and labels of the $i$th sample, and $\xi_i$ is the slack variable that allows for misclassified samples.
 
 We showed that optimizing this problem via subgradient descent can be problematic: the sub-gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
@@ -89,8 +89,8 @@ $L(\lambda) = \min_{u \in X} L(u, \lambda)$
 
 Therefore:
 
-    - The right-hand side has the expected form
-    - The left-hand side is different, we need to fix this to finish the proof.
+- The right-hand side has the expected form
+- The left-hand side is different, we need to fix this to finish the proof.
 
 To simplify notations, we write $c(u) = Au - b$.
 
