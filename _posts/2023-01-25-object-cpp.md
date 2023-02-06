@@ -7,7 +7,7 @@ title: Programmation Objet C++
 
 A namespace in C++ is a *container that holds a set of identifiers*, e.g. variables, functions, classes, etc... It is used to avoid naming conflicts and to organize code into logical groups. Namespaces are declared using the `namespace` keyword followed by the namespace name, and the contents of the namespace are enclosed in curly braces. To access an identifier in a namespace, one can either qualify the identifier with the namespace name or use a `using` directive to make the contents of the namespace accessible in the current scope.
 
-`#include <stdio.h>
+```#include <stdio.h>
 
 int     gl_var = 1;
 int     f( void ) {
@@ -50,7 +50,7 @@ int     main( void ) {
     printf( "::f():         [%d]\n\n", ::f() );
 
     return (0);
-}`
+}```
 
 ### `stdio` streams
 
