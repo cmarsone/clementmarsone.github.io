@@ -122,9 +122,9 @@ Therefore $f(\bar{u}) = f(\hat{u})$.
 ### Relaxing equality constraints
 
 $$\begin{align*}
-\min_{u} ; &f(u) \
-\text{s.t.} ; &Au = b \
-\text{or} ; &Au \le b \
+\min_{u} ; &f(u) \\
+\text{s.t.} ; &Au = b \\
+\text{or} ; &Au \le b \\
 &-Au \le -b
 \end{align*}$$
 
@@ -146,6 +146,7 @@ In this formulation, the dual variables $\lambda'' \in \mathbb{R}^m$ are unconst
 
 ### Karush–Kuhn–Tucker conditions
 
+Assume we have a maximization problem defined as follows:
 $$\begin{align}
 \nabla f(\mathbf{x}) + \sum_{i=1}^m \lambda_i \nabla g_i(\mathbf{x}) &= \mathbf{0} \
 g_i(\mathbf{x}) &\le 0, \quad i = 1, 2, \ldots, m \
@@ -154,3 +155,30 @@ g_i(\mathbf{x}) &\le 0, \quad i = 1, 2, \ldots, m \
 \end{align}$$
 
 where $\mathbf{x}$ is the vector of optimization variables, $f(\mathbf{x})$ is the objective function, $g_i(\mathbf{x})$ are the inequality constraints, $\lambda_i$ are the Lagrange multipliers, and $m$ is the number of constraints.
+
+$$\begin{align}
+&\text{max} \quad f(x) \
+&\text{s.t.} \quad g_i(x) \ge 0 \quad (1 \le i \le m) \
+&\quad\quad\quad h_i(x) = 0 \quad (1 \le i \le n) \
+&\text{where} \quad x \in \mathbb{R}^k \
+\end{align}$$
+
+An optimal solution $x^* \in \mathbb{R}^k$ of the mathematical program satisfies the following constraints:
+
+$$\begin{align}
+&\text{(stationarity)} \quad \forall i : \frac{\partial f(x^)}{\partial x_i} + \sum_{j=1}^{m} \mu_j \frac{\partial g_j(x^)}{\partial x_i} - \sum_{j=1}^{n} \lambda_j \frac{\partial h_j(x^)}{\partial x_i} = 0 \
+&\text{(primal feasibility)} \quad \forall i : g_i(x) \ge 0 \
+&\quad\quad\quad\quad\quad\quad\quad \forall i : h_i(x) = 0 \
+&\text{(dual feasibility)} \quad \forall i : \mu_i \ge 0 \
+&\text{(complementary slackness)} \quad \sum_{i=1}^{m} \mu_i g_i(x^) \ge 0 \
+\end{align}$$
+
+where $\mu \in \mathbb{R}^m$ and $\lambda \in \mathbb{R}^n$ are dual variables associated with primal inequalities and equalities, respectively.
+
+These set of equations, in the general case, are necessary constraints: there may exists points $x$ that satisfies these constraints that are not optimal solutions. However, if:
+
+$f$ is a concave function,
+all $g_i$ are concave functions,
+and all $h_i$ are affine functions,
+
+then the KKT conditions are sufficient conditions too. In particular, we will see that in some special cases we can solve this set of equations to find the optimal $x^*$, i.e. the optimization problem has a closed form solution.
