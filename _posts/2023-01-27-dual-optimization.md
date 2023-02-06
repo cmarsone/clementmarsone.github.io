@@ -5,20 +5,12 @@ author: Clément
 ---
 
 We consider the following $L_ 2$ regularized binary *SVM training problem*:
-$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y(i) . a^⊤ w(i)) + ||x||^2 a^2$$
+$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y_ i (a^⊤ x_ i +b) + \frac{1}{2} C ||x||_ 2^2 a^2$$
+where $C$ is the regularization parameter that controls the trade-off between maximizing the margin and avoiding overfitting, $a$ and $b$ are the coefficients of the hyperplane, $x_i$ and $y_i$ are the features and labels of the $i$th sample, and $\xi_i$ is the slack variable that allows for misclassified samples.
+
 We showed that optimizing this problem via subgradient descent can be problematic: the sub-gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
 - it highlights what support vectors in SVM means,
 - it allows us to use a hyper-parameter free optimization algorithm i.e. no stepsize
-
-Minimize:
-
-$\frac{1}{2}||w||^2 + C \sum_{i=1}^{n} \xi_i$
-
-Subject to:
-
-$y_i(w^Tx_i + b) \ge 1 - \xi_i, \quad \xi_i \ge 0, \quad i = 1,2,...,n$
-
-where $C$ is the regularization parameter that controls the trade-off between maximizing the margin and avoiding overfitting, $w$ and $b$ are the coefficients of the hyperplane, $x_i$ and $y_i$ are the features and labels of the $i$th sample, and $\xi_i$ is the slack variable that allows for misclassified samples.
 
 ### Lagrangian duality
 
@@ -74,6 +66,29 @@ It is important to note that the dual problem is always concave, regardless of w
 
 Strong Lagrangian duality states that, given a dual feasible solution $\lambda \in \mathbb{R}^m_+$ and $\bar{u} = \arg\max_{u \in U} L(u, \lambda)$, if $\bar{u}$ satisfies the primal feasibility condition $A\bar{u} \leq b$ and the complementary slackness condition $\lambda^T (A\bar{u} - b) = 0$, then $\bar{u} = \hat{u}$ is the optimal solution of the primal problem $(P)$.
 
+### Dual concavity proof
+
+Let $L(\lambda)$ be a function, then $L(\lambda)$ is concave if and only if the following two conditions are satisfied:
+
+1. The domain of $L(\lambda)$ is convex (trivial). 
+2. $\forall \lambda(1), \lambda(2) \in \lambda \in \mathbb{R}^m, \epsilon \in [0, 1]: L(\epsilon \lambda(1) + (1 - \epsilon) \lambda(2)) \ge \epsilon L(\lambda(1)) + (1 - \epsilon) L(\lambda(2))$
+
+Let $\lambda = \epsilon \lambda(1) + (1 - \epsilon) \lambda(2)$ and $\bar{u} = \arg \min_{u \in X} L(u, \lambda)$:
+
+$L(\bar{u}, \lambda(1)) \ge L(\lambda(1))$
+
+$L(\bar{u}, \lambda(2)) \ge L(\lambda(2))$
+
+$\implies \epsilon L(\bar{u}, \lambda(1)) + (1 - \epsilon) L(\bar{u}, \lambda(2)) \ge \epsilon L(\lambda(1)) + (1 - \epsilon) L(\lambda(2))$
+
+To understand the left-hand side, recall that:
+
+$L(\lambda) = \min_{u \in X} L(u, \lambda)$
+
+Therefore:
+
+    - The right-hand side has the expected form
+    - The left-hand side is different, we need to fix this to finish the proof.
 
 Let xˆ be the optimal solution of the primal problem (P). Then: ∀λ∈Rm+ : f(xˆ)≥L(λ)
 In other word, for any set of dual variables λ, the relaxed problem gives use a lower bound to the optimal solution. To prove this, first note that xˆ satisfies the primal constraints by definition, therefore λ⊤(Axˆ − b) ≤ 0:
