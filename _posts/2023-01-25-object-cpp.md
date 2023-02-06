@@ -7,7 +7,8 @@ title: Programmation Objet C++
 
 A namespace in C++ is a *container that holds a set of identifiers*, e.g. variables, functions, classes, etc... It is used to avoid naming conflicts and to organize code into logical groups. Namespaces are declared using the `namespace` keyword followed by the namespace name, and the contents of the namespace are enclosed in curly braces. To access an identifier in a namespace, one can either qualify the identifier with the namespace name or use a `using` directive to make the contents of the namespace accessible in the current scope.
 
-```#include <stdio.h>
+```
+#include <stdio.h>
 
 int     gl_var = 1;
 int     f( void ) {
@@ -50,7 +51,8 @@ int     main( void ) {
     printf( "::f():         [%d]\n\n", ::f() );
 
     return (0);
-}```
+}
+```
 
 ### `stdio` streams
 
@@ -63,7 +65,8 @@ The term *stdio streams* refers to the standard input/output streams in the C st
 These streams can be read from and written to using various functions such as `printf` and `scanf` for formatted output and input, respectively. They are an important part of the C standard library and are widely used in C and C++ programming.
 
 
-`#include <iostream>
+```
+#include <iostream>
 
 int     main( void ) {
 
@@ -76,7 +79,8 @@ int     main( void ) {
     std::cout << "You entered: [" << buff << "]" << std::endl;
 
     return (0);
-}`
+}
+```
 
 ### Class & instance
 
@@ -86,7 +90,8 @@ An instance, also known as an object, is a specific occurrence of a class. It ho
 
 In C++, a class is defined using the "class" keyword followed by the class name and the class definition, which is enclosed in curly braces. Member variables are declared within the class definition and can be either public (accessible from outside the class) or private (only accessible within the class). Member functions are also declared within the class definition and can access and manipulate the member variables.
 
-`// Sample.class.hpp
+```
+// Sample.class.hpp
 
 class   Sample {
 
@@ -94,9 +99,11 @@ class   Sample {
         Sample( void );
         ~Sample( void );
 
-};`
+};
+```
 
-`// Sample.class.cpp
+```
+// Sample.class.cpp
 #include <iostream>
 #include "Sample.class.hpp"
 
@@ -110,13 +117,13 @@ Sample::Sample( void ) {
 
     std::cout << "Destructor called" << std::endl;
     return ;
-}`
+}
+```
 
 ### Member attributs & member functions
 
-` 
-
-...
+```
+... (as above)
 
 void    Sample::bar( void ) {
 
@@ -135,11 +142,13 @@ int     main() {
 
     return (0);
 
-}`
+}
+```
 
 ### `this`
 
-`#include <iostream>
+```
+#include <iostream>
 #include "Sample.class.hpp"
 
 Sample::Sample( void ) {
@@ -188,7 +197,8 @@ int     main() {
 
     return (0);
 
-}`
+}
+```
 
 ### Initialization lists
 
