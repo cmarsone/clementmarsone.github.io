@@ -123,9 +123,9 @@ Therefore $f(\bar{u}) = f(\hat{u})$.
 
 $$\begin{align*}
 \min_{u} &f(u) \\
-\text{s.t.} &Au = b \\
-\text{or} &Au \le b \\
-&-Au \le -b
+\text{s.t. } &Au = b \\
+\text{or } &Au \le b \\
+- &Au \le -b
 \end{align*}$$
 
 The Lagrangian can be expressed as:
