@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Programmation Objet C++
+title: Programmation Avancée C++
+author: Clément
 ---
 
 ### Un langage multi-paradigmes:
