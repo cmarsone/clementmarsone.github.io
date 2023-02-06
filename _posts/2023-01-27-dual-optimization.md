@@ -5,7 +5,7 @@ author: Clément
 ---
 
 We consider the following $L_ 2$ regularized binary *SVM training problem*:
-$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y_ i (a^⊤ x_ i +b) + \frac{1}{2} C ||x||_ 2^2 a^2$$
+$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y_ i (a^⊤ x_ i +b) + \frac{1}{2} ||a||_ 2^2 $$
 where $C$ is the regularization parameter that controls the trade-off between maximizing the margin and avoiding overfitting, $a$ and $b$ are the coefficients of the hyperplane, $x_i$ and $y_i$ are the features and labels of the $i$th sample, and $\xi_i$ is the slack variable that allows for misclassified samples.
 
 We showed that optimizing this problem via subgradient descent can be problematic: the sub-gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
@@ -56,6 +56,8 @@ The Lagrangian dual problem is defined as follows:
 
 $L(\lambda)$ is a lower bound to the primal problem for all $\lambda \in \mathbb{R}^m_+$, such that $f(\hat{u}) \geq L(\lambda)$.
 
+### Lagragian dual problem
+
 The dual problem $(D)$ is defined as the search for the best lower bound:
 
 $$\begin{equation}
@@ -66,7 +68,7 @@ It is important to note that the dual problem is always concave, regardless of w
 
 Strong Lagrangian duality states that, given a dual feasible solution $\lambda \in \mathbb{R}^m_+$ and $\bar{u} = \arg\max_{u \in U} L(u, \lambda)$, if $\bar{u}$ satisfies the primal feasibility condition $A\bar{u} \leq b$ and the complementary slackness condition $\lambda^T (A\bar{u} - b) = 0$, then $\bar{u} = \hat{u}$ is the optimal solution of the primal problem $(P)$.
 
-### Dual concavity proof
+#### Dual concavity proof
 
 Let $L(\lambda)$ be a function, then $L(\lambda)$ is concave if and only if the following two conditions are satisfied:
 
@@ -90,6 +92,57 @@ Therefore:
     - The right-hand side has the expected form
     - The left-hand side is different, we need to fix this to finish the proof.
 
+To simplify notations, we write $c(u) = Au - b$.
+
+The left-hand side of the inequality can be rewritten as:
+
+$\epsilon L(\bar{u}, \lambda(1)) + (1 - \epsilon) L(\bar{u}, \lambda(2)) = \epsilon (f(\bar{u}) + \lambda(1)^T c(\bar{u})) + (1 - \epsilon)(f(\bar{u}) + \lambda(2)^T c(\bar{u})) = \epsilon f(\bar{u}) + \epsilon \lambda(1)^T c(\bar{u}) + (1 - \epsilon) f(\bar{u}) + (1 - \epsilon) \lambda(2)^T c(\bar{u}) = f(\bar{u}) + (\epsilon \lambda(1) + (1 - \epsilon) \lambda(2))^T c(\bar{u}) = f(\bar{u}) + \lambda^T c(\bar{u}) = L(\bar{u}, \lambda) = L(\lambda) = L(\epsilon \lambda(1) + (1 - \epsilon) \lambda(2))$
+
+Hence, we obtain the inequality:
+
+$L(\epsilon \lambda(1) + (1 - \epsilon) \lambda(2)) \ge \epsilon L(\lambda(1)) + (1 - \epsilon) L(\lambda(2))$
+
+which proves that the Lagrangian dual objective is concave.
+
+#### Solve strong Lagragian duality
+
+Let $\hat{u}$ be a primal optimal solution.
+By weak Lagrangian duality, we know that:
+
+$f(\hat{u}) \ge L(\lambda) = L(\bar{u}, \lambda) = f(\bar{u}) + \lambda^\intercal (A \bar{u} - b)$
+
+From the prerequisites (complementary slackness), the second term is null:
+
+$f(\hat{u}) \ge f(\bar{u})$
+
+Moreover: $f(\hat{u}) \le f(\hat{u})$ because $\hat{u}$ is primal feasible,
+
+Therefore $f(\bar{u}) = f(\hat{u})$.
+
+### Relaxing equality constraints
+
+\begin{align*}
+\min_{u} ; &f(u) \
+\text{s.t.} ; &Au = b \
+\text{or} ; &Au \le b \
+&-Au \le -b
+\end{align*}
+
+The Lagrangian can be expressed as:
+
+\begin{align*}
+L(u, \lambda \ge 0, \lambda' \ge 0) &= f(u) + \lambda^\top (Au - b) + \lambda'^\top (-Au + b) \
+&= f(u) + \lambda^\top (Au - b) - \lambda'^\top (Au - b) \
+&= f(u) + (\lambda - \lambda')^\top (Au - b)
+\end{align*}
+
+Let $\lambda'' = \lambda - \lambda'$:
+
+\begin{align*}
+L(u, \lambda'') &= f(u) + \lambda''^\top (Au - b)
+\end{align*}
+
+In this formulation, the dual variables $\lambda'' \in \mathbb{R}^m$ are unconstrained. Relaxing the equalities has the benefits of an unconstrained optimization problem and a simpler strong duality condition.
 Let xˆ be the optimal solution of the primal problem (P). Then: ∀λ∈Rm+ : f(xˆ)≥L(λ)
 In other word, for any set of dual variables λ, the relaxed problem gives use a lower bound to the optimal solution. To prove this, first note that xˆ satisfies the primal constraints by definition, therefore λ⊤(Axˆ − b) ≤ 0:
 f(xˆ) ≥ f(xˆ) + λ⊤(Axˆ − b)
