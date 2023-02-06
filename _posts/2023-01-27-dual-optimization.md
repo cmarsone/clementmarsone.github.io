@@ -5,7 +5,7 @@ author: Clément
 ---
 
 We consider the following $L_ 2$ regularized binary *SVM training problem*:
-$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − x(i) a^⊤ y(i)) + ∥x∥^2 a^2$$
+$$\min\limits_{a} \sum\limits_ {i=1} ^n \operatorname{max}(0, 1 − y(i) . a^⊤ w(i)) + ||x||^2 a^2$$
 We showed that optimizing this problem via subgradient descent can be problematic: the sub-gradient is not necessarily a descent direction. The sub-gradient allows use to move closer to the optimal solution in term of euclidean distance, but it is difficult to check if an iteration improves this distance as the optimal point is obviously unknown. In this section, we will show an alternative way to train a SVM in its dual formulation. This formulation will have two advantages:
 - it highlights what support vectors in SVM means,
 - it allows us to use a hyper-parameter free optimization algorithm i.e. no stepsize
@@ -58,7 +58,7 @@ f(\hat{u}) \geq L(\lambda)
 
 Proof:
 
-Since $\hat{u}$ satisfies the constraints, we have $f(\hat{u}) \geq f(\hat{u}) + \lambda^T (\hat{A} \hat{u} - b)$. Also, $f(\hat{u}) + \lambda^T (\hat{A} \hat{u} - b) \geq \min_{u \in U} f(u) + \lambda^T(Au - b) = L(\lambda)$.
+Since $\hat{u}$ satisfies the constraints, we have $f(\hat{u}) \geq f(\hat{u}) + \lambda^T (A \hat{u} - b)$. Also, $f(\hat{u}) + \lambda^T (A \hat{u} - b) \geq \min_{u \in U} f(u) + \lambda^T(Au - b) = L(\lambda)$.
 
 The Lagrangian dual problem is defined as follows:
 
