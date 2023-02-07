@@ -50,7 +50,7 @@ For instance, in a system where you have a dual-processor machine instance, you 
 
 Load balancing is the process of distributing workloads across multiple computing resources, such as servers, to optimize resource utilization, maximize throughput, minimize response time, and avoid overload. Load balancing can be achieved through various methods, including round-robin, least connections, IP hash, and geographic hash. The goal of load balancing is to ensure that no single resource is overwhelmed, leading to improved reliability and availability of the overall system.
 
-### Workload distribution
+### Workload distribution: monitoring, hypervising, resoure pooling
 
 A redundant copy of Cloud Service $A$ is implemented on Virtual Server $B$. The *load balancer* intercepts cloud service
 consumer requests and directs them to both Virtual Servers $A$ and $B$ to ensure even *workload distribution*.
@@ -67,7 +67,7 @@ monitoring is necessary to fulfill legal and regulatory requirements.
 • *Cloud Usage Monitor* - Various monitors can be involved to carry out runtime
 workload tracking and data processing.
 • *Hypervisor* - Workloads between hypervisors and the virtual servers that they
-host may require distribution.
+host may require distribution. => virtualization & containers
 • *Logical Network Perimeter* - The logical network perimeter isolates cloud
 consumer network boundaries in relation to how and where workloads are
 distributed.
@@ -76,3 +76,31 @@ support workload balancing between different cluster nodes.
 • *Resource Replication* - This mechanism can generate new in-stances of
 virtualized IT resources in response to runtime workload distribution demands.
 
+### Resource Pooling
+
+Identical IT resources are grouped and maintained by a system that automatically ensures that they remain synchronized
+
+![image](https://user-images.githubusercontent.com/109908559/217198051-b92cc8a5-d260-42fb-b979-3abcadf84aed.png)
+
+### Dynamic scalability
+
+The dynamic scalability architecture is an architectural model based on a system of predefined scaling
+conditions that trigger the *dynamic allocation* of IT resources from *resource pools*. Dynamic allocation enables variable utilization as dictated by usage demand *fluctuations*, since unnecessary IT resources are efficiently
+reclaimed without requiring manual interaction.
+
+![image](https://user-images.githubusercontent.com/109908559/217199887-f8096f1c-d036-4671-94f6-19dba668b8a8.png)
+
+The number of requests coming from cloud service consumers increases (3). The workload exceeds the performance thresholds. The automated *scaling listener*
+determines the next course of action based on a predefined *scaling policy* (4). If the cloud service implementation is deemed eligible for additional scaling, the
+automated scaling listener initiates the *scaling process* (5).
+
+![image](https://user-images.githubusercontent.com/109908559/217200118-41c2569b-b031-4387-9731-8a064f0e6f3d.png)
+
+The automated scaling listener sends a signal to the *resource replication* mechanism (6), which creates more instances of the cloud service (7). Now that the increased workload has been accommodated, the automated scaling listener resumes monitoring and detracting and adding IT resources, as required (8)
+
+### Elastic resource capacity
+
+The elastic resource capacity architecture is primarily related to the
+*dynamic provisioning of virtual servers*, using a system that allocates
+and reclaims CPUs and RAM in immediate response to the fluctuating
+processing requirements of hosted IT re-sources
