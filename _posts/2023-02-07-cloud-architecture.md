@@ -130,3 +130,11 @@ It refers to the *use of multiple hypervisors (virtualization software)* working
 It also allows for load balancing of VMs across multiple hosts, ensuring that no single host is overburdened and leading to better overall system performance. This helps to optimize resource utilization and provides a more flexible and scalable virtualization environment.
 
 It is commonly used in cloud computing and other large-scale virtualization environments to ensure high availability and efficient use of resources.
+
+### VIM
+
+Virtual Infrastructure Manager (VIM) is a term used in the context of Software Defined Networking (SDN) and Network Function Virtualization (NFV). VIM refers to the software component that manages the virtual infrastructure resources, such as virtual machines (VMs), virtual networks, virtual storage, and virtualized network functions. The main role of VIM is to orchestrate the deployment, configuration, and management of these virtual resources, and to ensure their high availability and performance.
+
+### Service Level Agreement (SLA)
+
+Service Level Agreement (SLA) is a contract between a service provider and its customers that defines the level of service they can expect. SLAs typically specify the agreed upon service quality, availability, performance, and support, along with the measures and metrics used to monitor and enforce these commitments. The purpose of SLA is to set clear expectations and to ensure that the customer receives the promised level of service, while giving the service provider the necessary flexibility to manage the service delivery. SLAs are commonly used in the context of IT services, telecommunications, cloud computing, and managed services.
