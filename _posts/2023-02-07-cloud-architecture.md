@@ -117,11 +117,11 @@ Load balancing can be achieved through various methods such as round-robin, leas
 
 There are several common types of redundant storage architectures, including:
 
-    1. *RAID (Redundant Array of Independent Disks)* - A group of disk drives that appear as a single logical storage unit to the operating system, with data spread across multiple disks to provide data protection in case of disk failure e.g. Remote RAID Over IP
+1. *RAID (Redundant Array of Independent Disks)* - A group of disk drives that appear as a single logical storage unit to the operating system, with data spread across multiple disks to provide data protection in case of disk failure e.g. Remote RAID Over IP
 
-    2. *Clustered Storage* - Multiple storage devices work together as a single entity to provide data protection and increased capacity.
+2. *Clustered Storage* - Multiple storage devices work together as a single entity to provide data protection and increased capacity.
 
-    3. *Network Attached Storage (NAS)* - A storage device that is connected to a network and allows multiple devices to access its data. NAS devices often provide built
+3. *Network Attached Storage (NAS)* - A storage device that is connected to a network and allows multiple devices to access its data. NAS devices often provide built
     
 ### Hypervisor Clustering
 
