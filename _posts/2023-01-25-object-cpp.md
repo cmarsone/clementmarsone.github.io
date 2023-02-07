@@ -372,7 +372,94 @@ Encapsulation provides several benefits, including improved data protection and 
 
 ### `class` vs `struct`
 
+*Default Member Access*: In a struct, the members are public by default, while in a class they are private by default.
+*Syntax*: Classes and structs are declared using different keywords, class and struct, respectively.
+*Use*: In practice, the distinction between structs and classes is largely a matter of convention and programming style. Structs are often used to define simple data structures, while classes are used to define more complex data structures with member functions.
+
 ### Accessors
+
+Accessors are member functions in a `class` or `struct` that allow you to access and manipulate the private data members of an object. They are also known as getters and setters.
+
+1. *Getters* (Accessors): Getters, also known as accessors, are used to retrieve the value of a private data member. They are defined as member functions with the keyword `get` in their names.
+2. *Setters*: Setters are used to modify the value of a private data member. They are defined as member functions with the keyword `set` in their names. 
+    
+Accessors are used to protect the internal representation of an object from direct modification, making it easier to maintain and change the implementation without affecting the code that uses the object.
+
+```
+
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class   Sample {
+
+    public:
+
+        Sample( void );
+        ~Sample( void );
+
+        int     getFoo( void ) const;
+        void    setFoo( int v );
+
+    private:
+
+        int     _foo;
+
+};
+
+#endif
+```
+
+```
+#include <iostream>
+#include "Sample.class.hpp"
+
+Sample::Sample( void ) {
+
+    std::cout << "Constructor called" << std::endl;
+
+    this->setFoo( 0 );
+    std::cout << "this->getFoo(): " << this->getFoo() << std::endl;
+    return ;
+}
+
+Sample::~Sample( void ) {
+
+    std::cout << "Destructor called" << std::endl;
+    return ;
+}
+
+int    Sample::getFoo( void ) const {
+
+    return this->_foo;
+}
+
+
+void    Sample::setFoo( int v ) {
+
+    if (v >= 0)
+        this->_foo = v;
+
+    return ;
+}
+```
+
+```
+#include <iostream>
+#include "Sample.class.hpp"
+
+int     main() {
+
+    Sample  instance;
+
+    instance.setFoo( 42 );
+    std::cout << "instance.getFoo(): " << instance.getFoo() << std::endl;
+    instance.setFoo( -42 );
+    std::cout << "instance.getFoo(): " << instance.getFoo() << std::endl;
+
+    return (0);
+
+}
+```
 
 ### Comparisons
 
