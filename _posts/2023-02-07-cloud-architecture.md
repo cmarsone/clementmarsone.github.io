@@ -104,3 +104,29 @@ The elastic resource capacity architecture is primarily related to the
 *dynamic provisioning of virtual servers*, using a system that allocates
 and reclaims CPUs and RAM in immediate response to the fluctuating
 processing requirements of hosted IT re-sources
+
+### Service load balancing
+
+Service load balancing is a technique used to *distribute incoming requests to multiple servers*, services or resources in a network. The aim of load balancing is to improve the reliability, availability, and performance of a system by distributing the workload evenly across multiple resources. This ensures that no single resource becomes overburdened, leading to better overall system performance and reduced risk of failure.
+
+Load balancing can be achieved through various methods such as round-robin, least connections, IP hash, and others. It is commonly used in web-based systems, cloud computing, and other large-scale distributed systems.
+
+### Redundant storage & storage replication
+
+*Redundant storage architecture* refers to a data storage design that provides a backup or secondary copy of data in case of a primary storage failure. The goal of redundant storage is to ensure high availability and reliability of data by eliminating single points of failure.
+
+There are several common types of redundant storage architectures, including:
+
+    1. *RAID (Redundant Array of Independent Disks)* - A group of disk drives that appear as a single logical storage unit to the operating system, with data spread across multiple disks to provide data protection in case of disk failure e.g. Remote RAID Over IP
+
+    2. *Clustered Storage* - Multiple storage devices work together as a single entity to provide data protection and increased capacity.
+
+    3. *Network Attached Storage (NAS)* - A storage device that is connected to a network and allows multiple devices to access its data. NAS devices often provide built
+    
+### Hypervisor Clustering
+
+It refers to the *use of multiple hypervisors (virtualization software)* working together to provide high availability and load balancing for virtual machines (VMs). In a hypervisor cluster, multiple physical hosts run the same hypervisor software and share the workload of virtual machines. This allows for automatic failover of VMs from one host to another in the event of a host failure, providing high availability for the VMs.
+
+It also allows for load balancing of VMs across multiple hosts, ensuring that no single host is overburdened and leading to better overall system performance. This helps to optimize resource utilization and provides a more flexible and scalable virtualization environment.
+
+It is commonly used in cloud computing and other large-scale virtualization environments to ensure high availability and efficient use of resources.
