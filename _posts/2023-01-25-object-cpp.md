@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Programmation Objet C++
+title: C++ Object-Oriented Programming
 ---
 
 ### Namespace
@@ -463,9 +463,21 @@ int     main() {
 
 ### Comparisons
 
-### Non-member attributs & non-member functions
+### Non-member attributs & non-member functions `static`
+
+"Non-member" refers to functions or variables that are not associated with a class in object-oriented programming.
+
+Non-member functions are standalone functions that are not part of a class and do not have access to the private data of the class. They are usually used to perform tasks that do not need access to the class's data and can operate on data passed as arguments.
+
+Non-member variables are variables that are not part of a class, but are global to the program. They can be accessed by any function or class in the program.
+
+In general, non-member functions and variables can provide a more modular and reusable design for a program. However, they should be used with caution to avoid global state problems, such as namespace collisions, unintended side effects, and loss of encapsulation.
 
 ### Pointers to members
+
+Pointers to members are a type of pointer in C++ that can be used to refer to class member functions or data members. They provide a way to manipulate members of an object directly, without using the object's public interface.
+
+Pointers to member functions are declared using the same syntax as normal function pointers, but with an additional class name before the function name.
 
 #### `noexecpt`
 
