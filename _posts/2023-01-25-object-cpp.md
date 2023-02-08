@@ -466,3 +466,7 @@ int     main() {
 ### Non-member attributs & non-member functions
 
 ### Pointers to members
+
+#### `noexecpt`
+
+The `noexecpt` keyword in C++ is used to indicate that a function does not throw any exceptions. When a function is declared with `noexecpt`, the compiler will generate faster code for this function and the program will perform better. Additionally, if an exception is thrown from within a `noexecpt` function, the program will terminate immediately. This keyword can be used in function declarations, function templates, and exception specifications.
