@@ -80,8 +80,10 @@ Hence, the complexity of the dynamic programming algorithm is $O(nb)$.
 
 The recurrence for the $0-1$ knapsack problem can be derived in a similar manner. If $x^{}$ is the optimal solution for the problem $\mathcal{P}{r}(\lambda)$ for a value of $g{r}(\lambda)$, then we retain the value of $x^{}_{r}$.
 
-If $x^{*}_ {r}=t$, then $g_ {r}(\lambda)=c_{r}t+g_{r-1}(\lambda-t a_{r})$ for $t=0, \dots , b \lambda/a_{r}$ according to the principle of optimality.
+If $x^{*}_ {r}=t$, then $g_ {r}(\lambda)=c_{r}t+g_{r-1}(\lambda-t a_{r})$ for $t=0, \dots , \lfloor \lambda/a_{r} \rfloor$ according to the principle of optimality.
 Therefore, the following recurrence formula:
-$g_{r}(\lambda)=\max_{t=0, \dots , b \lambda/a_{r}} {c_{r}t+g_{r-1}(\lambda-t a_{r}) }$
+$g_{r}(\lambda)=\max_{t=0, \dots , \lfloor \lambda/a_{r} \rfloor} \{ c_{r}t+g_{r-1}(\lambda-t a_{r}) \}$
+
+As $\lfloor \lambda / a_r \rfloor = b$ in the worst case, this results in an algorithm of complexity $O(nb^2)$
 
 The worst case complexity of this algorithm is $O(nb^{2})$. Can this algorithm be improved? Is it possible to reduce the calculation of $g_{r}(\lambda)$ to a comparison of two cases?
