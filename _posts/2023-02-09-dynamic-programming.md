@@ -44,9 +44,23 @@ We need to define a recurrence to calculate $f_{r}(\lambda)$ in terms of values 
 
 #### Optimal solution
 
+If we initialize the recurrence with $f_{0}(\lambda) = 0$ for $\lambda \geq 0$, or equivalently with $f_{1}(\lambda) = 0$ for $0 \leq \lambda < a_{1}$ and $f_{1}(\lambda) = \max \left { c_{1}, 0 \right }$ for $\lambda \geq a_{1}$, we can continue the recurrence to calculate $f_{2}, f_{3},...,f_{n}$ for all integer values of $\lambda$ from 0 to $b$.
+
 To obtain the optimal solution of the knapsack problem, we start from the optimal value of $f_ {n}(b)$. There are two cases:
 - If $x_ {r}^{*}=0$, then $f_ {r}(\lambda)=f_ {r-1}(\lambda)$.
 - If $x_ {r}^{*}=1$, then $f_ {r}(\lambda)=c_ {r}+f_ {r-1}(\lambda-a_ {r})$.
+
+To obtain the optimal solution to the knapsack problem, we must iterate starting from the optimal value of $f_n(b)$. There are two possible cases:
+
+- Store all the values of $f_r(\lambda)$, where $\lambda = 0, 1, \ldots, b$ and $r = 1, 2, \ldots, n$.
+
+- Use an indicator $p_r(\lambda)$ such that: 
+$$p_ r(\lambda) = \begin{cases} 0 &\text{if } f_r(\lambda) = f_{r-1}(\lambda) \\ 1 &\text{otherwise} \end{cases}$$
+
+- If $p_n(b) = 0$, then $f_n(b) = f_{n-1}(b)$. Set $x_n^* = 0$ and search for an optimal solution with a value of $f_{n-1}(b)$.
+
+- If $p_n(b) = 1$, then $f_n(b) = c_n + f_{n-1}(b - a_n)$. Set $x_n^* = 1$ and search for an optimal solution with a value of $f_{n-1}(b - a_n)$.
+
 By repeating this process $n$ times, we obtain the optimal solution.
 
 Finally, we get:
