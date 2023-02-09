@@ -20,14 +20,14 @@ By increasing *k* from $1$ to $n − 1$ and computing each time
 $D_ k (j)$, $∀j ∈ V$ by recurrence, we get an algorithmin  $O(mn)$ et
 $d(j) = D_ {n−1} (j)$.
 This technique where the optimal solution is calculated by reccurence from the solution
-of different slightly problems is called *Dyanmic Programming*.
+of different slightly problems is called *Dynamic Programming*.
 
 The following terminology will be used:
 1. Optimality : property of some parts of optimal solutions that are themselves optimal
 2. States : Nodes that need different operations.
 3. Steps : steps which define the order we have to follow.
 
-*Knapsack* : Assuming that the RHS $λ$ taking values $0, \lodts , b$ represent the states and the subset of variables $x_ 1, . . . , x_ r$ ,
+*Knapsack* : Assuming that the RHS $λ$ taking values $0, \ldots , b$ represent the states and the subset of variables $x_ 1, \ldots , x_ r$ ,
 represented by $r$ steps, we get the following formula $P_ r (λ)$ :
 
 $$\begin{align*}
@@ -49,17 +49,19 @@ If $x_{r}^{*}=0$, then $f_{r}(\lambda)=f_{r-1}(\lambda)$.
 If $x_{r}^{*}=1$, then $f_{r}(\lambda)=c_{r}+f_{r-1}(\lambda-a_{r})$.
 By repeating this process $n$ times, we obtain the optimal solution.
 
-Initialization
+- Initialization
 
-$$f_{r}(\lambda)=-\infty$, for $r \geq 0$ and $\lambda < 0$$.
-$$f_{r}(0)=0$, for $r \geq 0$$.
-$$f_{0}(\lambda)=0$, for $\lambda \geq 0$$.
+$f_{r}(\lambda)=-\infty$, for $r \geq 0$ and $\lambda < 0$.
+
+$f_{r}(0)=0$, for $r \geq 0$.
+
+$f_{0}(\lambda)=0$, for $\lambda \geq 0$.
 
 The complexity of the dynamic programming algorithm is $O(nb)$.
 
 The recurrence for the $0-1$ knapsack problem can be derived in a similar manner. If $x^{}$ is the optimal solution for the problem $\mathcal{P}{r}(\lambda)$ for a value of $g{r}(\lambda)$, then we retain the value of $x^{}_{r}$.
 
-If $x^{*}{r}=t$, then $g{r}(\lambda)=c_{r}t+g_{r-1}(\lambda-t a_{r})$ for $t=0, \dots , b \lambda/a_{r}$ according to the principle of optimality.
+If $x^{*}_ {r}=t$, then $g_ {r}(\lambda)=c_{r}t+g_{r-1}(\lambda-t a_{r})$ for $t=0, \dots , b \lambda/a_{r}$ according to the principle of optimality.
 Therefore, the following recurrence formula:
 $g_{r}(\lambda)=\max_{t=0, \dots , b \lambda/a_{r}} {c_{r}t+g_{r-1}(\lambda-t a_{r}) }$
 
