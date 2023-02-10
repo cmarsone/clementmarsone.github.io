@@ -46,7 +46,7 @@ Bellman's optimality criteria state that an optimal policy $\pi^* = (\pi^_t)$ is
 
 We consider quantum and classical algorithms that make queries to the transition kernel and reward structure to solve a DP problem. The quantum algorithms make coherent queries to $UDP : |s\rangle |a\rangle |t\rangle |x\rangle |y\rangle \rightarrow |s\rangle |a\rangle |t\rangle |x \oplus at(s)\rangle |y \oplus rt(s, a)\rangle$, while the classical algorithms make classical queries to $ODP : (s, a, t) \rightarrow (at(s), rt(s, a))$.
 
-Based on Bellman's recursion, we consider two algorithms for solving the DP problem. We define the value iteration operator $F(t) : \mathbb{Z}_{\geq 0}^{|S|} \rightarrow
+Based on Bellman's recursion, we consider two algorithms for solving the DP problem. We define the value iteration operator $F(t) : \mathbb{Z}_{\geq 0}^{|S|} \rightarrow$
 
 Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in {0, ..., T}$ and states $s \in S$. For each value of the value function $V^*t(s)$, we assign a real variable $v{s,t}$ and write the constants $r_{t}(s, a)$ as $r_{s,a,t}$ for consistency. The LP formulation is:
 
