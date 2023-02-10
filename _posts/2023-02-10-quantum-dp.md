@@ -47,3 +47,19 @@ Bellman's optimality criteria state that an optimal policy $\pi^* = (\pi^_t)$ is
 We consider quantum and classical algorithms that make queries to the transition kernel and reward structure to solve a DP problem. The quantum algorithms make coherent queries to $UDP : |s\rangle |a\rangle |t\rangle |x\rangle |y\rangle \rightarrow |s\rangle |a\rangle |t\rangle |x \oplus at(s)\rangle |y \oplus rt(s, a)\rangle$, while the classical algorithms make classical queries to $ODP : (s, a, t) \rightarrow (at(s), rt(s, a))$.
 
 Based on Bellman's recursion, we consider two algorithms for solving the DP problem. We define the value iteration operator $F(t) : \mathbb{Z}_{\geq 0}^{|S|} \rightarrow
+
+Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in {0, ..., T}$ and states $s \in S$. For each value of the value function $V^*t(s)$, we assign a real variable $v{s,t}$ and write the constants $r_{t}(s, a)$ as $r_{s,a,t}$ for consistency. The LP formulation is:
+
+\begin{align}
+\min\ v_{s_0,0} \
+\text{s.t.} \quad v_{s,t} &\geq r_{s,a,t} + v_{a(s),t+1} \quad \forall a \in A, s \in S, t \in T \
+v_{s,t} &\geq 0 \quad \forall s \in S, t \in T \cup {T}
+\end{align}
+
+The above LP is feasible and attains a unique solution, where $v_{s,T} = 0$ for all $s \in S$. The LP can be thought of as a network flow problem, where the inward flow of each node $(s, t)$ must match the largest outward flow toward the states $(a(s), t + 1)$ for all $a \in A$, with an added flow bias of $r_{s,a,t}$. The goal is to find the smallest required inward flow from the initial node $(s_0, 0)$.
+
+The author tried to solve the LP using the multiplicative weight update method (MWUM) in a previous preprint. This technique was used in previous studies to solve semidefinite and linear programming problems. However, the scaling of the precision parameter of the solution prohibits the method from providing a quadratic quantum advantage. The MWUM requires $O(1/\epsilon^2)$ queries to return an $\epsilon$-feasible solution, which is the main drawback of the method.
+
+The number of variables $n$ and constraints $m$ in the LP are both $\tilde{O}(|S|)$. In the context of MWUM, the primal width $\ell$ and dual width $L$ are both $O(T\lceil r \rceil)$, where $\lceil r \rceil$ is an upper bound on the reward structure. For a generic LP solver to provide a quadratic speedup, a scaling of $O(\sqrt{\max(n,m)} \text{polylog}(\eta))$ is required, where $\eta = \ell L \epsilon$. However, it has been shown that any generic quantum LP solver with sublinear dependence on $n$ or $m$ has to depend at least polynomially on $\eta$.
+
+Another attempt to solve DP problems using quantum computation is reported in previous studies, where the goal was to demonstrate a quadratic quantum speedup for DP problems with convex value functions. The authors aim to find a unitary transformation that evolves a register prepared in the superposition of the values of the function to the superposition of the values of the convex conjugate of the function, using polylog($|D|$, $|K|$) quantum gates. However, the existence of such a unitary is still an open problem.
