@@ -50,17 +50,17 @@ $$ U_ {DP} \ : \ |s\rangle |a\rangle |t\rangle |x\rangle |y\rangle \rightarrow |
 
 whereas the *classical algorithms* use a similar oracle called $O_ {DP}$, represented by:
 
-$$ O_ {DP} \ : \ (s, a, t) \rightarrow (at(s), rt(s, a)) $$
+$$ O_ {DP} \ : \ (s, a, t) \rightarrow (a_ t(s), r_ t(s, a)) $$
 
 In cases where one of the transition kernel, reward structure, or policies is independent of time, they are referred to as being *time homogeneous*. The algorithms for solving the DP problem are based on Bellman's recursion. The *value iteration operator* is defined as:
 
-$$ F^{(t)} \ : \ v_s \rightarrow \max_{a \in A} {r_t(s, a) + v_{at(s)}} $$
+$$ F^{(t)} \ : \ v_s \rightarrow \max_{a \in A} \{r_t(s, a) + v_{a_ t}(s)\} $$
 
 The recursive applications of this operator are represented by:
 
 $$ v^{(T-t-1)} = \mathcal{F}^{(T-t-1)}(v^{(T-t)}) t \in T $$
 
-where $v(T) = 0$ for all $s \in S$, and $T$ represents the set of all time points. It can be seen that after applying the value iteration operator recursively, $v(T-k)$ will attain the optimal value function at time $T-k$. This is represented by:
+where $v^{(T)} = 0$ for all $s \in S$, and $T$ represents the set of all time points. It can be seen that after applying the value iteration operator recursively, $v^{(T-k)}$ will attain the optimal value function at time $T-k$. This is represented by:
 
 $$ V^*_{T-k}(s) = F(T-k) \circ \dots \circ F(T-1)(0) $$
 
