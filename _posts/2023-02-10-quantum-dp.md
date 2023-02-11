@@ -30,6 +30,9 @@ for an *agent* at every state. Here, the measure of optimality is the future rew
 should it pursue the actions prescribed by a policy. The cumulative future reward is often called
 the *value function*."
 
+![image](https://user-images.githubusercontent.com/109908559/218268322-9618f4bf-6d28-4e57-b7a1-1a93704bae1a.png)
+
+
 (a) Consider two finite sets $S$ and $A$, and a transition kernel $P_{t}(s,a)$ or law of motion defined as:
 
 $$P_{t}: S \rightarrow S \quad \forall t \in \mathbb{T}, \forall a \in A$$
@@ -44,6 +47,9 @@ $, where $s_0 = s$ is an initial state and all subsequent actions are chosen acc
 #### Bellman's optimality criteria 
 
 It states that an optimal policy $\pi^* = (\pi_ t^* )$ is associated with the unique optimal value function $V_ t^* (s) := V_ y^{\pi^* } (s)$ satisfying $V_ t^* (s) = \max\limits_ {a \in A} \{r_ t(s, a) + V_ {t+1}^* (a_ t(s))}$ for all $t \in \mathbb{T}$ and the boundary condition $V_ T^* (s) = 0$ for all $s \in S$.
+
+![image](https://user-images.githubusercontent.com/109908559/218268126-85372814-1ab1-442e-ba98-5e45cbb035f3.png)
+
 
 #### Query model
 
@@ -71,7 +77,7 @@ Thus, to find the optimal action at $s_0$ at time $t=0$, it suffices to find $v(
 
 $$ \text{argmax}_{a \in A} \left[r_0(s_0, a) + v(1) a_0(s_0)\right] $$
 
-Based on Bellman's recursion, we consider two algorithms for solving the DP problem. We define the value iteration operator $F(t) : \mathbb{Z}_{\geq 0}^{|S|} \rightarrow$
+### Quantum Linear Programming
 
 Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in {0, ..., T}$ and states $s \in S$. For each value of the value function $V^*t(s)$, we assign a real variable $v{s,t}$ and write the constants $r_{t}(s, a)$ as $r_{s,a,t}$ for consistency. The LP formulation is:
 
@@ -88,6 +94,52 @@ The author tried to solve the LP using the multiplicative weight update method (
 The number of variables $n$ and constraints $m$ in the LP are both $\tilde{O}(|S|)$. In the context of MWUM, the primal width $\ell$ and dual width $L$ are both $O(T\lceil r \rceil)$, where $\lceil r \rceil$ is an upper bound on the reward structure. For a generic LP solver to provide a quadratic speedup, a scaling of $O(\sqrt{\max(n,m)} \text{polylog}(\eta))$ is required, where $\eta = \ell L \epsilon$. However, it has been shown that any generic quantum LP solver with sublinear dependence on $n$ or $m$ has to depend at least polynomially on $\eta$.
 
 Another attempt to solve DP problems using quantum computation is reported in previous studies, where the goal was to demonstrate a quadratic quantum speedup for DP problems with convex value functions. The authors aim to find a unitary transformation that evolves a register prepared in the superposition of the values of the function to the superposition of the values of the convex conjugate of the function, using polylog($|D|$, $|K|$) quantum gates. However, the existence of such a unitary is still an open problem.
+
+### The quantum TSP
+
+The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = {1, . . . , n}$ starting and ending at vertex 1. The best known classical algorithm for TSP has a runtime of $O(n^22^n)$ and is based on dynamic programming (DP). The DP problem can be transformed into a reward-maximizing problem by assigning rewards to edges and rewriting the DP problem as a functional equation. A quantum oracle for the TSP problem can be constructed with $O(n^2 \text{polylog}(n, \lceil c \rceil))$ qubits, where $\lceil c \rceil$ is an upper bound on the edge weights. The quantum algorithm for TSP that makes the minimum number of queries to this oracle has $O^*(\sqrt{2n})$ queries
+
+### The quantum MSC
+
+### Quantum complexity lower bound
+
+We now investigate the quantum query complexity of solving dynamic programming (DP) problems using the adversary method. The DP problems are split into two families, M1 and M2, which share the same state space, action space, and time horizon. The states in family M1 and M2 form a binary tree with a root state, with the optimal value function being T for M1 and dependent on the choice of a special state-action pair for M2. A function f is defined that receives a binary string describing the transition kernel of a problem instance in M1 or M2 and returns 0 if the optimal action at the root state is either aL or aR. The article concludes that any quantum algorithm computing the function f requires at least $\Omega(\sqrt{|S||A|})$ queries.
+
+![image](https://user-images.githubusercontent.com/109908559/218268634-ec8e8a6c-9895-4ffb-8309-529113c8078a.png)
+
+Theorem 5: Any quantum algorithm that computes the function $f$ above uses $\Omega(\sqrt{|S||A|})$ queries
+
+Theorem 5 states that any quantum algorithm that computes the function $f$ requires $\Omega(\sqrt{|S||A|})$ queries. This is proven by considering a relation $R$ between instances $M1 \in M1$ and $M2 \in M2$ such that $(M1, M2) \in R$ if and only if their transition kernels differ in exactly one pair $(\bar{s}, \bar{a})$. By using a result from [6, Theorem 2], it is shown that the number of queries made by the quantum algorithm is lower bounded by $\Omega(\sqrt{|S||A|})$.
+
+Corollary 6: A bounded-error quantum algorithm solving finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ makes $\Omega(\sqrt{|S||A|})$ queries to the oracle (3).
+
+Corollary 6 states that a bounded-error quantum algorithm solving finite-horizon dynamic programming (DP) problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ requires $\Omega(\sqrt{|S||A|})$ queries to the oracle.
+
+Corollary 7: A bounded-error quantum algorithm solving Problem A is optimal in $|S|$ for DP problems with $|A| = O(\text{polylog}(|S|))$ and time horizon $T = \Theta(\text{polylog}(|S|))$.
+
+Corollary 7 states that a bounded-error quantum algorithm solving Problem A is optimal in $|S|$ for DP problems with $|A| = O(\text{polylog}(|S|))$ and time horizon $T = \Theta(\text{polylog}(|S|))$.
+
+Proposition 8: A bounded-error quantum algorithm solving time-ordered finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ makes $\Omega(\sqrt{|S||A|})$ queries to the oracle (3).
+
+It states that a bounded-error quantum algorithm solving time-ordered finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ requires $\Omega(\sqrt{|S||A|})$ queries to the oracle. This is proven by adding a logarithmic number of states to $S$ to make the DP problems time-ordered, and the argument of Theorem 5 remains valid.
+
+Corollary 9. A bounded-error quantum algorithm solving Problem D for time-ordered finite-horizon DP problems with time horizon $T = \Theta(\text{polylog}(|S|))$ is optimal in $|S|$, and dependence on a $\text{poly}(\sqrt{|A|})$ factor is inevitable.
+
+Corollary 9 states that a bounded-error quantum algorithm solving Problem D for time-ordered finite-horizon DP problems with time horizon $T = \Theta(\text{polylog}(|S|))$ is optimal in $|S|$, and dependence on a poly($\sqrt{|A|}$) factor is inevitable
+
+![image](https://user-images.githubusercontent.com/109908559/218268331-5f3d80ef-9705-4da3-87c3-26921c2e8e0b.png)
+
+### Classic complexity lower bound
+
+We now examine the computational complexity of solving DP problems in a classical setting with an oracle. As in a previous section, we use techniques from adversary methods to apply them to bounded-error classical randomized algorithms.
+
+Let M1 and M2 be families of DP instances with the same state and action spaces, and let M = M1 ⊔ M2 be the set of all instances. An algorithm that finds an optimal action at s0 can distinguish instances between M1 and M2. We use Q to represent the number of queries a deterministic algorithm makes to the oracle. We define ΠQ as the set of all deterministic algorithms that make at most Q queries to the oracle before returning an optimal action at s0. A randomized algorithm running at most Q steps is represented by a distribution μ on ΠQ.
+
+Suppose that there exists a randomized algorithm μ ∈ P(ΠQ) that, with high probability, correctly returns an optimal action for every M ∈ M. Then, by Yao’s minimax principle, there exists a deterministic algorithm μ in ΠQ that succeeds in returning an optimal action for a large fraction of instances in M1 and M2.
+
+Let D1 and D2 be uniform distributions on M1 and M2, respectively, and let D be the uniform mixture of the two. We define Ci as the set of instances for which a deterministic algorithm μ succeeds. It is clear that |Ci| ≥ (1 − 2ξ)|Mi| for i = 1, 2. A twin is defined as two DP instances with identical transition kernels except for one reward difference. The number of twins that a deterministic algorithm μ succeeds on is lower bounded by (1 − 4ξ)mnm.
+
+We now define a new problem, function distinction, as the task of distinguishing between two integer-valued functions f and g defined on a discrete domain X with X = {1, ..., m}. Any deterministic algorithm μ that performs vector differentiation requires at least Ω(m) queries to distinguish at least 1/2mnm twins of functions. This result directly translates to the setting of DP problems and implies that a deterministic algorithm requires at least Ω(m) queries to distinguish at least 1/2mnm twins of DP instances.
 
 ### Is quantum magic ?
 
