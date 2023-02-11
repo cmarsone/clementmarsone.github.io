@@ -10,7 +10,7 @@ author: inspired from Poooya Ronagh (2021)
 
 *Quantum dynamic programming* is an area of study that seeks to understand the potential benefits and limitations of using quantum algorithms to solve dynamic programming problems. 
 
-Quantum algorithms have the potential to solve these problems much faster than classical algorithms, but the difficulty lies in finding algorithms that can achieve a significant speedup. The study of quantum dynamic programming seeks to understand the conditions under which quantum algorithms can achieve a speedup and the limitations that prevent such a speedup. This area of study is of practical significance because it has the potential to improve the performance of algorithms in various fields, such as computer science, operations research, and artificial intelligence.
+Quantum algorithms have the potential to solve these problems much faster than classical algorithms, but the difficulty lies in finding algorithms that can achieve a significant speedup. This area of study is of practical significance because it has the potential to improve the performance of algorithms in various fields, such as computer science, operations research, and artificial intelligence.
 
 #### Approach: the problem of finite-horizon dynamic programming (DP) on a quantum computer
 
