@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Quantum Dynamic Programming inspired from Poooya Ronagh
+title: Quantum Dynamic Programming
+author: inspired from Poooya Ronagh (2021)
 ---
 
 ### Introduction
@@ -12,16 +13,6 @@ title: Quantum Dynamic Programming inspired from Poooya Ronagh
 Quantum algorithms have the potential to solve these problems much faster than classical algorithms, but the difficulty lies in finding algorithms that can achieve a significant speedup. The study of quantum dynamic programming seeks to understand the conditions under which quantum algorithms can achieve a speedup and the limitations that prevent such a speedup. This area of study is of practical significance because it has the potential to improve the performance of algorithms in various fields, such as computer science, operations research, and artificial intelligence.
 
 #### Approach: the problem of finite-horizon dynamic programming (DP) on a quantum computer
-
-This paper is concerned with the problem of dynamic programming on a quantum computer. The authors focus on finite-horizon dynamic programming problems, which are of great interest in many areas of discrete and combinatorial algorithms, including the traveling salesperson problem (TSP) and the minimum set-cover problem (MSC). The authors study the query complexity of dynamic programming problems, that is, they aim to solve the problems with the fewest queries to an oracle that simulates the effects of performing an action.
-
-In this paper, the authors introduce a general framework for studying finite-horizon dynamic programming problems on a quantum computer and provide a query model for bounded-error quantum algorithms that make coherent queries to an oracle representative of the dynamic programming problem. They also state several open problems related to the potential existence of quadratic quantum speedups in solving dynamic programming problems.
-
-The authors provide several example constructions of the dynamic programming oracle for TSP, MSC, and the edit distance problem, and prove lower bounds for the query complexity of quantum and classical randomized algorithms for solving these problems. They show that a greater-than-quadratic speedup cannot be achieved using quantum algorithms. They also provide a quantum query complexity lower bound of $Ω(\sqrt{|S||A|})$ for solving dynamic programming problems using the generalized relational adversary method.
-
-In conclusion, the authors provide a comprehensive study of dynamic programming on a quantum computer and the associated query complexity. Their results suggest that achieving a quadratic speedup in the number of state-action pairs may not be possible using quantum algorithms, but further research is needed to confirm this result.
-
-#### Looking at the big picture
 
 "A DP problem is defined by a finite set of *states* $S$ or $A$, a finite set of possible actions
 (decisions) A at each state, and a set of time epochs $\mathbb{T} = \{ 0, \ldots , T − 1 \}$. Performing an action at a given state
@@ -97,9 +88,27 @@ Another attempt to solve DP problems using quantum computation is reported in pr
 
 ### The quantum TSP
 
-The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = {1, . . . , n}$ starting and ending at vertex 1. The best known classical algorithm for TSP has a runtime of $O(n^22^n)$ and is based on dynamic programming (DP). The DP problem can be transformed into a reward-maximizing problem by assigning rewards to edges and rewriting the DP problem as a functional equation. A quantum oracle for the TSP problem can be constructed with $O(n^2 \text{polylog}(n, \lceil c \rceil))$ qubits, where $\lceil c \rceil$ is an upper bound on the edge weights. The quantum algorithm for TSP that makes the minimum number of queries to this oracle has $O^*(\sqrt{2n})$ queries
+The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = {1, . . . , n}$. The starting vertex is fixed at 1, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_{ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2^2n})$.
+
+The authors describe the problem as a Dynamic Programming (DP) problem, with a state defined as a pair $(H, i)$, where $i \in H$ and $H \subseteq V$. The action at a state $(H, i)$ corresponds to choosing a vertex $j \in H \setminus {i}$, with the instantaneous cost being $c_{ji}$. The cost function $C(H, i)$ represents the minimum total cost of a Hamiltonian path starting at 1, entering $H$, traversing $H$, and ending at $i$. The optimization problem can be written as:
+
+$C(H, i) = \min\limits_{j \in H \setminus {i}} {C(H \setminus {i}, j) + c_{ji}}$
+
+The authors also note that the problem can be transformed into a reward-maximizing problem by defining $r_{ij} = \lceil c \rceil + 1 - c_{ij}$, where $\lceil c \rceil$ is an upper bound on the edge weights $c_{ij}$. The definition of states and actions can then be extended to allow $i \notin H$ and $j \notin H \setminus {i}$.
+
+The DP problem has $O(n^{2n})$ states, $O(n)$ actions, and a time horizon of $O(n)$, resulting in a time complexity of $O(n^{2^2n})$. The authors present an oracle construction for this problem, using $O(n^{2} \text{polylog}(n, \lceil c \rceil))$ qubits and a similar number of elementary quantum gates. The oracle queries an adjacency matrix oracle and outputs the updated state and reward.
+
+The authors also note that Problem (A) asks for a quantum algorithm for the TSP problem that makes $O^*(\sqrt{2n})$ queries to this oracle. The article concludes by stating that an algorithm with this time complexity would likely have applications in other optimization problems and could lead to breakthroughs in quantum computing.
 
 ### The quantum MSC
+
+The minimum set-cover problem (MSC) is a problem of finding the minimum number of subsets of a given family F of m subsets Vi of a universe U with n elements, such that the union of these subsets covers the entire universe. The goal is to find the minimum cardinality F of F such that $\bar{F} = \bigcup_{V \in F} V = U$.
+
+A dynamic programming (DP) problem can be defined to solve the MSC problem. The states of the DP problem are the subsets S of the universe U. There are two actions, u and v, where the transition from S via u at time t is the inclusion of the subset Vt+1, and the transition via v skips this inclusion. The transition via v has a reward of 1, whereas the transition via u has a reward of 0, since it adds a new set to the candidate set cover. The value function at the initial state (s0 = ∅) at time t = 0 is maximized by a policy that constructs a minimum set cover. The DP problem has a time horizon T = O(m), |A| = 2 = O(1) actions, and |S| = O(2^n) states. The best known classical algorithm for MSC has a runtime of O(m * 2^n), consisting of O(m * 2^n) queries to the classical oracle and an additional O(n) factor for set operations.
+
+The family F can be prepared using O(mn) qubits by encoding each set Vi using a binary string of size n. Unions and set comparisons can be done using O(n) elementary quantum gates, which suffices for constructing an oracle UMSC. The oracle UMSC can be constructed using O(mn) qubits and the same order of elementary gate operations.
+
+There are three different quantum algorithms that have been proposed for solving MSC: Problem A asks whether MSC can be solved in O*(√2n * poly(m)) queries to the oracle UMSC, while Problems C and D ask for query complexities O*(m√2n) and O*(√m * 2^n), respectively. [4] also shows a bounded-error quantum algorithm for solving MSC that uses recursive applications of Grover's search to solve the problem in O(1.728n * poly(m, n)) using quantum random access memory (QRAM).
 
 ### Quantum complexity lower bound
 
@@ -141,7 +150,8 @@ Let D1 and D2 be uniform distributions on M1 and M2, respectively, and let D be 
 
 We now define a new problem, function distinction, as the task of distinguishing between two integer-valued functions f and g defined on a discrete domain X with X = {1, ..., m}. Any deterministic algorithm μ that performs vector differentiation requires at least Ω(m) queries to distinguish at least 1/2mnm twins of functions. This result directly translates to the setting of DP problems and implies that a deterministic algorithm requires at least Ω(m) queries to distinguish at least 1/2mnm twins of DP instances.
 
-### Is quantum magic ?
+### Conclusion: Is quantum magic ?
 
 Quantum computing is not magic, but it can seem like it because it operates on principles that are different from classical computing and can lead to exponential speedup in certain tasks.
 However, quantum computing is still in its early stages of development, and there are many technical challenges that must be overcome before it can be widely used. Moreover, quantum computing is not always faster than classical computing and its advantage depends on the specific problem being solved.
+In conclusion, the authors provide a comprehensive study of dynamic programming on a quantum computer and the associated query complexity. Their results suggest that achieving a quadratic speedup in the number of state-action pairs may not be possible using quantum algorithms, but further research is needed to confirm this result.
