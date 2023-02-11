@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (Quantum) Dynamic programming
+title: Dynamic programming
 ---
 
 #### Aim: found an optimal solution for some combinatorial problem
