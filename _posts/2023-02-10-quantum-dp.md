@@ -15,7 +15,7 @@ Quantum algorithms have the potential to solve these problems much faster than c
 #### Approach: the problem of finite-horizon dynamic programming (DP) on a quantum computer
 
 "A DP problem is defined by a finite set of *states* $S$ or $A$, a finite set of possible actions
-(decisions) A at each state, and a set of time epochs $\mathbb{T} = \{ 0, \ldots , T − 1 \}$. Performing an action at a given state
+(decisions) A at each state, and a set of time epochs $\mathbb{T} = \lbrace 0, \ldots , T − 1 \rbrace$. Performing an action at a given state
 results in a *reward* (or cost) and a transition to a new state. The goal is to find an *optimal policy*
 for an *agent* at every state. Here, the measure of optimality is the future reward the agent collects
 should it pursue the actions prescribed by a policy. The cumulative future reward is often called
@@ -24,20 +24,20 @@ the *value function*."
 ![image](https://user-images.githubusercontent.com/109908559/218268322-9618f4bf-6d28-4e57-b7a1-1a93704bae1a.png)
 
 
-(a) Consider two finite sets $S$ and $A$, and a transition kernel $P_{t}(s,a)$ or law of motion defined as:
+(a) Consider two finite sets $S$ and $A$, and a *transition kernel* $a_ {t}$ or *law of motion* defined as:
 
-$$P_{t}: S \rightarrow S \quad \forall t \in \mathbb{T}, \forall a \in A$$
+$$a_ {t}: S \rightarrow S \quad \forall t \in \mathbb{T}, \forall a \in A$$
 
-This means that at any time $t \in \mathbb{T}$, the *law of motion* or *transition kernel* maps a state $s$ in $S$ to a new state $s'$ in $S$, given an action $a \in A$. The function $P_{t}(s,a)$ provides the probability of transitioning from state $s$ to state $s'$, when action $a$ is taken at time $t$
+This means that at any time $t \in \mathbb{T}$, the *law of motion* or *transition kernel* maps a state $s$ in $S$ to a new state $s'$ in $S$, given an action $a \in A$. The function $a_ {t}(s,a)$ provides the probability of transitioning from state $s$ to state $s'$, when action $a$ is taken at time $t$
 
-(b) A reward structure which is a bounded, deterministic, possibly time-dependent function of states, actions, and time epochs, and takes values in the set of non-negative integers $r_ t = r_ t(s, a) : S \times A \rightarrow \mathbb{Z}_ {\geq 0}$ for all $t \in \mathbb{T}$. We define a positive integer $⌈r⌉ \in \mathbb{N}$ as an upper bound on reward values, and assume a lower bound of 0 for the reward structure without loss of generality.
+(b) A *reward structure* which is a bounded, deterministic, possibly time-dependent function of states, actions, and time epochs, and takes values in the set of non-negative integers $r_ t = r_ t(s, a) : S \times A \rightarrow \mathbb{Z}_ {\geq 0}$ for all $t \in \mathbb{T}$. We define a positive integer $⌈r⌉ \in \mathbb{N}$ as an upper bound on reward values, and assume a lower bound of $0$ for the reward structure without loss of generality.
 
-(c) A policy consists of the choice of a single action at every state and every point in time, $\pi_ t : S \rightarrow A$ for all $t \in \mathbb{T}$. To a policy $\pi = (\pi_ t)_ { \{ t \in \mathbb{T}\} }$, we associate a possibly time-dependent value function $V_ t^{\pi} : S \rightarrow \mathbb{Z}_ {\geq 0}$ defined as $V_ t^\pi (s) = \sum\limits_ {i \geq t} r_i(s_i, a_i)
-$, where $s_0 = s$ is an initial state and all subsequent actions are chosen according to $\pi$. That is $at = \pi_t(s_t)$ and $s_{t+1} = a_t(s_t)$. The goal of DP is to find an optimal policy at $s_0$ at time $t = 0$, that is, to find $\pi^* = \arg\max_{\pi} V_ 0^{\pi}(s_ 0)$.
+(c) **Value fonction** A *policy* consists of the choice of a single action at every state and every point in time, $\pi_ t : S \rightarrow A$ for all $t \in \mathbb{T}$. To a policy $\pi = (\pi_ t)_ { \lbrace t \in \mathbb{T}\rbrace }$, we associate a possibly time-dependent value function $V_ t^{\pi} : S \rightarrow \mathbb{Z}_ {\geq 0}$ defined as $V_ t^\pi (s) = \sum\limits_ {i \geq t} r_i(s_i, a_i)
+$, where $s_0 = s$ is an initial state and all subsequent actions are chosen according to $\pi$. That is $a_ t = \pi_t(s_t)$ and $s_{t+1} = a_t(s_t)$. The goal of DP is to find an optimal policy at $s_0$ at time $t = 0$, that is, to find $\pi^* = \arg\max_{\pi} V_ 0^{\pi}(s_ 0)$.
 
 #### Bellman's optimality criteria 
 
-It states that an optimal policy $\pi^* = (\pi_ t^* )$ is associated with the unique optimal value function $V_ t^* (s) := V_ y^{\pi^* } (s)$ satisfying $V_ t^* (s) = \max\limits_ {a \in A} \{r_ t(s, a) + V_ {t+1}^* (a_ t(s))}$ for all $t \in \mathbb{T}$ and the boundary condition $V_ T^* (s) = 0$ for all $s \in S$.
+It states that an optimal policy $\pi^* = (\pi_ t^* )$ is associated with the unique optimal value function $V_ t^* (s) := V_ t^{\pi^* } (s)$ satisfying $V_ t^* (s) = \max\limits_ {a \in A} \{r_ t(s, a) + V_ {t+1}^* (a_ t(s))}$ for all $t \in \mathbb{T}$ and the boundary condition $V_ T^* (s) = 0$ for all $s \in S$.
 
 ![image](https://user-images.githubusercontent.com/109908559/218268126-85372814-1ab1-442e-ba98-5e45cbb035f3.png)
 
@@ -46,7 +46,7 @@ It states that an optimal policy $\pi^* = (\pi_ t^* )$ is associated with the un
 
 The *DP* problem is solved by quantum and classical algorithms that make queries to the transition kernel and reward structure. The *quantum algorithms use a coherent query process* called $U_ {DP}$, represented by:
 
-$$ U_ {DP} \ : \ |s\rangle |a\rangle |t\rangle |x\rangle |y\rangle \rightarrow |s\rangle |a\rangle |t\rangle |x \oplus at(s)\rangle |y \oplus rt(s, a)\rangle $$
+$$ U_ {DP} \ : \ |s\rangle |a\rangle |t\rangle |x\rangle |y\rangle \rightarrow |s\rangle |a\rangle |t\rangle |x \oplus a_ t(s)\rangle |y \oplus r_ t(s, a)\rangle $$
 
 whereas the *classical algorithms* use a similar oracle called $O_ {DP}$, represented by:
 
@@ -54,28 +54,28 @@ $$ O_ {DP} \ : \ (s, a, t) \rightarrow (a_ t(s), r_ t(s, a)) $$
 
 In cases where one of the transition kernel, reward structure, or policies is independent of time, they are referred to as being *time homogeneous*. The algorithms for solving the DP problem are based on Bellman's recursion. The *value iteration operator* is defined as:
 
-$$ F^{(t)} \ : \ v_s \rightarrow \max_{a \in A} \{r_t(s, a) + v_{a_ t}(s)\} $$
+$$ \mathcal{F}^{(t)} \ : \ v_s \rightarrow \max_{a \in A} \{r_t(s, a) + v_{a_ t}(s)\} $$
 
 The recursive applications of this operator are represented by:
 
-$$ v^{(T-t-1)} = \mathcal{F}^{(T-t-1)}(v^{(T-t)}) t \in T $$
+$$ v^{(T-t-1)} = \mathcal{F}^{(T-t-1)}(v^{(T-t)}) \text{ , } t \in \mathbb{T} $$
 
 where $v^{(T)} = 0$ for all $s \in S$, and $T$ represents the set of all time points. It can be seen that after applying the value iteration operator recursively, $v^{(T-k)}$ will attain the optimal value function at time $T-k$. This is represented by:
 
-$$ V^*_{T-k}(s) = F(T-k) \circ \dots \circ F(T-1)(0) $$
+$$ V^*_{T-k}(s) = \mathcal{F}(T-k) \circ \dots \circ \mathcal{F}(T-1)(0) $$
 
 Thus, to find the optimal action at $s_0$ at time $t=0$, it suffices to find $v(1)$ and then find the action that maximizes:
 
-$$ \text{argmax}_{a \in A} \left[r_0(s_0, a) + v(1) a_0(s_0)\right] $$
+$$ \text{argmax}_{a \in A} \left[r_0(s_0, a) + v_ {a_ 0 (s_ 0)}^{(1)} \right] $$
 
 ### Quantum Linear Programming
 
-Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in {0, ..., T}$ and states $s \in S$. For each value of the value function $V^*t(s)$, we assign a real variable $v{s,t}$ and write the constants $r_{t}(s, a)$ as $r_{s,a,t}$ for consistency. The LP formulation is:
+Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in \lbrace 0, ..., T \rbrace $ and states $s \in S$. For each value of the value function $V_ t^*(s)$, we assign a real variable $v_ {s,t}$ and write the constants $r_ {t} (s, a)$ as $r_ {s,a,t}$ for consistency. The LP formulation is:
 
 \begin{align}
-\min\ v_{s_0,0} \
-\text{s.t.} \quad v_{s,t} &\geq r_{s,a,t} + v_{a(s),t+1} \quad \forall a \in A, s \in S, t \in T \
-v_{s,t} &\geq 0 \quad \forall s \in S, t \in T \cup {T}
+\min\ v_{s_0,0} \\
+\text{s.t.} \quad v_ {s,t} &\geq r_ {s,a,t} + v_ {a(s),t+1} \quad \forall a \in A, s \in S, t \in \mathbb{T} \cup \lbrace T \rbrace \\
+v_ {s,t} &\geq 0 \quad \forall s \in S, t \in \mathbb{T} \cup \lrbace T \rbrace
 \end{align}
 
 The above LP is feasible and attains a unique solution, where $v_{s,T} = 0$ for all $s \in S$. The LP can be thought of as a network flow problem, where the inward flow of each node $(s, t)$ must match the largest outward flow toward the states $(a(s), t + 1)$ for all $a \in A$, with an added flow bias of $r_{s,a,t}$. The goal is to find the smallest required inward flow from the initial node $(s_0, 0)$.
