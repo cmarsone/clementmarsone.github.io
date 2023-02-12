@@ -4,6 +4,8 @@ title: Quantum Dynamic Programming
 author: inspired from Poooya Ronagh (2021)
 ---
 
+Based on the paper of Ronagh, we focus on the application of dynamic programming (DP) to quantum computing. It introduces a method for comparing quantum and classical algorithms in solving DP problems through the use of a query model. The paper gives examples of oracle constructions for various DP problems and raises questions about the possibility of a quadratic speedup in quantum algorithms. The paper also provides lower bounds for the query complexity of both quantum and classical algorithms in solving DP problems and concludes that no more than a quadratic speedup can be achieved.
+
 ### Introduction
 
 *Dynamic programming* is a method of solving optimization problems by breaking them down into smaller subproblems and solving each subproblem only once. We will see that this approach can be applied to a wide range of problems, including the travelling salesperson problem, the minimum set-cover problem, and the edit distance problem, among others.
