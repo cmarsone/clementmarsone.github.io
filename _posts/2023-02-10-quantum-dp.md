@@ -88,17 +88,19 @@ Another attempt to solve DP problems using quantum computation is reported in pr
 
 ### The quantum TSP
 
-The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = \lrbace 1, \dots, n \rbrace$. The starting vertex is fixed at $1$, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_ {ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2^2n})$.
+The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = \lbrace 1, \dots, n \rbrace$. The starting vertex is fixed at $1$, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_ {ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2}2^n}) = O( \mid S \mid \mid A \mid)$.
 
 The authors describe the problem as a Dynamic Programming (DP) problem, with a state defined as a pair $(H, i)$, where $i \in H$ and $H \subseteq V$. The action at a state $(H, i)$ corresponds to choosing a vertex $j \in H \setminus {i}$, with the instantaneous cost being $c_{ji}$. The cost function $C(H, i)$ represents the minimum total cost of a Hamiltonian path starting at 1, entering $H$, traversing $H$, and ending at $i$. The optimization problem can be written as:
 
-$C(H, i) = \min\limits_{j \in H \setminus {i}} {C(H \setminus {i}, j) + c_{ji}}$
+$C(H, i) = \min\limits_{j \in H \setminus \lbrace i \rbrace} \bigl[ C(H \setminus \lbrace i \rbrace, j \bigr] + c_{ji}}$
 
 The authors also note that the problem can be transformed into a reward-maximizing problem by defining $r_{ij} = \lceil c \rceil + 1 - c_{ij}$, where $\lceil c \rceil$ is an upper bound on the edge weights $c_{ij}$. The definition of states and actions can then be extended to allow $i \notin H$ and $j \notin H \setminus {i}$.
 
-The DP problem has $O(n^{2n})$ states, $O(n)$ actions, and a time horizon of $O(n)$, resulting in a time complexity of $O(n^{2^2n})$. The authors present an oracle construction for this problem, using $O(n^{2} \text{polylog}(n, \lceil c \rceil))$ qubits and a similar number of elementary quantum gates. The oracle queries an adjacency matrix oracle and outputs the updated state and reward.
+The DP problem has $O(n2^n)$ states, $O(n)$ actions, and a time horizon of $O(n)$, resulting in a time complexity of $O(n^{2}2^n})$. The authors present an oracle construction for this problem, using $O(n^{2} \text{polylog}(n, \lceil c \rceil))$ qubits and a similar number of elementary quantum gates. The oracle queries an adjacency matrix oracle and outputs the updated state and reward.
 
 The authors also note that Problem (A) asks for a quantum algorithm for the TSP problem that makes $O^*(\sqrt{2n})$ queries to this oracle. The article concludes by stating that an algorithm with this time complexity would likely have applications in other optimization problems and could lead to breakthroughs in quantum computing.
+
+In the context of an edge-weighted graph $G$, an oracle construction is performed to solve the TSP (Travelling Salesman Problem). A quantum oracle $UG$ is assumed for the adjacency matrix of $G$, with $2\log(n) + \log(\lceil c \rceil)$ qubits required in the registers of $UG$. The oracle $UG$ is implemented using $O(n^2\text{polylog}(n,\lceil c \rceil))$ qubits. Another oracle $UTSP$ is then constructed from $UG$, with the states $|H,i\rangle$ encoded using binary strings of size $n$ and $\log(n)$ qubits respectively. The registers in $UTSP$ are made up of $O(n\text{polylog}(n,\lceil c \rceil))$ qubits. The circuit $UTSP$ queries $UG$ and uses a total of $O(n^2\text{polylog}(n,\lceil c \rceil))$ qubits. The oracle $UTSP$ can be constructed using $O(n^2\text{polylog}(n,\lceil c \rceil))$ qubits and a similar order of quantum gates. The question of whether there exists a quantum algorithm for TSP that makes $O^(\sqrt{2n})$ queries to the oracle $UTSP$ remains open. However, a bounded-error quantum algorithm has been proposed that solves TSP in $O^(1.728n)$ but requires QRAM access to a classical algorithm.
 
 ### The quantum MSC
 
