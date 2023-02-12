@@ -88,7 +88,7 @@ Another attempt to solve DP problems using quantum computation is reported in pr
 
 ### The quantum TSP
 
-The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = \lbrace 1, \dots, n \rbrace$. The starting vertex is fixed at $1$, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_ {ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2}2^n}) = O( \mid S \mid \mid A \mid)$.
+The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = \lbrace 1, \dots, n \rbrace$. The starting vertex is fixed at $1$, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_ {ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2}2^n) = O( \mid S \mid \mid A \mid)$.
 
 The authors describe the problem as a Dynamic Programming (DP) problem, with a state defined as a pair $(H, i)$, where $i \in H$ and $H \subseteq V$. The action at a state $(H, i)$ corresponds to choosing a vertex $j \in H \setminus {i}$, with the instantaneous cost being $c_{ji}$. The cost function $C(H, i)$ represents the minimum total cost of a Hamiltonian path starting at 1, entering $H$, traversing $H$, and ending at $i$. The optimization problem can be written as:
 
@@ -118,25 +118,27 @@ We now investigate the quantum query complexity of solving dynamic programming (
 
 ![image](https://user-images.githubusercontent.com/109908559/218268634-ec8e8a6c-9895-4ffb-8309-529113c8078a.png)
 
-Theorem 5: Any quantum algorithm that computes the function $f$ above uses $\Omega(\sqrt{|S||A|})$ queries
+#### (Go further being more detailed)
 
-Theorem 5 states that any quantum algorithm that computes the function $f$ requires $\Omega(\sqrt{|S||A|})$ queries. This is proven by considering a relation $R$ between instances $M1 \in M1$ and $M2 \in M2$ such that $(M1, M2) \in R$ if and only if their transition kernels differ in exactly one pair $(\bar{s}, \bar{a})$. By using a result from [6, Theorem 2], it is shown that the number of queries made by the quantum algorithm is lower bounded by $\Omega(\sqrt{|S||A|})$.
+*Theorem*. Any quantum algorithm that computes the function $f$ above uses $\Omega(\sqrt{\mid S \mid \mid A \mid})$ queries
 
-Corollary 6: A bounded-error quantum algorithm solving finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ makes $\Omega(\sqrt{|S||A|})$ queries to the oracle (3).
+This theorem states that any quantum algorithm that computes the function $f$ requires $\Omega(\sqrt{\mid S \mid \mid A \mid})$ queries. This is proven by considering a relation $R$ between instances $M1 \in M1$ and $M2 \in M2$ such that $(M1, M2) \in R$ if and only if their transition kernels differ in exactly one pair $(\bar{s}, \bar{a})$. By using a result, it is shown that the number of queries made by the quantum algorithm is lower bounded by $\Omega(\sqrt{\mid S \mid\mid A\mid})$.
 
-Corollary 6 states that a bounded-error quantum algorithm solving finite-horizon dynamic programming (DP) problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ requires $\Omega(\sqrt{|S||A|})$ queries to the oracle.
+*Corollary*. A bounded-error quantum algorithm solving finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(\mid S \mid))$ makes $\Omega(\sqrt{\mid S \mid \mid A\mid})$ queries to the oracle (3).
 
-Corollary 7: A bounded-error quantum algorithm solving Problem A is optimal in $|S|$ for DP problems with $|A| = O(\text{polylog}(|S|))$ and time horizon $T = \Theta(\text{polylog}(|S|))$.
+It states that a bounded-error quantum algorithm solving finite-horizon dynamic programming (DP) problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(\mid S \mid))$ requires $\Omega(\sqrt{\mid S\mid\mid A\mid})$ queries to the oracle.
 
-Corollary 7 states that a bounded-error quantum algorithm solving Problem A is optimal in $|S|$ for DP problems with $|A| = O(\text{polylog}(|S|))$ and time horizon $T = \Theta(\text{polylog}(|S|))$.
+*Corollary*. A bounded-error quantum algorithm solving Problem A is optimal in $\mid S\mid$ for DP problems with $\mid A\mid = O(\text{polylog}(\mid S \mid))$ and time horizon $T = \Theta(\text{polylog}(\mid S\mid))$.
 
-Proposition 8: A bounded-error quantum algorithm solving time-ordered finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ makes $\Omega(\sqrt{|S||A|})$ queries to the oracle (3).
+It states that a bounded-error quantum algorithm solving Problem A is optimal in $\mid S \mid$ for DP problems with $\mid A \mid = O(\text{polylog}(\mid S \mid))$ and time horizon $T = \Theta(\text{polylog}(\mid S \mid))$.
 
-It states that a bounded-error quantum algorithm solving time-ordered finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(|S|))$ requires $\Omega(\sqrt{|S||A|})$ queries to the oracle. This is proven by adding a logarithmic number of states to $S$ to make the DP problems time-ordered, and the argument of Theorem 5 remains valid.
+*Proposition*. A bounded-error quantum algorithm solving time-ordered finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(\mid S \mid))$ makes $\Omega(\sqrt{\mid S\mid\mid A\mid})$ queries to the oracle (3).
 
-Corollary 9. A bounded-error quantum algorithm solving Problem D for time-ordered finite-horizon DP problems with time horizon $T = \Theta(\text{polylog}(|S|))$ is optimal in $|S|$, and dependence on a $\text{poly}(\sqrt{|A|})$ factor is inevitable.
+It states that a bounded-error quantum algorithm solving time-ordered finite-horizon DP problems with states $S$, actions $A$, and time horizon $T = \Omega(\log(\mid S \mid))$ requires $\Omega(\sqrt{\mid S\mid \mid A \mid})$ queries to the oracle. This is proven by adding a logarithmic number of states to $S$ to make the DP problems time-ordered, and the argument of Theorem 5 remains valid.
 
-Corollary 9 states that a bounded-error quantum algorithm solving Problem D for time-ordered finite-horizon DP problems with time horizon $T = \Theta(\text{polylog}(|S|))$ is optimal in $|S|$, and dependence on a poly($\sqrt{|A|}$) factor is inevitable
+*Corollary*. A bounded-error quantum algorithm solving Problem D for time-ordered finite-horizon DP problems with time horizon $T = \Theta(\text{polylog}(\mid S \mid))$ is optimal in $\mid S \mid$, and dependence on a $\text{poly}(\sqrt{\mid A\mid})$ factor is inevitable.
+
+It states that a bounded-error quantum algorithm solving Problem D for time-ordered finite-horizon DP problems with time horizon $T = \Theta(\text{polylog}(\mid S \mid))$ is optimal in $\mid S\mid$, and dependence on a poly($\sqrt{\mid A\mid }$) factor is inevitable
 
 ![image](https://user-images.githubusercontent.com/109908559/218268331-5f3d80ef-9705-4da3-87c3-26921c2e8e0b.png)
 
