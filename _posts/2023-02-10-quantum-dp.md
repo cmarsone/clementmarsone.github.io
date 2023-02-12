@@ -73,7 +73,7 @@ $$ \text{argmax}_{a \in A} \left[r_0(s_0, a) + v_ {a_ 0 (s_ 0)}^{(1)} \right] $$
 Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in \lbrace 0, ..., T \rbrace $ and states $s \in S$. For each value of the value function $V_ t^*(s)$, we assign a real variable $v_ {s,t}$ and write the constants $r_ {t} (s, a)$ as $r_ {s,a,t}$ for consistency. The LP formulation is:
 
 \begin{align}
-\min\ v_{s_0,0} \\
+\min\ v_{s_0,0} & \\
 \text{s.t.} \quad v_ {s,t} &\geq r_ {s,a,t} + v_ {a(s),t+1} \quad \forall a \in A, s \in S, t \in \mathbb{T} \cup \lbrace T \rbrace \\
 v_ {s,t} &\geq 0 \quad \forall s \in S, t \in \mathbb{T} \cup \lrbace T \rbrace
 \end{align}
@@ -84,11 +84,11 @@ The author tried to solve the LP using the multiplicative weight update method (
 
 The number of variables $n$ and constraints $m$ in the LP are both $\tilde{O} ( \mid S \mid)$. In the context of MWUM, the primal width $\ell$ and dual width $L$ are both $O(T\lceil r \rceil)$, where $\lceil r \rceil$ is an upper bound on the reward structure. For a generic LP solver to provide a quadratic speedup, a scaling of $O(\sqrt{\max(n,m)} \text{polylog}(\eta))$ is required, where $\eta = \ell L \epsilon$. However, it has been shown that any generic quantum LP solver with sublinear dependence on $n$ or $m$ has to depend at least polynomially on $\eta$.
 
-Another attempt to solve DP problems using quantum computation is reported in previous studies, where the goal was to demonstrate a quadratic quantum speedup for DP problems with convex value functions. The authors aim to find a unitary transformation that evolves a register prepared in the superposition of the values of the function to the superposition of the values of the convex conjugate of the function, using polylog($|D|$, $|K|$) quantum gates. However, the existence of such a unitary is still an open problem.
+Another attempt to solve DP problems using quantum computation is reported in previous studies, where the goal was to demonstrate a quadratic quantum speedup for DP problems with convex value functions. The authors aim to find a unitary transformation that evolves a register prepared in the superposition of the values of the function to the superposition of the values of the convex conjugate of the function, using polylog($\mid D \mid$, $\mid K\mid$) quantum gates. However, the existence of such a unitary is still an open problem.
 
 ### The quantum TSP
 
-The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = {1, . . . , n}$. The starting vertex is fixed at 1, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_{ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2^2n})$.
+The Traveling Salesman Problem (TSP) involves finding the shortest route that visits all vertices of a fully connected graph with vertices $V = \lrbace 1, \dots, n \rbrace$. The starting vertex is fixed at $1$, and the cost of traveling from vertex $i$ to vertex $j$ is denoted by $c_ {ij}$. The best known classical algorithm for this problem is due to Bellman and Held and Karp and has a runtime of $O(n^{2^2n})$.
 
 The authors describe the problem as a Dynamic Programming (DP) problem, with a state defined as a pair $(H, i)$, where $i \in H$ and $H \subseteq V$. The action at a state $(H, i)$ corresponds to choosing a vertex $j \in H \setminus {i}$, with the instantaneous cost being $c_{ji}$. The cost function $C(H, i)$ represents the minimum total cost of a Hamiltonian path starting at 1, entering $H$, traversing $H$, and ending at $i$. The optimization problem can be written as:
 
