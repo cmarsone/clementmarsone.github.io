@@ -110,7 +110,7 @@ A dynamic programming (DP) problem can be defined to solve the MSC problem. The 
 
 The family $F$ can be prepared using $O(mn)$ qubits by encoding each set $V_ i$ using a binary string of size $n$. Unions and set comparisons can be done using $O(n)$ elementary quantum gates, which suffices for constructing an oracle UMSC. The oracle UMSC can be constructed using $O(mn)$ qubits and the same order of elementary gate operations.
 
-There are three different quantum algorithms that have been proposed for solving MSC: Problem A asks whether MSC can be solved in $O*(√2n * poly(m))$ queries to the oracle UMSC, while Problems C and D ask for query complexities $O*(m√2n$ and $O*(√m * 2^n)$, respectively. [4] also shows a bounded-error quantum algorithm for solving MSC that uses recursive applications of Grover's search to solve the problem in $O(1.728n * poly(m, n))$ using quantum random access memory (QRAM).
+There are three different quantum algorithms that have been proposed for solving MSC: Problem A asks whether MSC can be solved in $O*(\sqrt{2^n} \text{poly}(m))$ queries to the oracle UMSC, while Problems C and D ask for query complexities $O*(m\sqrt{2^n})$ and $O^*(\sqrt{m 2^n})$, respectively. [4] also shows a bounded-error quantum algorithm for solving MSC that uses recursive applications of Grover's search to solve the problem in $O(1.728n * \text{poly}(m, n))$ using quantum random access memory (QRAM).
 
 ### Quantum complexity lower bound
 
@@ -142,7 +142,7 @@ It states that a bounded-error quantum algorithm solving Problem D for time-orde
 
 ![image](https://user-images.githubusercontent.com/109908559/218268331-5f3d80ef-9705-4da3-87c3-26921c2e8e0b.png)
 
-### Classic complexity lower bound
+### Classical complexity lower bound
 
 We are now investigating the computational complexity of solving DP problems in the classical setting with an oracle. Using techniques from adversary methods, we apply them to bounded-error classical randomized algorithms, as previously described in a section.
 
@@ -150,7 +150,7 @@ Let M1 and M2 be families of DP instances with identical state and action spaces
 
 If there exists a randomized algorithm $\mu \in P(\Pi_Q)$ that, with high probability, returns the optimal action for every $M \in M$, then, according to Yao’s minimax principle, there exists a deterministic algorithm $\mu \in \Pi_Q$ that returns the optimal action for a large fraction of instances in M1 and M2.
 
-Let D1 and D2 be the uniform distributions on M1 and M2, respectively, and let D be the uniform mixture of the two. $C_i$ represents the set of instances for which a deterministic algorithm $\mu$ succeeds, where it is clear that $|C_i| \geq (1-2\xi)|M_i|$ for $i = 1, 2$. A "twin" is defined as two DP instances with identical transition kernels except for one reward difference, and the number of twins that a deterministic algorithm $\mu$ succeeds on is lower bounded by $(1-4\xi)mnm$.
+Let D1 and D2 be the uniform distributions on M1 and M2, respectively, and let D be the uniform mixture of the two. $C_i$ represents the set of instances for which a deterministic algorithm $\mu$ succeeds, where it is clear that $\mid C_ i\mid \geq (1-2\xi)\mid M_ i\mid$ for $i = 1, 2$. A "twin" is defined as two DP instances with identical transition kernels except for one reward difference, and the number of twins that a deterministic algorithm $\mu$ succeeds on is lower bounded by $(1-4\xi)mnm$.
 
 The "function distinction" problem is defined as the task of distinguishing between two integer-valued functions $f$ and $g$ defined on a discrete domain $X$ with $X = {1, 2, ..., m}$. Any deterministic algorithm $\mu$ that performs vector differentiation requires at least $\Omega(m)$ queries to distinguish at least $\frac{1}{2mnm}$ twins of functions. This result directly translates to the setting of DP problems, implying that a deterministic algorithm requires at least $\Omega(m)$ queries to distinguish at least $\frac{1}{2mnm}$ twins of DP instances
 
