@@ -42,7 +42,25 @@ and patterns to be matched
 
 *Patterns* combine node and relationship descriptors
 
+### Graph stores: summary
 
+• Graph databases repeatedly "attempted" but not fully
+"solved" yet
+
+• Very convenient data model, natural representation
+
+• Typically no strict schema
+
+• No standard query language
+
+• Semantic graphs are a particular case (RDF and SPARQL are
+standards)
+
+• Most powerful tools around: distributed graph stores (Pregel,
+Spark GraphX)
+
+– Extra dimension: graph partitioning
+– Less effort on query language; in progress
 
 
 
