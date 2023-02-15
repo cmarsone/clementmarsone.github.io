@@ -31,3 +31,41 @@ of OODB vendors which produced a standard
 4. C++ and Java Bindings
 5. Mostly relational
 
+### Neo4J basics
+
+*Data model*: labeled, directed graphs
+
+*Data manipulation language* (CRUD): Cypher, used to describe data
+and patterns to be matched
+
+*Relationship* descriptions in Cypher: -- (undirected) vs. --> or <-- (directed)
+
+*Patterns* combine node and relationship descriptors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
