@@ -72,12 +72,12 @@ $$ \text{argmax}_{a \in A} \left[r_0(s_0, a) + v_ {a_ 0 (s_ 0)}^{(1)} \right] $$
 
 ### Quantum Linear Programming
 
-Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in \lbrace 0, ..., T \rbrace $ and states $s \in S$. For each value of the value function $V_ t^*(s)$, we assign a real variable $v_ {s,t}$ and write the constants $r_ {t} (s, a)$ as $r_ {s,a,t}$ for consistency. The LP formulation is:
+Linear programming with high precision can be written as a linear program (LP) equivalent to the functional equation. The value function depends on the time epochs $t \in \lbrace 0, ..., T \rbrace $ and states $s \in S$. For each value of the value function $V_ t^* (s)$, we assign a real variable $v_ {s,t}$ and write the constants $r_ {t} (s, a)$ as $r_ {s,a,t}$ for consistency. The LP formulation is:
 
 \begin{align}
 \min\ v_{s_0,0} & \\
 \text{s.t.} \quad v_ {s,t} &\geq r_ {s,a,t} + v_ {a(s),t+1} \quad \forall a \in A, s \in S, t \in \mathbb{T} \cup \lbrace T \rbrace \\
-v_ {s,t} &\geq 0 \quad \forall s \in S, t \in \mathbb{T} \cup \lrbace T \rbrace
+v_ {s,t} &\geq 0 \quad \forall s \in S, t \in \mathbb{T} \cup \lbrace T \rbrace
 \end{align}
 
 The above LP is feasible and attains a unique solution, where $v_ {s,T} = 0$ for all $s \in S$. The LP can be thought of as a network flow problem, where the inward flow of each node $(s, t)$ must match the largest outward flow toward the states $(a(s), t + 1)$ for all $a \in A$, with an added flow bias of $r_{s,a,t}$. The goal is to find the smallest required inward flow from the initial node $(s_ 0, 0)$.
