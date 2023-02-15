@@ -10,7 +10,7 @@ title: Graph stores
 • They do not simplify query evaluation and may make it more complex
 
 ### Graph database models
-• Graph $= V$ (nodes) and $E$ (edges, subset of $V \times V$)
+• Graph $= V$ (nodes) and $E$ (edges, subset $\subseteq V \times V$)
 • Directed vs. undirected edges
 • Nodes:
 – Unlabeled
