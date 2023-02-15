@@ -132,7 +132,7 @@ To construct $Q'$, we define a unitary operator $U$ that maps the state $\mid i\
 
 We also define a unitary operator $V$ that maps the state $\mid i\rangle \mid j\rangle \mid s\rangle \mid t\rangle \mid 0\rangle$ to $\mid i\rangle \mid j\rangle \mid s\rangle \mid t\rangle \mid d_{ij}\rangle$, where $d_{ij} = 1$ if $x_i$ and $x_j$ differ in at most $n/3$ positions and 0 otherwise. The operator $V$ applies the Hadamard transform to the input registers $\mid i\rangle$ and $\mid j\rangle$, and then queries the input registers $\mid i\rangle$ and $\mid j\rangle$ using the quantum algorithm $Q$ for $f$. Finally, $V$ applies the $\mid d_{ij}\rangle$ state to the output register.
 
-Using $U$ and $V$, we define a quantum algorithm $Q'$ for the set disjointness problem on $\lbrace x_i \rbrace$ as follows. We initialize $\mid0\rangle$ in the output register, and then apply $V$ to all pairs of indices $i,j$ with $i < j$. After applying $V
+Using $U$ and $V$, we define a quantum algorithm $Q'$ for the set disjointness problem on $\lbrace x_i \rbrace$ as follows. We initialize $\mid0\rangle$ in the output register, and then apply $V$ to all pairs of indices $i,j$ with $i < j$.
 After applying the adversary method of Ambainis [6] to the function $f$, we obtain the following quantum query complexity lower bound for solving DP problems:
 
 $$Q(f) = \Omega\left(\sqrt{\frac{\mid M_1\mid+\mid M_2\mid}{\log(\mid M_1\mid+\mid M_2\mid)}}\right),$$
