@@ -116,7 +116,38 @@ The family $F$ can be prepared using $O(mn)$ qubits by encoding each set $V_ i \
 
 ### Quantum complexity lower bound
 
-We are now examining the quantum query complexity of solving dynamic programming (DP) problems using the adversary method. The DP problems are divided into two families, M1 and M2, which have the same state space, action space, and time horizon. The states in families M1 and M2 form a binary tree with a root state, and the optimal value function is T for M1 and is dependent on the choice of a special state-action pair for M2. The function $f$ is defined to take a binary string that describes the transition kernel of a problem instance in M1 or M2, and it returns 0 if the optimal action at the root state is either $a_L$ or $a_R$. The article concludes that any quantum algorithm computing the function $f$ requires at least $\Omega(\sqrt{\mid S\mid\mid A\mid})$ queries.
+The notation "M1 ⊔ M2" means the union of sets M1 and M2. We now investigate the quantum query complexity of solving DP problems using the adversary method of \cite{aaronson2007quantum}. Our construction follows ideas from \cite{aaronson2009limits}. Consider two families of DP problem instances $M_1$ and $M_2$, depicted in Fig. 1. The two families share the same state space $S = S^{\top} \cup S_1 \cup S_2 \cup S^{\perp}$, the same action space $A$, and the same time horizon $T \in \mathbb{N}$. We let $S_1 = S_2 = [n] = {1, \dots, n}$ and assume that $|A| > 2$. The set $S^{\perp}$ is a singleton $|S^{\perp}| = 1$. For all instances in $M_1$ and $M_2$, every action maps $s \in S^{\perp}$ to itself with a reward of $2$ and every $s \in S_2$ to itself with a reward of $0$.
+
+The structure of $S^{\top}$ is also common between DP problem instances in $M_1$ and $M_2$. It contains the initial state $s_0 \in S^{\top}$. Let $a_L, a_R \in A$ be two fixed actions. The states in $S^{\top}$ form a binary tree with $s_0$ as the root. The role of $S^{\top}$ is to make every state in $S_1$ accessible from $s_0$ in $\lceil \log n \rceil$ steps. The actions $a_L$ and $a_R$ map every parent state to its left and right children (which might coincide) with a reward of $0$, and every action $a \in A \setminus {a_L, a_R}$ maps every state in $S^{\top}$ to itself with a reward of $1$. It is easy to see that $|S^{\top}| \leq 2^n$ and thus $|S| = \mathcal{O}(n)$.
+
+For any $M_1 \in M_1$, every $a \in A$ maps every $s \in S_1$ to some $a(s) \in S_2$ with a reward of $0$. Therefore, the optimal value function for $M_1$ at $s_0$ is $v^*_{M_1}(s_0) = T$ and any action $a \neq a_L, a_R$ is optimal. The instances $M_2 \in M_2$ differ from those in $M_1$ only in a special state-action pair $(\bar{s}, \bar{a}) \in S_1 \times A$ for which $\bar{a}(\bar{s})$ is the single element of $S^{\perp}$ with a reward of $\bar{r} = 2$. So long as $T > 2\lceil \log(n) \rceil$, the optimal action at $s_0$ is one of $a_L$ and $a_R$, depending on the choice of $\bar{s}$. We note that in the argument that follows we could instead assume $T > \lceil \log(n) \rceil$ but use instead and set ̄r = T, but this would impose a scaling constraint of ⌈r⌉ = Ω(log(n)) on the reward structure.
+
+Now, consider a function $f: {0,1}^* \rightarrow {0,1}$ that receives a binary string describing the transition kernel of a problem instance in $M_1 \cup M_2$ and returns 0 if and only if the optimal action at $s_0$ is in ${a_L, a_R}$. Using the adversary method of Ambainis et al. [6], we prove a lower bound of $\Omega(n^{1/3})$ on the quantum query complexity of computing $f$.
+
+To prove the lower bound, we consider a set $T$ of $2^{\lfloor n/3 \rfloor}$ problem instances $M_i \in M_1 \cup M_2$. Each instance is described by a binary string $x_i$ of length $O(n)$, and we can assume that $x_i$ and $x_j$ differ in at least $\lfloor n/3 \rfloor$ positions for $i \neq j$. For each instance $M_i \in T$, we choose a special state-action pair $(\bar{s}_i, \bar{a}_i)$ as described above.
+
+We assume towards a contradiction that there exists a quantum algorithm $Q$ that computes $f$ with query complexity $q < n^{1/3}$. We use $Q$ to construct a quantum algorithm $Q'$ that solves the set disjointness problem on ${x_i}$ using at most $q$ queries. We show that such a $Q'$ cannot exist, which contradicts the assumption that $Q$ exists.
+
+To construct $Q'$, we define a unitary operator $U$ that maps the state $|i\rangle |s\rangle |t\rangle |0\rangle$ to $|i\rangle |s\rangle |t\rangle |f(x_i)\rangle$, where $|i\rangle$ is the binary encoding of $i$, $|s\rangle$ is a state in $S$, $|t\rangle$ is a time step in ${0,1,\dots,T-1}$, and $|0\rangle$ is a classical register initialized to 0. The operator $U$ acts on the input register $|i\rangle$ by applying the Hadamard transform, and then applies the query operator for $f(x_i)$ and a controlled-$Z$ gate depending on the value of $f(x_i)$.
+
+We also define a unitary operator $V$ that maps the state $|i\rangle |j\rangle |s\rangle |t\rangle |0\rangle$ to $|i\rangle |j\rangle |s\rangle |t\rangle |d_{ij}\rangle$, where $d_{ij} = 1$ if $x_i$ and $x_j$ differ in at most $n/3$ positions and 0 otherwise. The operator $V$ applies the Hadamard transform to the input registers $|i\rangle$ and $|j\rangle$, and then queries the input registers $|i\rangle$ and $|j\rangle$ using the quantum algorithm $Q$ for $f$. Finally, $V$ applies the $|d_{ij}\rangle$ state to the output register.
+
+Using $U$ and $V$, we define a quantum algorithm $Q'$ for the set disjointness problem on $\lbrace x_i \rbrace$ as follows. We initialize $|0\rangle$ in the output register, and then apply $V$ to all pairs of indices $i,j$ with $i < j$. After applying $V
+After applying the adversary method of Ambainis [6] to the function $f$, we obtain the following quantum query complexity lower bound for solving DP problems:
+
+$$Q(f) = \Omega\left(\sqrt{\frac{|M_1|+|M_2|}{\log(|M_1|+|M_2|)}}\right),$$
+
+where $|M_1|$ and $|M_2|$ denote the number of instances in $M_1$ and $M_2$, respectively.
+
+
+The quantum query complexity of the function $f$ is the minimum number of queries to the transition kernel of an input instance that a quantum algorithm must make to correctly determine whether $f$ outputs 0 or 1 with high probability.
+
+We show that any quantum algorithm that solves this problem with bounded error must make $\Omega(\sqrt{n})$ queries to the transition kernel, where $n$ is the size of the instance. Our proof follows a standard adversary argument, which involves constructing two distributions of instances, one that leads to a positive outcome for $f$ and one that leads to a negative outcome, and showing that the algorithm cannot distinguish between the two with high probability using only a small number of queries.
+
+The construction of the two distributions is based on the difference between the instances in $M1$ and $M2$. For an instance in $M1$, the optimal action at $s0$ is either $aL$ or $aR$, whereas for an instance in $M2$, it depends on the special state-action pair $(\bar{s},\bar{a})$. We construct the two distributions by setting $(\bar{s},\bar{a})$ to be either $aL$ or $aR$, respectively, with equal probability.
+
+We then use a standard argument to show that the two distributions are indistinguishable using only a small number of queries to the transition kernel. In particular, we show that for any fixed number $q$ of queries, the difference in the distributions is bounded by a term that depends on the maximum probability of reaching $\bar{s}$ from $s0$ using $q$ queries. Using the fact that $|S|\leq O(n)$ and the structure of the instance, we obtain a lower bound of $\Omega(\sqrt{n})$ for this maximum probability, and hence for the query complexity of any quantum algorithm that solves the problem with bounded error.
+
 
 ![image](https://user-images.githubusercontent.com/109908559/218268634-ec8e8a6c-9895-4ffb-8309-529113c8078a.png)
 
