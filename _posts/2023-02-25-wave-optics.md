@@ -1,69 +1,65 @@
 ---
 layout: post
-title: Optics & acoustics.
+title: Optics & acoustics
 ---
 
 ## Wave optics
 
 Physical wave optics and acoustics are branches of physics that deal with the behavior of waves and their interaction with matter.
 
-Physical wave optics deals with the behavior of electromagnetic waves, particularly in the visible range of the electromagnetic spectrum. This includes topics such as interference, diffraction, and polarization. One of the most important equations in wave optics is the wave equation, which describes the behavior of waves in terms of their frequency, wavelength, and propagation speed:
+Physical wave optics deals with the behavior of electromagnetic waves, particularly in the visible range of the electromagnetic spectrum. This includes topics such as interference, diffraction, and polarization.
 
-c = λf
+Acoustics, on the other hand, deals with the behavior of sound waves, which are longitudinal waves that travel through a medium such as air or water. Acoustics includes topics such as wave propagation, resonance, and sound attenuation. The most important equation in wave optics & acoustics is the wave equation, which describes the behavior of sound waves in terms of their frequency, wavelength, and propagation speed:
 
-where c is the speed of light, λ is the wavelength of the wave, and f is the frequency of the wave.
+$$c = λf$$
 
-Acoustics, on the other hand, deals with the behavior of sound waves, which are longitudinal waves that travel through a medium such as air or water. Acoustics includes topics such as wave propagation, resonance, and sound attenuation. The most important equation in acoustics is the wave equation, which describes the behavior of sound waves in terms of their frequency, wavelength, and propagation speed:
-
-c = λf
-
-where c is the speed of sound, λ is the wavelength of the wave, and f is the frequency of the wave.
+where $c$ is the speed of light, $λ$ is the wavelength of the wave, and $f$ is the frequency of the wave.
 
 Another important concept in acoustics is the decibel (dB), which is a logarithmic measure of sound intensity:
 
-L = 10 log(I/I0)
+$$L = 10 \log(I/I_0)$
 
-where L is the sound level in dB, I is the sound intensity, and I0 is a reference intensity of 10^-12 W/m^2.
+where $L$ is the sound level in $dB$, $I$ is the sound intensity, and $I_0$ is a reference intensity of $10^{-12} W/m^2$.
 
 In wave optics, the principle of superposition is also important, which states that when two or more waves overlap, their amplitudes add together. This can lead to phenomena such as interference, where waves can either reinforce each other or cancel each other out, depending on their relative phase.
 
 In acoustics, the Doppler effect is an important concept, which describes the shift in frequency of a sound wave as the source or observer moves relative to the medium. The Doppler shift is given by the equation:
 
-Δf/f0 = v/c
+$$Δf/f0 = v/c$$
 
-where Δf is the change in frequency, f0 is the original frequency, v is the velocity of the source or observer, and c is the speed of sound in the medium.
+where $Δf$ is the change in frequency, $f0$ is the original frequency, $v$ is the velocity of the source or observer, and $c$ is the speed of sound in the medium.
 
 Overall, wave optics and acoustics are important areas of physics that describe the behavior of waves in different contexts and have many practical applications in areas such as telecommunications, imaging, and music.
 
 Wave propagation refers to the way that waves travel through a medium, such as air, water, or a solid material. The behavior of waves can be described mathematically using various formulas and equations. Here are some of the key formulas used to describe wave propagation:
 
-    Wave equation: The wave equation describes the behavior of a wave as it propagates through a medium. It is given by:
+Wave equation: The wave equation describes the behavior of a wave as it propagates through a medium. It is given by:
 
-∂²u/∂t² = c²∇²u
+$$∂²u/∂t² = c²∇²u$$
 
-where u is the wave function, t is time, c is the wave speed, and ∇²u is the Laplacian of u.
+where $u$ is the wave function, $t$ is time, $c$ is the wave speed, and $∇²u$ is the Laplacian of $u$.
 
-    Wave speed: The speed of a wave depends on the properties of the medium it is traveling through. For a wave in a homogeneous medium, the wave speed is given by:
+Wave speed: The speed of a wave depends on the properties of the medium it is traveling through. For a wave in a homogeneous medium, the wave speed is given by:
 
 c = λf
 
 where c is the wave speed, λ is the wavelength, and f is the frequency.
 
-    Wavelength: The wavelength of a wave is the distance between two adjacent peaks or troughs. It is related to the wave speed and frequency by:
+Wavelength: The wavelength of a wave is the distance between two adjacent peaks or troughs. It is related to the wave speed and frequency by:
 
 λ = c/f
 
-    Frequency: The frequency of a wave is the number of complete cycles it makes per unit time. It is related to the wave speed and wavelength by:
+Frequency: The frequency of a wave is the number of complete cycles it makes per unit time. It is related to the wave speed and wavelength by:
 
 f = c/λ
 
-    Snell's law: Snell's law describes how waves are refracted as they pass through a boundary between two materials with different refractive indices. It is given by:
+Snell's law: Snell's law describes how waves are refracted as they pass through a boundary between two materials with different refractive indices. It is given by:
 
 n1 sin θ1 = n2 sin θ2
 
 where n1 and n2 are the refractive indices of the two materials, and θ1 and θ2 are the angles of incidence and refraction, respectively.
 
-    Attenuation: Attenuation refers to the loss of energy as a wave propagates through a medium. It is described by the attenuation coefficient, α, which is related to the wave amplitude, A, and distance traveled, x, by:
+Attenuation: Attenuation refers to the loss of energy as a wave propagates through a medium. It is described by the attenuation coefficient, α, which is related to the wave amplitude, A, and distance traveled, x, by:
 
 A(x) = A0e^(-αx)
 
@@ -136,17 +132,17 @@ Overall, ray tracing theory and techniques are important in a variety of fields 
 
 Ray tracing is a rendering technique used in computer graphics to create realistic images by simulating the behavior of light as it interacts with objects in a scene. Here are some of the key techniques used in ray tracing:
 
-    Ray casting: Ray casting is the simplest form of ray tracing. It involves casting a ray from the camera through each pixel in the image plane, and testing whether the ray intersects with any objects in the scene. If an intersection is found, the color of the pixel is determined based on the material properties of the intersected object.
+Ray casting: Ray casting is the simplest form of ray tracing. It involves casting a ray from the camera through each pixel in the image plane, and testing whether the ray intersects with any objects in the scene. If an intersection is found, the color of the pixel is determined based on the material properties of the intersected object.
 
-    Shadow rays: Shadow rays are rays cast from a point on a surface towards a light source, to determine whether the surface is in shadow or not. Shadow rays are particularly important for creating realistic shadows in a scene.
+Shadow rays: Shadow rays are rays cast from a point on a surface towards a light source, to determine whether the surface is in shadow or not. Shadow rays are particularly important for creating realistic shadows in a scene.
 
-    Reflection rays: Reflection rays are rays cast from a point on a surface in the direction of reflection, to simulate the reflection of light off of reflective surfaces. The color of the reflected ray is determined by tracing a ray from the point of reflection in the direction of the reflected light, and finding the color of the object that the ray intersects.
+Reflection rays: Reflection rays are rays cast from a point on a surface in the direction of reflection, to simulate the reflection of light off of reflective surfaces. The color of the reflected ray is determined by tracing a ray from the point of reflection in the direction of the reflected light, and finding the color of the object that the ray intersects.
 
-    Refraction rays: Refraction rays are rays cast from a point on a surface in the direction of refraction, to simulate the bending of light as it passes through transparent materials. The color of the refracted ray is determined by tracing a ray from the point of refraction in the direction of the refracted light, and finding the color of the object that the ray intersects.
+Refraction rays: Refraction rays are rays cast from a point on a surface in the direction of refraction, to simulate the bending of light as it passes through transparent materials. The color of the refracted ray is determined by tracing a ray from the point of refraction in the direction of the refracted light, and finding the color of the object that the ray intersects.
 
-    Anti-aliasing: Anti-aliasing is a technique used to reduce the jagged edges or "jaggies" that can appear in a rendered image, particularly along edges that are not aligned with the pixel grid. This is done by casting multiple rays per pixel, and averaging the colors to produce a smoother image.
+Anti-aliasing: Anti-aliasing is a technique used to reduce the jagged edges or "jaggies" that can appear in a rendered image, particularly along edges that are not aligned with the pixel grid. This is done by casting multiple rays per pixel, and averaging the colors to produce a smoother image.
 
-    Monte Carlo ray tracing: Monte Carlo ray tracing is a stochastic technique that involves randomly sampling the scene to simulate the behavior of light. This technique can be used to simulate effects such as global illumination, caustics, and depth of field, which are difficult to simulate using traditional ray tracing methods.
+Monte Carlo ray tracing: Monte Carlo ray tracing is a stochastic technique that involves randomly sampling the scene to simulate the behavior of light. This technique can be used to simulate effects such as global illumination, caustics, and depth of field, which are difficult to simulate using traditional ray tracing methods.
 
 These techniques are used in various combinations to create realistic images and animations using ray tracing. They can be computationally intensive, but can produce highly realistic results that are difficult to achieve using other rendering techniques.
 
