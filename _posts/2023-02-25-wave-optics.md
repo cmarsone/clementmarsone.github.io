@@ -17,7 +17,7 @@ where $c$ is the speed of light, $λ$ is the wavelength of the wave, and $f$ is 
 
 Another important concept in acoustics is the decibel (dB), which is a logarithmic measure of sound intensity:
 
-$$L = 10 \log(I/I_0)$
+$$L = 10 \log(I/I_0)$$
 
 where $L$ is the sound level in $dB$, $I$ is the sound intensity, and $I_0$ is a reference intensity of $10^{-12} W/m^2$.
 
