@@ -106,3 +106,7 @@ schedule = lambda step: 0.1 * (1 - step/100)
 # Optimize the model's parameters using simulated annealing
 params_opt, _ = opt.stochastic_gradient_descent(cost, params, stepsize=0.4, schedule=schedule)
 ```
+
+Here, we set the input topic and target output, initialize the model's parameters randomly, and define a simulated annealing schedule. We then use the `stochastic_gradient_descent` function in PennyLane to optimize the model's parameters using simulated annealing. The optimal parameters and final cost are returned as outputs.
+
+This is just a simple example, but it demonstrates the basic steps involved in using simulated annealing to find the best generation about a cooking/IT topic from a language model in PennyLane. We can modify the cost function and optimization parameters to suit your specific application.
