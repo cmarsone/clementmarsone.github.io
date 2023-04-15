@@ -1,3 +1,9 @@
+---
+layout: post
+title: Markov decision processs
+author: Clément
+---
+
 ## Discounted rewards
 
 He "discounted sum of future rexards" using discount factrro gamma
@@ -5,10 +11,10 @@ reaward +gamm reward at 1step....
 
 Define:
 $V_A$: expected discounted futur rewards starting in state $A$
-$V_B=\mdots$
+$V_B=\cdots$
 
 ### Markov system with rewards
-Set of states $\{ S_1, \ldots, S_N \}$
+Set of states $\{ S_1, \cdots, S_N \}$
 
 A transition probability matrix
 
