@@ -14,10 +14,10 @@ $V_A$: expected discounted futur rewards starting in state $A$
 $V_B=\cdots$
 
 ### Markov system with rewards
-Set of states $\{ S_1, \cdots, S_N \}$
+
+Set of states $\{ S_ 1, \cdots, S_ N \}$
 
 A transition probability matrix
-
 
 $$\[
 \begin{pmatrix}
@@ -30,7 +30,7 @@ P_{n1} & P_{n2} & \cdots & P_{nn}
 
 $P_{ij} = \text{Prob } \{ \text{next } S_i | \text{ this } = S_j \}
 
-Each state has reward \{ r1, r2, rN \}
+Each state has reward $\{ r_1, r_2, r_N \}$
 
 Discount factor $0 < \gamma < 1$
 $V^* (S_ i)=$ expected discounted sum of future rewards starting in $S_ i$
