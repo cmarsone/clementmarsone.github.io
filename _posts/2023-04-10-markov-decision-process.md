@@ -28,7 +28,7 @@ P_{n1} & P_{n2} & \cdots & P_{nn}
 \end{pmatrix}
 \]$$
 
-$P_{ij} = \text{Prob } ( \text{next } (S_i) | \text{ this } = S_j )$
+$P_{ij} = \text{Prob } ( \text{next } (S_i) | \text{ this }) = S_j$
 
 Each state has reward $\{ r_1, r_2, r_N \}$
 
