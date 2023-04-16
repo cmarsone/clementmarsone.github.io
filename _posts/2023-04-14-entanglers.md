@@ -72,30 +72,38 @@ The main result of the study concerns the construction of an entanglement operat
 
 ## Illustration for $N=5$
 
-\begin{align*}
-\text{A convenient way to build an appropriate unitary } N \times N \text{ matrix } R \text{ is to start from a simple non-singular matrix } A \
-\text{and then orthogonalize it within the Grahm-Schmidt procedure. For example,}\
-A = \begin{pmatrix}
+A convenient way to build an ap-
+propriate unitary $N \times N$ matrix $R$ is to start from a
+simple non-singular matrix $A$ and then orthogonalize it
+within the Grahm-Schmidt procedure. For example,
+$A =
+\begin{pmatrix}
 1 & 1 & 1 & 1 & 1 \
 1 & 1 & 0 & 0 & 0 \
 1 & 0 & 1 & 0 & 0 \
 1 & 0 & 0 & 1 & 0 \
 1 & 0 & 0 & 0 & 1 \
-\end{pmatrix}, \quad R = \begin{pmatrix}
-1/\sqrt{5} & \sqrt{3/10} & \sqrt{3/14} & 3/2\sqrt{14} & 1/\sqrt{5}-\sqrt{2}/15 \
-\sqrt{3/10} & \sqrt{2/5} & \sqrt{2/7} & -1/\sqrt{14} & -\sqrt{2}/21+\sqrt{3}/10 \
-\sqrt{3/14} & \sqrt{2/7} & 2/\sqrt{7} & -1/\sqrt{14} & -\sqrt{2}/21-1/\sqrt{14} \
-3/2\sqrt{14} & -1/\sqrt{14} & -1/\sqrt{14} & 2\sqrt{2/7} & -\sqrt{2}/21-1/\sqrt{14} \
-1/\sqrt{5}-\sqrt{2}/15 & -\sqrt{2}/21+\sqrt{3}/10 & -\sqrt{2}/21-1/\sqrt{14} & -\sqrt{2}/21-1/\sqrt{14} & 1/\sqrt{14} \
-\end{pmatrix} \
-\text{Proceeding with the list of steps prescribed above we can easily construct } J(\beta) \text{ and compute the von Neumann entropy of the state } | \Psi_1 \rangle = J(\beta) |11\rangle \
-\text{upon which the players apply their strategies according to the game protocol specified in Eq. (6).} \
-\text{The result is given in Fig. 2. As explained in the figure’s caption, the degree of entanglement is controlled by a single parameter } \beta \
-\text{and } S_N(\beta) \text{ is a continuous function of } \beta \text{ reaching any value in the interval } [0, \log N]. \
-\text{Thus we have achieved our goal of constructing an entangler } J(\beta) \text{ that turns a non-entangled 2-quNit state into} \
-\text{an entangled one given in a Schmidt decomposed form with single parameter completeness satisfied.}
-\end{align*}
-
+\end{pmatrix}$, $R =
+\begin{pmatrix}
+1/\sqrt{5} & \sqrt{3}/10 & \sqrt{3}/14 & 3/(2\sqrt{14}) & 1/\sqrt{5} - \sqrt{2}/15 \
+\sqrt{3}/10 & 1 & -\sqrt{3}/14 - 3/(2\sqrt{14}) & 2\sqrt{2} & \sqrt{3}/10 - \sqrt{2}/21 \
+\sqrt{3}/14 & -\sqrt{3}/14 - 3/(2\sqrt{14}) & 1 & 2\sqrt{2} & \sqrt{3}/14 - 1/\sqrt{14} \
+3/(2\sqrt{14}) & 2\sqrt{2} & 2\sqrt{2} & 1 & 2\sqrt{2} - 1/\sqrt{2} \
+1/\sqrt{5} - \sqrt{2}/15 & \sqrt{3}/10 - \sqrt{2}/21 & \sqrt{3}/14 - 1/\sqrt{14} & 2\sqrt{2} - 1/\sqrt{2} & 1/\sqrt{5} \
+\end{pmatrix}$.
+Proceeding with the list of steps prescribed above,
+we can easily construct $J(\beta)$ and compute the von
+Neumann entropy of the state $\mid \Psi_1 \rangle = J(\beta) \mid 11 \rangle$ upon
+which the players apply their strategies according to the
+game protocol specified in Eq. (6). The result is given in
+Fig. 2. As explained in the figure’s caption, the degree
+of entanglement is controlled by a single parameter
+and $S_N(\beta)$ is a continuous function of $\beta$ reaching any
+value in the interval $\[0, \log N\]$. Thus we have achieved
+our goal of constructing an entangler $J(\beta)$ that turns a
+non-entangled 2-quNit state into an entangled one given
+in a Schmidt decomposed form with single parameter
+completeness satisfied.
 ## Wrap-Up
 
 To summarize, we propose two ways to create an entanglement operator J(β) that transforms a non-entangled 2-quNit state into a partially entangled state with its von Neumann entropy controlled by a single parameter. The first method is straightforward and involves using classical strategies in an exponential equation, as shown in Equation (10) and Figure 1. However, this method only works for N ≤ 4 since the resulting entropy does not reach the maximum value of log N. Thus, we propose a second method that works for any N but is more complex. The resulting entropy as a function of β is depicted in Figure 2.
