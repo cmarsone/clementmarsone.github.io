@@ -40,19 +40,31 @@ In a 2-3 quantum game, a player's strategy is represented by an $SU(3)$ matrix t
 
 ## 2-3 Quantum Game Procedure
 
-The referee proposes a non-entangled two-qutrit initial state, denoted by $|\Psi_0\rangle$, and applies a unitary operator $J(\beta)$ to entangle the state. The construction of $J(\beta)$ is the main goal and is explained later. The players apply their respective quantum strategies $U_1\otimes U_2$ to the state $|\Psi_1\rangle=J(\beta)|\Psi_0\rangle$. Finally, the referee applies the operator $J^\dagger(\beta)$ to get the final state $|\Psi\rangle=J^\dagger(\beta)U_1\otimes U_2J(\beta)|\Psi_0\rangle=\sum_{i,j=1,3}v_{ij}|ij\rangle$. Here, $\gamma_k$ is the octet of 8 Euler angles defining the $SU(3)$ matrix $U(\gamma_k)$, which represents the strategy of player $k=1,2$. The payoff of player $k$ is denoted by $P_k(\gamma_1,\gamma_2)$ and is given by $\sum_{i,j=1,3}u_k(i,j)|v_{ij}(\gamma_1,\gamma_2)|^2$, where $u_k(i,j)$ are the payoffs in the corresponding entry $(i,j)$ of the classical game table. Each player chooses a strategy with the aim of maximizing their respective payoff.
+The referee suggests an initial non-entangled two-qutrit
+state $\mid \Psi_0 \rangle$ (e.g the analog of the classical two trit state
+$\mid \Psi_0 \rangle = \mid 11 \rangle$). Before letting the players apply their quantum strategies, the referee operates on $\mid \Psi_0 \rangle$ with a unitary operator $J(\beta)$ such that $\mid \Psi_1 \rangle = J(\beta) \mid \Psi_0 \rangle$ is entangled (otherwise the game remains classical). Construction of the operator $J(\beta)$ (our central goal) is detailed below. At this stage of the game, the players apply their respective strategies $U_1 \otimes U_2$. Finally, the referee applies the operator $J^{\dagger}(\beta)$ leading to the final state
+$\mid \Psi \rangle = J^{\dagger}(\beta) (U_1 \otimes U_2) J(\beta) \mid 11 \rangle = \sum_{i,j=1,3} v_{ij} \mid ij \rangle$,
+where $\gamma_k$ is the octet of 8 Euler angles defining the $SU(3)$ matrix $U(\gamma_k)$ (that is the strategy of player $k=1,2$).
+The payoff $P_k$ of player $k=1,2$ is given by,
+$P_k(\gamma_1, \gamma_2) = \sum_{i,j=1,3} u_k(i,j) \mid v_{ij}(\gamma_1, \gamma_2) \mid^2$,
+where $u_k(i,j)$ are the payoffs at entry $(i,j)$ of the classical game table. Like in the classical game, each player chooses a strategy with the goal of maximizing their payoff.
 
 ## Pure Strategy Nash Equilibrium (NE)
 
-The set of eight Euler angles $\gamma$ determines a player's strategy $U(\gamma) \in SU(3)$, and a pure strategy NE in the 2-3 quantum game is a pair of strategies $(\gamma^_1,\gamma^_2)$, each represented by eight angles, such that $P_1(\gamma_1, \gamma^_2) \leq P_1(\gamma^_1, \gamma^_2)$ for all $\gamma_1$ and $P_2(\gamma^_1, \gamma_2) \leq P_2(\gamma^_1, \gamma^_2)$ for all $\gamma_2$. The existence of a pure strategy NE in the 2-2 quantum game and its relationship with the degree of entanglement, controlled by $\beta$, has been discussed in several works. In brief, if there is a NE in the classical game that is not Pareto efficient, then there exists a critical value $\beta_c$ above which there is no pure strategy NE in the quantum game. As $\beta$ approaches $\beta_c$ from below, the respective payoffs in the quantum game at NE approach the Pareto point of cooperation. This is the main reason why partially entangled 2-quNit states where $S_N(\beta) < \log N$ are relevant.
+Because the set of 8 Euler angles $\gamma$ uniquely determines the player's strategy $U(\gamma) \in SU(3)$, a pure strategy NE in the 2-3 quantum game is a pair of strategies $(\gamma_1^, \gamma_2^)$ (each represents 8 angles), such that
+\begin{align}
+P_1(\gamma_1, \gamma_2^) &\leq P_1(\gamma_1^, \gamma_2^) \quad \forall \gamma_1, \
+P_2(\gamma_1^, \gamma_2) &\leq P_2(\gamma_1^, \gamma_2^) \quad \forall \gamma_2. \label{eq:pure_ne_2_3}
+\end{align}
+The question of whether a pure strategy NE exists in the 2-2 quantum game, and its relation to the degree of entanglement (controlled by $\beta$), has been discussed in numerous works [9-15]. In brief, if there is NE in the classical game that is not Pareto efficient [16], then there is a critical value $\beta_c$ above which there is no pure strategy NE in the quantum game. As $\beta$ approaches $\beta_c$ from below, the respective payoffs in the quantum game at NE approach the Pareto point of cooperation [11, 15]. This is the main reason why, right from the onset, we stressed the relevance of partially entangled 2-qutrit states where $S_N(\beta) < \log N$.
 
 ## Absence of Classical Commensurability
 
-We will now explain why there is no classical commensurability in a 2-3 quantum game, as stated in reference [10]. In classical commensurability, the players get their classical payoffs when they use classical strategies. If we take a classical strategy $\gamma$, it belongs to $S_3$, where $U_\gamma$ is a unitary permutation matrix. From Equation (6), it follows that $J$ should commute with all outer products of classical strategies. If the initial state is $|\Psi\rangle = |11\rangle$, then the 9 outer products of classical strategies are $1\otimes 2^s \otimes s$, where $s \in {1,2,3}$ and ${1,2,3}^{\otimes 2}={12,13,21,23,31,32}$ (see Equation (3)). Classical commensurability requires that $[J, \otimes_{S\in{1,2,3}^{\otimes 2}} U_S^{\otimes s}] = 0$, which leads to Equation (9): $[J,\otimes_{S\in{1,2,3}}U_S^{\otimes 2}] = 0$. This is only possible if $J$ is a function of $A\otimes A$, where $A$ is a $3\times 3$ matrix satisfying $A\otimes A = 0$ and $A$ is not just a multiple of the identity matrix $I$. However, this is impossible because $S_{12}$ and $S_{13}$ generate an irreducible representation of the permutation group $S_3$, and therefore, by Schur's lemma, $A$ is just a multiple of $I$. These arguments hold for any $N>2$.
+We will now explain why there is no classical commensurability in a 2-3 quantum game, as stated in reference [10]. In classical commensurability, the players get their classical payoffs when they use classical strategies. If we take a classical strategy $\gamma$, it belongs to $S_3$, where $U_\gamma$ is a unitary permutation matrix. From Equation (6), it follows that $J$ should commute with all outer products of classical strategies. If the initial state is $|\Psi\rangle = |11\rangle$, then the 9 outer products of classical strategies are $1\otimes 2^s \otimes s$, where $s \in {1,2,3}$ and ${1,2,3}^{\otimes 2}={12,13,21,23,31,32}$ (see Equation (3)). Classical commensurability requires that $\[J, \otimes_{S\in{1,2,3}^{\otimes 2}} U_S^{\otimes s}\] = 0$, which leads to Equation (9): $\[J,\otimes_{S\in{1,2,3}}U_S^{\otimes 2}\] = 0$. This is only possible if $J$ is a function of $A\otimes A$, where $A$ is a $3\times 3$ matrix satisfying $A\otimes A = 0$ and $A$ is not just a multiple of the identity matrix $I$. However, this is impossible because $S_{12}$ and $S_{13}$ generate an irreducible representation of the permutation group $S_3$, and therefore, by Schur's lemma, $A$ is just a multiple of $I$. These arguments hold for any $N>2$.
 
 ## Designing the Entangler $J(\beta)$
 
-The main result of the study concerns the construction of an entanglement operator $J_\beta$ for 2-qutrit states. The operator is constructed for $3$-qutrit states and extended to any $N$. The goal is to obtain an entangled 2-qutrit state with $\beta$ specifying the degree of entanglement that can range from $0$ to $\log 3$. The operator $J_\beta$ is constructed by exponentiating a combination of classical strategies. To obtain the diagonal 2-qutrit states $|2\rangle|2\rangle$ and $|3\rangle|3\rangle$ from $|1\rangle|1\rangle$, $J_\beta$ operates on $|1\rangle|1\rangle$ with $Z\otimes S\otimes S\otimes Z\otimes S\otimes S$, where $Z$ and $S$ are defined as quantum gates. The exponent of $J_\beta$ is calculated to obtain the entangled state. The maximal entanglement is obtained when the absolute values of all three coefficients are equal, which happens at $\beta = 2e^2-1$. The entanglement operator satisfies single-parameter completeness. The von Neumann entropy of the entangled state is displayed as a function of $\beta$ in Figure 1(a), showing that it is a periodic function of $\beta$ with a period of $4\pi/3$ and is symmetric about the midpoint $2\pi/3$. It has two maxima for $\beta=2e^2\pm1$, where it equals $3\log 3$. The entanglement in quantum games is obtained in terms of permutation exponentials that are SU(3) matrices.
+The passage discusses the construction of an entanglement operator $J(\beta)$ for $N > 2$. The operator is constructed for $N = 3$ and then extended to any $N$. The entanglement operator $J(\beta)$ is obtained by exponentiating a combination of classical strategies in the $2 \times 2$ game framework specified in Eq.~(1). The operator $J(\beta)$ is defined as $J(\beta) = e^{i\beta/2} Z$ where $Z \equiv S_{12} \otimes S_{12} + S_{13} \otimes S_{13}$. The exponent of $J(\beta)$ is calculated to obtain the entangled $2$-qutrit state. The maximal entanglement is obtained when the absolute values of all three coefficients are equal. The entanglement operator $J(\beta)$ satisfies single parameter completeness. The extension to arbitrary $N$ is done by defining the $N \times N$ matrix representing the permutation $i \leftrightarrow j$ and an unentangled $2$-quNit state $\mid ij \rangle$, where $i, j = 1, 2, \ldots, N$. The entangled state is obtained from $\mid 11 \rangle$ by defining $J(\beta) \mid 11 \rangle = e^{i\beta/2} \sum_{j=2}^N S_{1j} \otimes S_{1j} \mid 11 \rangle = e^{-i\beta/2}\sqrt{N} \left( e^{iN\beta/2(N-1)} \mid 11 \rangle + \sqrt{\frac{N-1}{N}} \sum_{j=2}^N \mid jj \rangle \right)$. The maximal entanglement entropy $S_N(\beta)$ is obtained by solving the equality $\left| e^{iN\beta_0/2(N-1)} + \sqrt{\frac{N-1}{N}} e^{-iN\beta_0/2} \right|^2/N^2 = 1/N$. For $N = 3$ and $4$, maximal entanglement is achieved. For $N > 4$, maximal entanglement is not achieved, and single parameter completeness is not satisfied.
 
 ## Extension to Arbitrary $N$
 
@@ -60,9 +72,29 @@ The main result of the study concerns the construction of an entanglement operat
 
 ## Illustration for $N=5$
 
-A convenient way to build an appropriate unitary $N \times N$ matrix $R$ is to start from a simple non-singular matrix $A$ and then orthogonalize it within the Grahm-Schmidt procedure.
-
-Proceeding with the list of steps prescribed above we can easily construct $J(\beta)$ and compute the von Neumann entropy of the state $|\Psi_1\rangle = J(\beta) |11\rangle$ upon which the players apply their strategies according to the game protocol specified in Equation (6). The result is given in Figure 2. As explained in the figure’s caption, the degree of entanglement is controlled by a single parameter and $S_N(\beta)$ is a continuous function of $\beta$ reaching any value in the interval $[0, \log N]$. Thus we have achieved our goal of constructing an entangler $J(\beta)$ that turns a non-entangled 2-qubit state into an entangled one given in a Schmidt decomposed form with single parameter completeness satisfied.
+\begin{align*}
+\text{A convenient way to build an appropriate unitary } N \times N \text{ matrix } R \text{ is to start from a simple non-singular matrix } A \
+\text{and then orthogonalize it within the Grahm-Schmidt procedure. For example,}\
+A = \begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \
+1 & 1 & 0 & 0 & 0 \
+1 & 0 & 1 & 0 & 0 \
+1 & 0 & 0 & 1 & 0 \
+1 & 0 & 0 & 0 & 1 \
+\end{pmatrix}, \quad R = \begin{pmatrix}
+1/\sqrt{5} & \sqrt{3/10} & \sqrt{3/14} & 3/2\sqrt{14} & 1/\sqrt{5}-\sqrt{2}/15 \
+\sqrt{3/10} & \sqrt{2/5} & \sqrt{2/7} & -1/\sqrt{14} & -\sqrt{2}/21+\sqrt{3}/10 \
+\sqrt{3/14} & \sqrt{2/7} & 2/\sqrt{7} & -1/\sqrt{14} & -\sqrt{2}/21-1/\sqrt{14} \
+3/2\sqrt{14} & -1/\sqrt{14} & -1/\sqrt{14} & 2\sqrt{2/7} & -\sqrt{2}/21-1/\sqrt{14} \
+1/\sqrt{5}-\sqrt{2}/15 & -\sqrt{2}/21+\sqrt{3}/10 & -\sqrt{2}/21-1/\sqrt{14} & -\sqrt{2}/21-1/\sqrt{14} & 1/\sqrt{14} \
+\end{pmatrix} \
+\text{Proceeding with the list of steps prescribed above we can easily construct } J(\beta) \text{ and compute the von Neumann entropy of the state } | \Psi_1 \rangle = J(\beta) |11\rangle \
+\text{upon which the players apply their strategies according to the game protocol specified in Eq. (6).} \
+\text{The result is given in Fig. 2. As explained in the figure’s caption, the degree of entanglement is controlled by a single parameter } \beta \
+\text{and } S_N(\beta) \text{ is a continuous function of } \beta \text{ reaching any value in the interval } [0, \log N]. \
+\text{Thus we have achieved our goal of constructing an entangler } J(\beta) \text{ that turns a non-entangled 2-quNit state into} \
+\text{an entangled one given in a Schmidt decomposed form with single parameter completeness satisfied.}
+\end{align*}
 
 ## Wrap-Up
 
