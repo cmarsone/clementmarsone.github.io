@@ -72,8 +72,7 @@ The main result of the study concerns the construction of an entanglement operat
 
 ## Illustration for $N=5$
 
-A convenient way to build an ap-
-propriate unitary $N \times N$ matrix $R$ is to start from a
+A convenient way to build an appropriate unitary $N \times N$ matrix $R$ is to start from a
 simple non-singular matrix $A$ and then orthogonalize it
 within the Grahm-Schmidt procedure. For example,
 $A =
