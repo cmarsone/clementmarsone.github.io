@@ -13,6 +13,7 @@ author: Clément
 
 ## Objectif: L'harmonisation du choral
 
+S'inspirer du chant choral, particulièrement ceux de Bach: cantates, fugues, passions...
 
 ## Caractéristique de la méthode: Intégrer les éléments de complexification dès les premiers exercices à partir d'une base simple
 
