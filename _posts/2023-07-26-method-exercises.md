@@ -26,6 +26,8 @@ Ne pas réduire l'harmonie à la facilité de l'accord de do majeur parmi les 24
 
 ### Echaînements fondamentaux
 
-I-V, V-I et I-IV, IV-I, enchaînements par excellence de l'écriture tonale
+I-V, V-I et I-IV, IV-I, enchaînements par excellence de l'écriture tonale appelés 'diapente' ou 'diatessaron' & 'hyperdiapente' ou 'hyperdiatessaron' (ou 'hypo'). Terminologie grecque venant de l'antique harmonie byzantine.
+
+Particulièrement, l'enchaînement de tonique à dominante, ou vice versa, est l'enchaînement type de l'écriture tonale.
 
 Autres notions à s'approprier: diminution du sixième degré, passage en mineur par dimution de la tierce, abaissement de la sensible, modulation à la sous-dominante par la sensible ou à la dominante par la quinte
