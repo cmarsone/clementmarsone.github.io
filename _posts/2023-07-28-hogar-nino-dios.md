@@ -14,4 +14,4 @@ Dans un monde où les hommmes recherchent sans cesse leur profit, développement
 
 ### "Dieu créa l'homme à son image" | Gn. I, 27
 
-Coming up next... 
+(Coming up next)[https://ssvmusa.org/index.php/missions/foreign-missions/palestine/] 
