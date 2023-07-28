@@ -4,7 +4,7 @@ title: Internet of Things & Cie
 author: Clément
 ---
 
-*Mastering IoT (Internet of Things) involves gaining a deep understanding of the technologies, concepts & applications related to the interconnected network of physical devices.* IoT refers to the network of devices embedded with sensors, software, and connectivity capabilities that enable them to collect and exchange data.
+**Mastering IoT (Internet of Things) involves gaining a deep understanding of the technologies, concepts & applications related to the interconnected network of physical devices.** IoT refers to the network of devices embedded with sensors, software, and connectivity capabilities that enable them to collect and exchange data.
 
 Focus on several key areas:
 
