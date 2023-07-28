@@ -22,4 +22,4 @@ Depuis désormais 18 ans, elles ont consacré leur vie à s'occuper de 35 palest
 
 Cette mission exigeante de labeurs nécessite chaque année l'aide de plusieurs volontaires venus du monde entier, principalement d'Italie, de France ou de pays espagnols. Ils vivent ainsi au rythme de la communauté par la messe & le chapelet quotidiens, & se donnent à l'éducation des enfants en jouant avec eux, en les aidant à manger, à se doucher, à faire leurs besoins...
 
-Derrière chaque enfant, nous voyons tous l'image du Dieu qui les a crée
+Derrière chaque enfant, nous voyons tous l'image du Dieu qui les a créés & plus encore la "figure du Christ souffrant & glorieux". Telle est notre unique motivation à donner toute notre vie pour ceux que l'on aime, chacun selon sa mesure !
