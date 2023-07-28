@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hogar Niño Dios: de la Terre Sainte vers le Ciel
+title: Hogar Niño Dios, de la Terre Sainte vers le Ciel
 author: Clément
 ---
 
