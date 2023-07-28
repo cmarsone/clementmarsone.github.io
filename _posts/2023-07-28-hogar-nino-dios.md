@@ -14,4 +14,12 @@ Dans un monde où les hommmes recherchent sans cesse leur profit, développement
 
 ### "Dieu créa l'homme à son image" | Gn. I, 27
 
-[Coming up next](https://ssvmusa.org/index.php/missions/foreign-missions/palestine) 
+C'est à Bethlehem, en plein cœur de la Palestine, que se sont installées quelques sœurs de l'ordre de la Vierge de Matara. Elles se sont réunies dans une même communauté sous le patronage de Notre Dame des Sept Douleurs afin de mener à bien cette œeuvre de miséricorde. A peine située à quelques mètres de l'étable de la naissance du Christ, elles ont fondé, avec quelques prêtres de la Société du Verbe Incarné, la maison appelée à très juste titre Hogar Niño Dios, la Maison de l'Enfant-Dieu ! 
+
+Depuis désormais 18 ans, elles ont consacré leur vie à s'occuper de 35 palestiniens âgés de 3 à 70 ans tous atteints de handicap et délaissés par des familles précaires. Bien qu'il y ait quelques catholiques, la plupart sont de confession musulmane & ne peuvent participer publiquement aux activités religieuses sous peine de sanctions graves de la part du gouvernement. Quelque soit leurs origines, les résidents de "Hogar" sont baignés chaque jour dans une atmosphère joyeuse & spirituelle les aidant à surmonter leurs difficultés physiques ou mentales. Par la prière & les sacrifices, les pères & les sœurs s'offrent pour sauver ces enfants & les mettre en relation avec le Dieu de qui tout vient & tout doit retourner.
+
+[Highlighted Mission: Home of the Child Jesus](https://ssvmusa.org/index.php/missions/foreign-missions/palestine)
+
+Cette mission exigeante de labeurs nécessite chaque année l'aide de plusieurs volontaires venus du monde entier, principalement d'Italie, de France ou de pays espagnols. Ils vivent ainsi au rythme de la communauté par la messe & le chapelet quotidiens, & se donnent à l'éducation des enfants en jouant avec eux, en les aidant à manger, à se doucher, à faire leurs besoins...
+
+Derrière chaque enfant, nous voyons tous l'image du Dieu qui les a crée
