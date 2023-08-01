@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jérusalem, dans les textes & dans les pierres.
+title: Jérusalem, dans les textes & dans les pierres
 author: Clément
 ---
 
