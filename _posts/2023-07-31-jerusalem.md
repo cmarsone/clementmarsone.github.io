@@ -14,7 +14,7 @@ Problématique: **Jérusalem, capitale de deux peuples & sainte de trois religio
 - David, quittant Hebron, *fait de Jérusalem la capitale de son royaume*.
 - 957 BCE: Salomon, son fils, y édifie le temple, sanctuaire destiné à l'adoration du Dieu unique.
 
-#### Deux destructions du lieu saint. "Je vous le dis en vérité, il ne restera pas ici pierre sur pierre qui ne soit renversée" MT 24, 2
+#### Deux destructions du lieu saint. "Je vous le dis en vérité, il ne restera pas ici pierre sur pierre qui ne soit renversée" Mt 24, 2
 
 - 586 BCE: invasion & anéantissement par les Néo-Babyloniens de Nabuchodonosor puis reconstruction par le roi des Perses, Cyrus le Grand, à la suite du retour des exilés.
 - Perte progressive de l'influence politique juive jusqu'à la révolte de 70 AD et destruction par les Romains de Titus.
