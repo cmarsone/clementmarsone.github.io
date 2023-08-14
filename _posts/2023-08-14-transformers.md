@@ -7,11 +7,11 @@ title: PDC Summer School | Parallel Computer Architecture
 
 *Main keywords*: CPUs, memory, caching, accelerators…
 
-*Main goals*: precision, scale, range, datatypes, high performance, energy consumption, speed-up….
+*Main goals*: precision, reliability, large-scalability, efficiency, higher performance & speed-up, energy consumption...
 
 ### Computing machines
 
-- A mix of hardwares & softwares systems used to execute applications
+*Computer systems*: A mix of hardwares & softwares systems used to execute applications.
 
 ### Computer architecture representation
 
@@ -33,14 +33,14 @@ title: PDC Summer School | Parallel Computer Architecture
 
 - Organized as linear spaces with word-size granularity 
 - Code & data are stored as address
-- Memory operations are slow e.g off-chip, read/write operations...
+- Memory operations are slow e.g off-chip, read/write operations & fetching...
 
 ### CPU-memory gap
 
 *Flat memory model*:
-- All accesses with same latency
-- Memory latency slower to improve than processor speed 
-- Which means that we are waiting longer for DRAM access
+- All accesses = same latency
+- Memory latency slower to improve, than processor speed 
+- Which means that we are waiting longer for any DRAM access
 
 *Memory hierarchy*: registers, L1, L2, L3, SRAM, DRAM, local disks, remote secondary storage… 
 - Multiple layers of memory from small & fast to large & slow
@@ -48,10 +48,14 @@ title: PDC Summer School | Parallel Computer Architecture
 *Cache*: a smaller, faster storage device that acts as a staging area for a subset of the date in a larger slower device.
 
 *Locality principle*: programs tend to use data & instructions with addresses near or equal to those they have used recently.
-Locality can be *temporal* or *spatial*
+Locality can be *temporal* in the sucession of operations or *spatial* in the order of addresses.
 
 - Problems of size for every memory address, organisation loading & policies
-- Performance of hit, miss, metric (accesses, fails, penalties…)
+- Hit: access found data in fast memory.
+- Miss: data not found in fast memory causing high latency & penalty.
+- Metric: fraction of accesses that hit.
+
+Memory allocations & operations are the main bottleneck in HPC today. Needing to improve locality with better data memory layout & access patterns
 
 Core i7 Matrix Multiply Performances (see below)
 
