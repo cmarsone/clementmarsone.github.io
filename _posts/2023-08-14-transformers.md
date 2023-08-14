@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PDC Summer School | Parallel Computer Architectures
+title: PDC Summer School | Parallel Computer Architecture
 ---
 
 ## Introduction to computer systems
@@ -15,62 +15,64 @@ title: PDC Summer School | Parallel Computer Architectures
 
 ### Computer architecture representation
 
-- HPC makes extensive use of the computer systems
+- HPC makes extensive use of the computer systems with parallelism
 
 ### Representation of the data
 
 - Bits & bit vectors representation
-- Interpretation & datatypes
-- Careful to correctness, performance & efficiency
+- Interpretation of data & datatypes
+- Ensuring correctness, performance & efficiency
 
 ### Processor’s basic operations & inner workings
 
-- CPU executes the application (execution progress PC), fetches Instructions & data, ALU operations& manage results
-- Memory stores, receives by adresses, & replies with data (bit vector)
-- Bus facilitates information of bits movement
+- *CPU* executes the application (execution progress), fetches instructions & data, computes ALU operations & manages results
+- *Memory* stores, receives by adresses, & replies with data i.e. a bit vector
+- *Bus* facilitates information of bits movement between components
 
 ### Memory 
 
-Organised as linear spaces with word-size granularity 
-Code & data stored as address
-Memory operation are slow: off-chip, read/write operations, s
+- Organized as linear spaces with word-size granularity 
+- Code & data are stored as address
+- Memory operations are slow e.g off-chip, read/write operations...
 
 ### CPU-memory gap
 
-Flat memory Model
+*Flat memory model*:
 - All accesses with same latency
 - Memory latency slower to improve than processor speed 
-- Which leans we wait longer for DRAM access
+- Which means that we are waiting longer for DRAM access
 
-Memory hierarchy: registers, L1, SRAM, DRAM, local disks, remote secondary storage… multiple layers of memory from small & fast to large slow
+*Memory hierarchy*: registers, L1, L2, L3, SRAM, DRAM, local disks, remote secondary storage… 
+- Multiple layers of memory from small & fast to large & slow
 
-Cache: a smaller, faster storage device that acts as a staging area fora subset of the date in a larger slower device
+*Cache*: a smaller, faster storage device that acts as a staging area for a subset of the date in a larger slower device.
 
-Locality principle: programs tend to use data & instructions with addresses near or equal to those they have used recently.
-Temporal & spatial locality
+*Locality principle*: programs tend to use data & instructions with addresses near or equal to those they have used recently.
+Locality can be *temporal* or *spatial*
 
-Problems of size for every memory address, organisation loading & policies
-Performance of hit, miss, metric (accesses, fails, penalties…)
+- Problems of size for every memory address, organisation loading & policies
+- Performance of hit, miss, metric (accesses, fails, penalties…)
 
-Core i7 matrix multiply performance (see below)
+Core i7 Matrix Multiply Performances (see below)
+
+![url](https://github.com/cmarsone/cmarsone.github.io/assets/109908559/3d6f5d42-19e0-4fe2-be25-8f15e9bbc712)
 
 ## ￼Parallelism & parallel machines
 
-First taxonomy (classification): Michael Flynn of 1966
+First taxonomy (classification) introduced by Michael Flynn in 1966
 Single/Multiple = Instructions/Data
 
-Moore’s Law predicts that the transistor density of semiconductor chips double roughly every 18 months
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FFlynns-Taxonomy-of-Computer-Architectures-13_fig1_268011284&psig=AOvVaw3CLLvIA_OEsc36O7wlEuo_&ust=1692115160919000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCgvq_C3IADFQAAAAAdAAAAABAD![image](https://github.com/cmarsone/cmarsone.github.io/assets/109908559/732de32a-33e1-4e0f-a2f9-525665f428fc)
 
-Around 2005: “hitting the walls” for clock speed, power
+*Moore’s law* predicts that the transistor density of semiconductor chips double roughly every 18 months
+However around 2005: “hitting the walls” for clock speed, power...
 
-CPUs levels of parallelism
-=> Instruction-Level Parallelism, SIMD Data Parallelism (fine), Multi-Core Task/DataParallelism (coarse)
+*CPUs levels of parallelism* => Instruction-Level Parallelism, SIMD Data Parallelism (fine), Multi-Core Task/DataParallelism (coarse)
 
-Multi-core CPUs
+## Multi-core CPUs
 
-￼
 - Hardware threads, SIMD units (vector lanes)
-- L1& L2 dedicated caches (individual)
+- L1 & L2 dedicated caches (individual)
 - L3 shared cache (shared)
 - Main memory, I/O (off-chip)
 
