@@ -104,15 +104,17 @@ All are programmed in a similar way with OpenCL & have similar architecture.
 
 “OpenCL (Open Computing Language) is a framework for writing programs that execute across heterogeneous platforms consisting of central processing units (CPUs), graphics processing units (GPUs), digital signal processors (DSPs), field-programmable gate arrays (FPGAs) and other processors or hardware accelerators.”
 
-Fundamental difference latency/throughput
+*Fundamental difference latency/throughput*
+
 CPU: low latency, high flexibility, excellent for irregular codes with limited parallelism. Smallest time to execute one operation
+
 GPU: high throughput. Excellent for massively parallel workloads. Max operations at the same time
 
 Putting all together: multiple nodes, communication network, homogenous/heterogenous, peak performances, energy consumption, measurements 
 
 ### Scaling out
 
-Supercomputers: distributed combinations of multi-core & many-cores where we have to understand architectures.
+*Supercomputers*: distributed combinations of multi-core & many-cores where we have to understand architectures.
 
 ### Parallel Systems Models
 
