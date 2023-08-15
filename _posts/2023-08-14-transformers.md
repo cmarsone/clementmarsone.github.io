@@ -66,7 +66,7 @@ Core i7 Matrix Multiply Performances (see below)
 First taxonomy (classification) introduced by Michael Flynn in 1966
 Single/Multiple = Instructions/Data
 
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FFlynns-Taxonomy-of-Computer-Architectures-13_fig1_268011284&psig=AOvVaw3CLLvIA_OEsc36O7wlEuo_&ust=1692115160919000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCgvq_C3IADFQAAAAAdAAAAABAD![image](https://github.com/cmarsone/cmarsone.github.io/assets/109908559/732de32a-33e1-4e0f-a2f9-525665f428fc)
+![image](https://github.com/cmarsone/cmarsone.github.io/assets/109908559/732de32a-33e1-4e0f-a2f9-525665f428fc)
 
 *Moore’s law* predicts that the transistor density of semiconductor chips double roughly every 18 months
 However around 2005: “hitting the walls” for clock frequency, power...
