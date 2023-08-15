@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PDC Summer School | Parallel Computer Architecture
+title: PDC Summer School | Multithreading & Parallel Computer Architecture
 ---
 
 ## Introduction to computer systems
@@ -82,7 +82,7 @@ However around 2005: “hitting the walls” for clock frequency, power...
 
 1. *ILP*: multiple instructions executed in the same cycle. Gaining parallelism but needing independent task. Implementing by super-scalar processors with dynamic scheduling (most of high-end CPUs) & VLIW (Very Long Instruction Word) processors with static scheduling (most of GPUs). *Features of modern CPUs*: Pipelining, superscalar (multiple instructions in one cycle) & out-of-order (reordering operations in hardware) spaculative execution, branch prediction...
 2. Streaming *SIMD* Extension (SSE): same instruction executed on multiple data items by special registers & functional units. Scalar=sequential & vector=parallel. Compiler directives of auto-vectorization typically enabled with “-O” flag. Assembly instructions
-3. *Multi-core parallelism*: different streams of instructions to be executed in parallel aka software threads.
+3. *Multi-core parallelism*: different streams of instructions to be executed in parallel as software threads.
 4. *Many-Cores GPUs*: GPUs act as accelerators and depend on the CPU. Texture Processor Cluster = group of Streaming Multi-Processor (SM) = CUDA cores + special function units + local memory. Warps = pieces of data at a time that can be concurrently processed by a core. GPU integration with PCI Express or NVLink (10x faster). Graphics & textures processing clusters.
 
 *Hardware supported multi-threading*. Cores manages thread context:
@@ -114,38 +114,27 @@ Putting all together: multiple nodes, communication network, homogenous/heteroge
 
 Supercomputers: distributed combinations of multi-core & many-cores where we have to understand architectures.
 
-(Parallel) Systems Models
-• Why do we need parallel system models?
-• Provide an abstraction of the real machine
-• Dictate the properties of “dedicated” programming models • Enable the selection of an appropriate programming model
-• Organization-based classification • Shared Memory
-• Distributed Memory
-• Virtual shared Memory • Hybrids
+### Parallel Systems Models
 
-Shared Memory
-• Multiple compute nodes
-• One single shared address space • Typical example: multi-cores
-• Distributed Memory
-• Multiple compute nodes
-• Multiple, local (disjoint) address spaces
-• Virtual shared memory: software/hardware layer “emulates” shared memory • Typical example: clusters
-• Hybrids
-• Multiple compute nodes, typically heterogeneous
-• Mixed address space(s), some shared, some global memory • Typical example: supercomputers
+### Shared Memory
+- Multiple compute nodes
+- One single shared address space, typical example of multi-cores
 
-Major issues
-• Shared Memory model
-• Scalability problems (interconnect)
-• Programming challenge: RD/WR Conflicts
-• Distributed Memory model
-• Data distribution is mandatory
-• Programming challenge: remote accesses, consistency
-• Virtual Shared Memory model
-• Significant virtualization overhead • Easier programming
-• Hybrid models
-• Local/remote data more difficult to trace
+### Distributed Memory
+- Multiple compute nodes
+- Multiple, local (disjoint) address spaces
+- Virtual shared memory: software/hardware layer “emulates” shared memory, typical example of clusters
 
+### Hybrids
+- Multiple compute nodes, typically heterogeneous
+- Mixed address space(s), some shared, some global memory, typical example: supercomputers
 
+### Major issues
+
+*Shared Memory model*: Scalability problems (interconnect) & Programming challenge: RD/WR Conflicts
+*Distributed Memory model*: Data distribution is mandatory & Programming challenge: remote accesses, consistency
+*Virtual Shared Memory model*: Significant virtualization overhead • Easier programming
+*Hybrid models*: Local/remote data more difficult to trace
 
 --------------------------------------------------------------
 
