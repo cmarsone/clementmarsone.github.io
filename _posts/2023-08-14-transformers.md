@@ -132,8 +132,11 @@ Supercomputers: distributed combinations of multi-core & many-cores where we hav
 ### Major issues
 
 *Shared Memory model*: Scalability problems (interconnect) & Programming challenge: RD/WR Conflicts
+
 *Distributed Memory model*: Data distribution is mandatory & Programming challenge: remote accesses, consistency
+
 *Virtual Shared Memory model*: Significant virtualization overhead • Easier programming
+
 *Hybrid models*: Local/remote data more difficult to trace
 
 --------------------------------------------------------------
