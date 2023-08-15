@@ -88,9 +88,10 @@ However around 2005: “hitting the walls” for clock frequency, power...
 *Hardware supported multi-threading*. Cores manages thread context:
 - Interleaved, temporal multi-threading - employed in GPUs to hide the latency of stalls
 - Simultaneous co-located execution e.g. Intel Hyperthreading
+
 Requires replication of register file but increases throughput
 
-Using intrinsics refers to utilizing specialized instructions provided by the CPU's instruction set architecture to perform specific operations directly in code, often at a lower level than standard high-level programming constructs. Intrinsics allow programmers to take advantage of hardware-specific optimizations and capabilities for improved performance in applications such as multimedia processing, cryptography, signal processing, and more. => Intel AVX
+*Using intrinsics refers to utilizing specialized instructions provided by the CPU's instruction set architecture to perform specific operations directly in code, often at a lower level than standard high-level programming constructs. Intrinsics allow programmers to take advantage of hardware-specific optimizations and capabilities for improved performance in applications such as multimedia processing, cryptography, signal processing, and more.* => Intel AVX
 
 *AMD*:
 - Much better perfs
@@ -102,7 +103,7 @@ Using intrinsics refers to utilizing specialized instructions provided by the CP
 - Support own CPUs with integrated graphics
 All are programmed in a similar way with OpenCL & have similar architecture.
 
-“OpenCL (Open Computing Language) is a framework for writing programs that execute across heterogeneous platforms consisting of central processing units (CPUs), graphics processing units (GPUs), digital signal processors (DSPs), field-programmable gate arrays (FPGAs) and other processors or hardware accelerators.”
+*“OpenCL (Open Computing Language) is a framework for writing programs that execute across heterogeneous platforms consisting of central processing units (CPUs), graphics processing units (GPUs), digital signal processors (DSPs), field-programmable gate arrays (FPGAs) and other processors or hardware accelerators.”*
 
 *Fundamental difference latency/throughput*
 
@@ -110,7 +111,7 @@ CPU: low latency, high flexibility, excellent for irregular codes with limited p
 
 GPU: high throughput. Excellent for massively parallel workloads. Max operations at the same time
 
-Putting all together: multiple nodes, communication network, homogenous/heterogenous, peak performances, energy consumption, measurements 
+*Putting all together*: multiple nodes, communication network, homogenous/heterogenous, peak performances, energy consumption, measurements 
 
 ### Scaling out
 
